@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased"><TrafficTracker/><UsageTracker/>{children}<footer className="muted" style={{padding:"16px 24px",fontSize:"0.8rem"}}>Usage: daily totals of page arrivals, play/download actions and saved feedback or remix briefs help us improve. This counter stores no visitor IDs, cookies, IPs, page histories or message contents; totals older than 90 days are pruned on the next recorded activity. Repeat loads and bots can count. Existing anonymous referral-cookie tracking is unchanged.</footer></body>
+      <body className="antialiased"><TrafficTracker/><UsageTracker/><nav aria-label="Free4AllHub family" style={{display:"flex",flexWrap:"wrap",gap:"1rem",padding:"0.75rem 1.5rem"}}><a href="https://free4allhub.com">Free4AllHub</a><a href="https://games.free4allhub.com" aria-current="page">Games4Free</a><a href="https://plan.free4allhub.com">Plan4Free</a><a href="https://learn.free4allhub.com">Learn4Free</a></nav>{children}<footer className="muted" style={{padding:"16px 24px",fontSize:"0.8rem"}}>Usage: daily totals of page arrivals, play/download actions and saved feedback or remix briefs help us improve. This counter stores no visitor IDs, cookies, IPs, page histories or message contents; totals older than 90 days are pruned on the next recorded activity. Repeat loads and bots can count. Existing anonymous referral-cookie tracking is unchanged.</footer></body>
     </html>
   );
 }

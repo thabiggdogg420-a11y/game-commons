@@ -911,7 +911,11 @@
       "licenseUrl": "https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/LICENSE",
       "setupUrl": "https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/README.md",
       "requirements": [
-        "Open the pinned project with Godot 4.7 or use the author's browser build.",
+        "Native source: upstream requires Godot 4.7+. Source-declared (not runtime-verified here): pinned Web CI targets 4.7.2-stable. Run godot --path . from the extracted project for native play; the author's hosted build runs the original, not your adaptation.",
+        "Browser build: pair Godot 4.7.2-stable with the same 4.7.2-stable export templates (template directory 4.7.2.stable). The Web preset needs web_nothreads_release.zip; debug export needs web_nothreads_debug.zip. An installed editor alone is insufficient. Do not infer 4.6.x browser support from native/headless success.",
+        "From the project root: mkdir -p build/web/game; godot --headless --path . --import; godot --headless --path . --export-release \"Web\" build/web/game/index.html. Inspect import/export errors and require nonempty index.html, index.js, index.wasm and index.pck; exit code alone is not proof. Keep the preset non-threaded.",
+        "Local browser check: python3 -m http.server 8000 --bind 127.0.0.1 --directory build/web/game; open http://127.0.0.1:8000/ (not file://). This serves the adapted bare game, not the upstream wrapper. Check browser console/network, boot, legal/illegal moves, AI, pause/restart, result/replay, audio after interaction and narrow layout. Record engine/templates, source revision and browser results separately from native tests.",
+        "Pinned Web preset: https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/export_presets.cfg ; build reference: https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/.github/workflows/pages.yml . Commands are guidance, not an executed or verified browser build.",
         "The repository is a one-way snapshot; upstream issues and changes are tracked in the original godot-mcp-go repository.",
         "Preserve bundled CC0/OFL notices as applicable."
       ],
@@ -925,7 +929,8 @@
       ],
       "cautions": [
         "This is a focused board game and teaching example, not a large commercial-scale game.",
-        "The cover image is an illustrative title card, not an in-gameplay screenshot."
+        "The cover image is an illustrative title card, not an in-gameplay screenshot.",
+        "Browser adaptation readiness is unverified. Matching engine/export templates and an actual browser playthrough are required; native or headless checks cannot establish browser delivery."
       ],
       "remixSurfaces": [
         "Board rules and move validation",
