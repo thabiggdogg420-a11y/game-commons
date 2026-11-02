@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: "Game Commons — A starting point for your game",
   description: "Point your AI at Game Commons. Find a suitable game base, meet its creator and adapt useful source into the game you want.",
   metadataBase: new URL('https://game-commons-captain.thabiggdogg420.chatgpt.site'),
-  openGraph: {title:'Game Commons — A starting point for your game',description:'Find a starting point for the game you want. Browse original games or let your AI find a suitable source base.',images:[{url:'/projects/art/collection.jpg',alt:'Real game screenshots from the Game Commons collection.'}]},
-  twitter: {card:'summary_large_image',images:['/projects/art/collection.jpg']},
+  openGraph: {title:'Game Commons — A starting point for your game',description:'Find a starting point for the game you want. Browse original games or let your AI find a suitable source base.'},
+  twitter: {card:'summary'},
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

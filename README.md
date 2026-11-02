@@ -17,11 +17,11 @@ Open the local address printed by the server. The installer uses the pinned lock
 
 ```sh
 pnpm run build
-node --test tests/portable-install.test.mjs tests/source-export.test.mjs
+node --test tests/portable-install.test.mjs tests/source-export.test.mjs tests/source-only-media.test.mjs
 node --import ./tests/register.mjs --test tests/public-source-privacy.test.mjs tests/interop.test.mjs tests/core.test.ts tests/feedback.test.mjs tests/traffic.test.mjs tests/usage.test.mjs
 ```
 
-The 79 checks above cover installation, source-edition boundaries, catalogue pagination/handoffs, read-only MCP, core storage/feedback and event handling. The import hook supplies the in-memory test environment and TypeScript aliases. Other retained tests include historical assumptions and are not all part of this verified subset. Lint has existing errors/warnings; it is not a clean release gate.
+The 82 checks above cover installation, source-edition boundaries, catalogue pagination/handoffs, read-only MCP, core storage/feedback and event handling. The import hook supplies the in-memory test environment and TypeScript aliases. Other retained tests include historical assumptions and are not all part of this verified subset. Lint has existing errors/warnings; it is not a clean release gate.
 
 ## Use with an assistant
 
@@ -41,7 +41,7 @@ This is a contribution-ready source edition derived from hosted v73, **not a byt
 - `app/`, `components/`, `lib/`: website, catalogue, APIs and MCP.
 - `tests/`: runnable regression tests; see the verified subset above.
 - `scripts/`, `build/`: installation/build source. `build/` contains maintained source, not disposable output.
-- `public/projects/`: upstream catalogue and credited media.
+- `public/projects/`: upstream catalogue and image-credit/source references (no raster files).
 - `drizzle/`, `db/`: schema/migration source, not production data.
 - `tools/mcp-client/`: standalone read-only client and checks.
 
@@ -49,8 +49,8 @@ This is a contribution-ready source edition derived from hosted v73, **not a byt
 
 Reproduce upstream setup instructions, improve search relevance and concise handoffs, test keyboard/mobile accessibility, or demonstrate a focused adaptation with reproducible source and real checks. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting.
 
-Original independent platform code is MIT. Dependencies and retained media keep their own terms; see [LICENSING.md](LICENSING.md). A source link is not a security audit, build guarantee or blanket asset-reuse licence.
+Original independent platform code is MIT. Dependencies and credited external media keep their own terms; see [LICENSING.md](LICENSING.md). A source link is not a security audit, build guarantee or blanket asset-reuse licence.
 
-## Initial source publication
+## Source-only media scope
 
-This initial commit contains the reviewed text/source files. The 39 catalogue/concept image assets are not bundled yet; browser previews may show image placeholders. Catalogue data, the MCP server/client and build source are included. The hosted website retains its existing media. This is not a complete media mirror.
+This repository intentionally includes no raster images. Homepage and directory cards use text-only previews, and social metadata does not request absent artwork. Creator credits and upstream image-source links remain for reference under their own terms; they are not a blanket image redistribution grant. There is no automatic asset download, remote-image proxy or install-time fetch. Visit a game’s original site to see its media. The catalogue, search, source handoffs and read-only MCP work without these images. The hosted website is unchanged.
