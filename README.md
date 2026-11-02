@@ -20,10 +20,10 @@ Open the local address printed by the server. The installer uses the pinned lock
 ```sh
 pnpm run build
 node --test tests/portable-install.test.mjs tests/source-export.test.mjs tests/source-only-media.test.mjs
-node --import ./tests/register.mjs --test tests/public-source-privacy.test.mjs tests/interop.test.mjs tests/core.test.ts tests/feedback.test.mjs tests/traffic.test.mjs tests/usage.test.mjs
+node --import ./tests/register.mjs --test tests/public-source-privacy.test.mjs tests/interop.test.mjs tests/core.test.ts tests/feedback.test.mjs tests/traffic.test.mjs tests/usage.test.mjs tests/v75-source-sync.test.mjs tests/directory-entry.test.mjs tests/vision-discovery-redesign.test.mjs
 ```
 
-The 82 checks above cover installation, source-edition boundaries, catalogue pagination/handoffs, read-only MCP, core storage/feedback and event handling. The import hook supplies the in-memory test environment and TypeScript aliases. Other retained tests include historical assumptions and are not all part of this verified subset. Lint has existing errors/warnings; it is not a clean release gate.
+The 93 checks above cover installation, source-edition boundaries, directory filters and pagination, catalogue handoffs, read-only MCP, core storage/feedback and event handling. The import hook supplies the in-memory test environment and TypeScript aliases. Other retained tests include historical assumptions and are not all part of this verified subset. Lint has existing errors/warnings; it is not a clean release gate.
 
 ## Use with an assistant
 
