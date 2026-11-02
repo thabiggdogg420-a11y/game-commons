@@ -39,9 +39,9 @@ The [MCP client and acceptance harness](tools/mcp-client/README.md) uses the sam
 
 ## Community source edition
 
-**Version boundary (2 November 2026):** the hosted site is v85; this clone remains the v82 source edition. Hosted v85 adds device-specific platform filters, engine filters and Recommended sorting. Those features are not yet synchronized into this clone. This documentation update does not change the website or claim a newer source release.
+**Version boundary (2 November 2026):** this source edition includes discovery/filter logic from hosted v86: reported device-specific platform and engine filters, Recommended sorting and current public media/action metadata. This is not complete hosted-site parity: image rendering, historical demos, private data and deployment bindings remain deliberately excluded. The hosted v86 website is unchanged by this source update.
 
-This is a contribution-ready source edition derived from hosted v82, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
+This is a contribution-ready source edition updated from hosted v86, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
 
 ## Project map
 
@@ -76,12 +76,12 @@ Optional snapshot integration tests require explicit public metadata download (a
 
 ```sh
 node scripts/fetch-external-test-fixture.mjs
-node --import ./tests/register.mjs --test --test-concurrency=1 tests/external-catalogue.test.mjs tests/external-compact-codec.test.mjs tests/external-compact-parity.test.mjs tests/external-import-auth.test.mjs tests/external-import-recovery.test.mjs tests/external-snapshot.test.mjs tests/featured-games.test.mjs tests/server-css-dedupe.test.mjs tests/external-catalogue-additions.test.mjs tests/external-play-only.test.mjs tests/media-signals-integration.test.mjs tests/project-media-contract.test.mjs tests/top-game-carousel.test.mjs tests/top-game-presentation.test.mjs
+node --import ./tests/register.mjs --test --test-concurrency=1 tests/external-catalogue.test.mjs tests/external-compact-codec.test.mjs tests/external-compact-parity.test.mjs tests/external-import-auth.test.mjs tests/external-import-recovery.test.mjs tests/external-snapshot.test.mjs tests/featured-games.test.mjs tests/server-css-dedupe.test.mjs tests/external-catalogue-additions.test.mjs tests/external-play-only.test.mjs tests/media-signals-integration.test.mjs tests/project-media-contract.test.mjs tests/top-game-carousel.test.mjs tests/top-game-presentation.test.mjs tests/platform-engine-recommended.test.mjs tests/facet-d1-parity.test.mjs tests/top-enrichment.test.mjs tests/unciv-carousel-note.test.mjs
 ```
 
 The fixture goes to ignored `.cache/`; alternatively set `GC_SNAPSHOT_FIXTURE`, `GC_MEDIA_FIXTURE` and `GC_SIGNALS_FIXTURE` to the exact pinned metadata files outside the checkout. No dataset, private import state, operational receipts or hosted-game binaries are included in this repository. Featured rating cards cite dated public store aggregates, not independent gameplay testing; the source edition uses text previews only.
 
-The documented baseline plus optional integration suites currently total **142 passing checks**. The entire retained legacy suite is not a clean gate: old hosted-demo, image-byte and historical-handoff assumptions remain in tests outside this subset. Do not interpret those historical fixtures as bundled content.
+The documented baseline plus optional integration suites currently total **153 passing checks**. The entire retained legacy suite is not a clean gate: old hosted-demo, image-byte and historical-handoff assumptions remain in tests outside this subset. Do not interpret those historical fixtures as bundled content.
 
 ## Source-only carousel, public signals and media references
 
@@ -89,7 +89,11 @@ The carousel and broad catalogue share sourced rating/review activity, corrected
 
 Two additional immutable public **JSON metadata** dependencies are fetched server-side when available:
 
-- Media references: `https://free4allhub.com/catalogues/games4free/media-e651135b0c22d2ed877e709d3609a7873423d988545528e10e56bf47427f8548.compact.json` — SHA-256 `e651135b0c22d2ed877e709d3609a7873423d988545528e10e56bf47427f8548`, 1,651,251 bytes, 4,417 records. Original normalized metadata SHA-256: `65b1e9aa0299e36d3d79681950467e9dce2feec48a6061e1263e850bc81e7ee0`.
+- Media references: `https://free4allhub.com/catalogues/games4free/media-7cdd3f4b8c2a4da8d9810ce62682e1e2ed271c9401228bbbc2323afae1ae32c6.compact.json` — SHA-256 `7cdd3f4b8c2a4da8d9810ce62682e1e2ed271c9401228bbbc2323afae1ae32c6`, 1,655,841 bytes, 4,419 records. Original normalized metadata SHA-256: `233025f4adcaab67c11cc446bcd3b20bebb95038089208549070f2ae3eef61a0`.
 - Public rating/review signals: `https://free4allhub.com/catalogues/games4free/6db468ff73c96e06e4fc244a04eed8ab61d579b154d599cef8437935c62cbe09.signals.json` — SHA-256 `6db468ff73c96e06e4fc244a04eed8ab61d579b154d599cef8437935c62cbe09`, 1,588,107 bytes, 3,384 activity records.
 
 Public image URLs, image type, original-source links, creator/rights notices and dated observation qualifiers are preserved as metadata. They do not grant permission to redistribute the images or games. **This source edition does not request or render those images:** cards and carousel remain text-only, including when an image URL is present. No image proxy, raster bundle, private screenshots, local import records or operational receipts are included. Signals and media failures degrade without inventing ratings, pictures or playable copies.
+
+Reported platform and engine facets combine independently. Recommended uses reviewed selections, reported release/access evidence, metadata preview availability and provider-native rating thresholds; it is not an engine quality judgement or gameplay certification. Preview availability can inform ranking without fetching or rendering any image. Six reviewed picks remain text-only in this clone.
+
+For memory-constrained builds, native worker pools can be bounded: `ROLLDOWN_WORKER_THREADS=1 RAYON_NUM_THREADS=1 NODE_OPTIONS=--max-old-space-size=512 pnpm run build`.

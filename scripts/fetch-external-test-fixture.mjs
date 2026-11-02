@@ -3,7 +3,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const pins=[
  ['external-snapshot.json','e1bff498c5f0f2341e7d06d9cfbe58ee60b203cdd75af76153c6b08397375da8',2025219,'','.compact.json'],
- ['media-snapshot.json','e651135b0c22d2ed877e709d3609a7873423d988545528e10e56bf47427f8548',1651251,'media-','.compact.json'],
+ ['media-snapshot.json','7cdd3f4b8c2a4da8d9810ce62682e1e2ed271c9401228bbbc2323afae1ae32c6',1655841,'media-','.compact.json'],
  ['signals-snapshot.json','6db468ff73c96e06e4fc244a04eed8ab61d579b154d599cef8437935c62cbe09',1588107,'','.signals.json']
 ];
 await mkdir(new URL('../.cache/',import.meta.url),{recursive:true});

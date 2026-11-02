@@ -1,5 +1,6 @@
+import {platforms,engines,platformAliases,engineAliases,normalizedPlatforms,normalizedEngines,FACET_REVISION} from './external-facets.mjs';
 import type {MediaSummary} from './project-media-types';
-import {mediaSummaries,mediaFor,prepareMedia} from './project-media';
+import {mediaSummaries,mediaFor,prepareMedia,mediaHasImage,MEDIA_SHA} from './project-media';
 import {projectSignals,SIGNALS_SHA} from './project-signals';
 import {applyProjectCorrection,effectiveAccess,accessCorrections,CORRECTION_REVISION} from './project-corrections';
 import {externalSnapshot,snapshotSource,snapshotFailure,snapshotDiagnostic,SNAPSHOT_GENERATION} from './external-snapshot';
@@ -34,29 +35,42 @@ function dec(v:string){try{if(v.length>2048)throw Error();return JSON.parse(deco
 function db(){if(!env.DB)throw new RepositoryError('External catalogue storage unavailable.',503);return env.DB}
 function currentProject(p:ExternalEntry,signals:Awaited<ReturnType<typeof projectSignals>>){const project=applyProjectCorrection(p),review=signals?.reviews.get(p.id);return review?{...project,currentReview:review}:project;}
 function externalSummary(p:ReturnType<typeof currentProject>){return {...('currentReview' in p?{currentReview:p.currentReview}:{}),...('historicalClaims' in p?{historicalClaims:p.historicalClaims,accessCorrection:p.accessCorrection}:{}),freeClaimScope:p.freeClaimScope,knownLimitations:p.knownLimitations,contentWarnings:p.contentWarnings,reviewStatus:p.reviewStatus,id:p.id,title:p.title,creator:p.creator,genres:p.genres,platforms:p.platforms,engine:p.engine,links:p.links,access:p.access,sourceStatus:p.sourceStatus,licenseStatus:'upstream-claims-not-verified',contentRequirement:p.contentRequirement,verification:p.verification,remixPermission:p.remixPermission,metadataAttribution:p.metadataAttribution,metadataLicense:p.metadataLicense,provenance:p.provenance,detailUrl:'/api/external-catalogue/'+p.id}}
-async function selectedSummaries(projects:ExternalEntry[],signals:Awaited<ReturnType<typeof projectSignals>>,mediaReady=true){const media=mediaReady?await mediaSummaries(projects.map(p=>p.id)):new Map<string,MediaSummary>();return projects.map(p=>({...externalSummary(currentProject(p,signals)),activity:signals?.byId.get(p.id)??null,media:media.get(p.id)??null}));}
-async function snapshotPage(query:string,platform:unknown,genre:string,content:unknown,access:unknown,sort:unknown,limit:number,cursor:unknown){
+function recommendationTier(id:string,access:string,status:string,development:string|null,signals:Awaited<ReturnType<typeof projectSignals>>){
+ if(access!=='free-reported'||accessCorrections.has(id)||!mediaHasImage(id))return 0;
+ if(signals?.data.carouselSelection.some(p=>p.id===id&&p.selectionApproved))return 3;
+ if(signals?.reviews.has(id)&&!signals.reviews.get(id)?.selectionApproved)return 0;
+ if(status!=='Released'&&development!=='complete')return 0;
+ const a=signals?.byId.get(id);return a&&a.count>=20&&a.average&&((a.average.metric==='average-stars'&&a.average.scale===5&&a.average.value>=4)||(a.average.metric==='positive-percentage'&&a.average.scale===100&&a.average.value>=80))?2:1;
+}
+function recommendation(p:ExternalEntry,signals:Awaited<ReturnType<typeof projectSignals>>){const tier=recommendationTier(p.id,effectiveAccess(p.id,p.access),p.upstreamStatus??'',p.upstreamDevelopment,signals);return {tier,label:tier===3?'Reviewed pick':tier===2?'Strong reported ratings':tier?'Source-reported released':'No editorial recommendation',basis:tier===3?'Explicit editorial selection, reviewed access and a preview; not a gameplay certification.':tier?'Upstream reports release/completion and free access, with preview'+(tier===2?' and at least20 sourced ratings/reviews with4/5 stars or80% positive on that provider':'')+'. Not independently tested.':'Insufficient recommendation evidence; not a low-quality rating.'};}
+async function selectedSummaries(projects:ExternalEntry[],signals:Awaited<ReturnType<typeof projectSignals>>,mediaReady=true){const media=mediaReady?await mediaSummaries(projects.map(p=>p.id)):new Map<string,MediaSummary>();return projects.map(p=>({...externalSummary(currentProject(p,signals)),platformFacets:normalizedPlatforms(p.platforms),engineFacets:normalizedEngines(p.engine),facetEvidence:'Upstream-reported; current installation and runtime unverified.',recommendation:recommendation(p,signals),activity:signals?.byId.get(p.id)??null,media:media.get(p.id)??null}));}
+async function snapshotPage(query:string,platform:unknown,engine:unknown,genre:string,content:unknown,access:unknown,sort:unknown,limit:number,cursor:unknown){
  const generation=SNAPSHOT_GENERATION;
  let reader,signals,mediaReady;try{[reader,signals,mediaReady]=await Promise.all([externalSnapshot(),projectSignals(),prepareMedia()])}catch(e){const code=snapshotFailure(e),diagnostic=snapshotDiagnostic(e);console.warn('external-snapshot',{code,...diagnostic});return {format:'games4free-external-index-v1',available:false as const,diagnostic:{phase:diagnostic.phase,name:diagnostic.name},reason:'External index unavailable ('+code+'); curated source catalogue remains available.',generation:null,content,access,sort,total:0,limit,nextCursor:null,projects:[]}}
  let after=null;if(cursor){const c=dec(cursor as string);if(!c||c.v!==3||c.g!==generation||c.sr!==(signals?SIGNALS_SHA:'unavailable')||c.cr!==CORRECTION_REVISION||!c.after||typeof c.after!=='object'||Array.isArray(c.after))fail('Cursor belongs to another search or catalogue revision. Start again.');after=c.after;}
- let result;try{result=reader.page({query,platform,genre,content,access,sort,limit,after},{counts:signals?.counts,access:effectiveAccess,revision:CORRECTION_REVISION+':'+(signals?SIGNALS_SHA:'unavailable')})}catch{fail('Invalid external snapshot cursor or filters. Start again.');}
- return {format:'games4free-external-index-v1',available:true as const,generation,content,access,sort,rankingAvailable:!!signals,total:result.total,limit,nextCursor:result.nextCursor?enc({v:3,g:generation,sr:signals?SIGNALS_SHA:'unavailable',cr:CORRECTION_REVISION,after:result.nextCursor}):null,projects:await selectedSummaries(result.projects,signals,mediaReady),source:snapshotSource,scope:'External metadata, not hosted games or verified licensing/runtime. Free access reports do not establish original-content rights or remix permission.'};
+ let result;try{result=reader.page({query,platform,engine,genre,content,access,sort,limit,after},{counts:signals?.counts,recommend:(id,a,s,d)=>recommendationTier(id,a,s,d,signals),access:effectiveAccess,revision:FACET_REVISION+':'+CORRECTION_REVISION+':'+(signals?SIGNALS_SHA:'unavailable')+':'+(mediaReady?MEDIA_SHA:'unavailable')})}catch{fail('Invalid external snapshot cursor or filters. Start again.');}
+ return {format:'games4free-external-index-v1',available:true as const,generation,content,access,sort,platform,engine,rankingAvailable:!!signals,total:result.total,limit,nextCursor:result.nextCursor?enc({v:3,g:generation,sr:signals?SIGNALS_SHA:'unavailable',cr:CORRECTION_REVISION,after:result.nextCursor}):null,projects:await selectedSummaries(result.projects,signals,mediaReady),source:snapshotSource,scope:'External metadata, not hosted games or verified licensing/runtime. Free access reports do not establish original-content rights or remix permission.'};
 }
 export async function externalCataloguePage(options:Record<string,unknown>={}){
- const {query='',platform='all',genre='all',content='free-open',access='all',sort='relevance',limit=12,cursor}=options;
- if(Object.keys(options).some(k=>!['query','platform','genre','content','access','sort','limit','cursor'].includes(k))||typeof query!=='string'||query.length>200||!['all','browser','desktop'].includes(platform as string)||!['free-open','free','open','unknown','commercial','swappable','all'].includes(content as string)||!['all','free-reported','paid-reported','unknown'].includes(access as string)||!['relevance','popularity'].includes(sort as string)||typeof genre!=='string'||genre.length>100||typeof limit!=='number'||!Number.isInteger(limit)||limit<1||limit>24||(cursor!==undefined&&typeof cursor!=='string'))fail('Invalid external catalogue filters (limit 1–24).');
- const q=query.trim(),terms=externalTokens(q).slice(0,8),binding=access==='all'?[q,platform,genre,content]:[q,platform,genre,content,access];
+ const {query='',platform='all',engine='all',genre='all',content='free-open',access='all',sort='relevance',limit=12,cursor}=options;
+ if(Object.keys(options).some(k=>!['query','platform','engine','genre','content','access','sort','limit','cursor'].includes(k))||typeof query!=='string'||query.length>200||!platforms.includes(platform as string)||!engines.includes(engine as string)||!['free-open','free','open','unknown','commercial','swappable','all'].includes(content as string)||!['all','free-reported','paid-reported','unknown'].includes(access as string)||!['relevance','popularity','recommended'].includes(sort as string)||typeof genre!=='string'||genre.length>100||typeof limit!=='number'||!Number.isInteger(limit)||limit<1||limit>24||(cursor!==undefined&&typeof cursor!=='string'))fail('Invalid external catalogue filters (limit 1–24).');
+ const q=query.trim(),terms=externalTokens(q).slice(0,8),binding=[q,platform,engine,genre,content,access,sort,FACET_REVISION];
  let active:{id:string}|null;
- try{active=await db().prepare("SELECT id FROM external_imports WHERE state='active' ORDER BY created_at DESC LIMIT 1").first<{id:string}>()}catch{return snapshotPage(q,platform,genre,content,access,sort,limit,cursor)}
- if(!active)return snapshotPage(q,platform,genre,content,access,sort,limit,cursor);
- if(sort==='popularity')fail('Popularity sorting is unavailable for this active database generation; use relevance.');
+ try{active=await db().prepare("SELECT id FROM external_imports WHERE state='active' ORDER BY created_at DESC LIMIT 1").first<{id:string}>()}catch{return snapshotPage(q,platform,engine,genre,content,access,sort,limit,cursor)}
+ if(!active)return snapshotPage(q,platform,engine,genre,content,access,sort,limit,cursor);
+ if(sort!=='relevance')fail('Recommendation/popularity sorting is unavailable for this active database generation; use relevance.');
  try{
  const generation=active.id,args:(string|number)[]=[generation];
  let from='external_entries e',score='0',where='e.generation=?';
  if(terms.length){from='external_entries e JOIN (SELECT id,COUNT(*) AS score FROM external_terms WHERE generation=? AND term IN ('+terms.map(()=>'?').join(',')+') GROUP BY id) t ON t.id=e.id';args.push(...terms,generation);score='t.score';}
  if(content==='free-open')where+=" AND e.content_requirement IN ('free','open')";else if(content!=='all'){where+=' AND e.content_requirement=?';args.push(content as string);}
  if(access!=='all'){where+=" AND (CASE e.id "+[...accessCorrections.keys()].map(()=>"WHEN ? THEN ?").join(' ')+" ELSE json_extract(e.metadata,'$.access') END)=?";for(const [id,c] of accessCorrections)args.push(id,c.access);args.push(access as string);}
- if(platform!=='all')where+=platform==='browser'?' AND e.browser=1':' AND e.desktop=1';
+ if(platform!=='all'){
+  if(platform==='desktop')where+=' AND e.desktop=1';
+  else if(platform==='unknown')where+=" AND NOT EXISTS (SELECT 1 FROM json_each(e.metadata,'$.platforms') p WHERE lower(trim(p.value)) NOT IN ('none','unknown',''))";
+  else {const aliases=platformAliases[platform as string];where+=" AND EXISTS (SELECT 1 FROM json_each(e.metadata,'$.platforms') p WHERE lower(trim(p.value)) IN ("+aliases.map(()=>'?').join(',')+"))";args.push(...aliases);}
+ }
+ if(engine!=='all'){const aliases=engine==='unknown'?Object.values(engineAliases).flat():engineAliases[engine as string];where+=' AND '+(engine==='unknown'?'NOT ':'')+"EXISTS (SELECT 1 FROM json_each(e.metadata,'$.engine') n WHERE lower(replace(trim(n.value),'Ö','ö')) IN ("+aliases.map(()=>'?').join(',')+"))";args.push(...aliases);}
  if(genre!=='all'){where+=' AND EXISTS (SELECT 1 FROM external_terms g WHERE g.generation=e.generation AND g.id=e.id AND g.term=?)';args.push('genre:'+genre.normalize('NFKC').toLowerCase());}
  const base=`SELECT e.id,e.sort_key,e.metadata,${score} AS score FROM ${from} WHERE ${where}`;
  const count=await db().prepare(`SELECT COUNT(*) AS total FROM (${base})`).bind(...args).first<{total:number}>();
@@ -65,8 +79,8 @@ export async function externalCataloguePage(options:Record<string,unknown>={}){
  const out=await db().prepare(`SELECT * FROM (${base})${after} ORDER BY score DESC,sort_key,id LIMIT ?`).bind(...args).all<{id:string;sort_key:string;metadata:string;score:number}>();
  const rows=out.results.slice(0,limit),last=rows.at(-1),nextCursor=out.results.length>limit&&last?enc({v:1,g:generation,b:binding,s:last.score,k:last.sort_key,id:last.id}):null;
  const projects=await selectedSummaries(rows.map(r=>JSON.parse(r.metadata) as ExternalEntry),await projectSignals());
- return {format:'games4free-external-index-v1',available:true as const,generation,content,access,sort,total:count?.total??0,limit,nextCursor,projects,scope:'External metadata, not hosted games or verified licensing/runtime. Source availability does not grant remix permission.'};
- }catch(e){if(e instanceof RepositoryError)throw e;return snapshotPage(q,platform,genre,content,access,sort,limit,cursor)}
+ return {format:'games4free-external-index-v1',available:true as const,generation,content,access,sort,platform,engine,total:count?.total??0,limit,nextCursor,projects,scope:'External metadata, not hosted games or verified licensing/runtime. Source availability does not grant remix permission.'};
+ }catch(e){if(e instanceof RepositoryError)throw e;return snapshotPage(q,platform,engine,genre,content,access,sort,limit,cursor)}
 }
 export async function externalCatalogueEntry(id:unknown){
  if(typeof id!=='string'||!/^external-[a-f0-9]{20}$/.test(id))fail('Invalid external entry ID.');

@@ -39,7 +39,7 @@ Dependencies are pinned with a lockfile. This uses the official `@modelcontextpr
 
 ## Pick the right discovery tool
 
-The hosted site is **v85 as of 2 November 2026**; this repository remains the **v82 source edition**. The example below targets the hosted public MCP server. Device-specific platform filters, engine filters and Recommended sorting are not yet available in this clone. Call `tools/list` in your connected client to inspect the server's current schema; this guide does not upgrade an already-installed connector.
+The hosted site is **v86 as of 2 November 2026**. This repository includes updated discovery/filter logic while remaining a text-only source edition without hosted demos or production bindings. The example targets the hosted public MCP server; the same filter schema is now available in this clone. Call `tools/list` in your connected client to inspect the server's current schema; this guide does not upgrade an already-installed connector.
 
 - **Find something to play:** `search_external_catalogue` searches broad upstream metadata. Follow with `get_external_catalogue_entry` using the returned ID, then inspect the original creator's destination.
 - **Find a base to adapt:** `search_source_projects`, then `get_project_handoff`, returns the smaller source/setup/rights-oriented collection. This is what the CLI `search` and `detail` commands use.
