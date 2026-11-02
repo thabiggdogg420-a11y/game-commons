@@ -1,0 +1,23 @@
+import {registerHooks} from 'node:module';
+import {readFileSync,existsSync} from 'node:fs';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const [recovered,manifestPath]=process.argv.slice(2);
+assert.ok(recovered&&manifestPath,'Usage: node scripts/verify-recovered-game.mjs RESTORED_DIRECTORY EXPECTED_MANIFEST_JSON');
+process.env.GAME_COMMONS_RECOVERY_DIRECTORY=path.resolve(recovered);
+registerHooks({resolve(specifier,context,next){
+ if(specifier==='cloudflare:workers')return {url:new URL('./recovered-env.mjs',import.meta.url).href,shortCircuit:true};
+ let target;if(specifier.startsWith('@/'))target=path.join(root,specifier.slice(2));else if(specifier.startsWith('.')&&context.parentURL?.endsWith('.ts'))target=path.resolve(path.dirname(fileURLToPath(context.parentURL)),specifier);
+ if(target)for(const candidate of [target+'.ts',path.join(target,'index.ts')])if(existsSync(candidate))return {url:pathToFileURL(candidate).href,shortCircuit:true};return next(specifier,context);
+}});
+const expected=JSON.parse(readFileSync(manifestPath,'utf8'));
+const {manifest,readSource,cataloguePage}=await import('../lib/repository.ts');
+const actual=await manifest(expected.game.id,new URL(expected.pageUrl).origin,expected.version);
+assert.deepEqual(JSON.parse(JSON.stringify(actual)),expected,'Recovered application manifest differs from hosted manifest');
+const source=await readSource(expected.game.id,expected.version);
+assert.equal(createHash('sha256').update(source).digest('hex'),expected.sha256);
+const found=await cataloguePage({query:expected.game.title});assert.ok(found.games.some(g=>g.id===expected.game.id),'Recovered game not discoverable');
+console.log(JSON.stringify({checkedAt:new Date().toISOString(),gameId:expected.game.id,version:expected.version,sha256:expected.sha256,realApplicationManifestMatchesHosted:true,realApplicationSourceHashMatches:true,recoveredCatalogueFindsGame:true,mode:'read-only local recovery; no production database writes'},null,2));

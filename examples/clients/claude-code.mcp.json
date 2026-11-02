@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "game-commons-reader": {
+      "type": "http",
+      "url": "https://game-commons-captain.thabiggdogg420.chatgpt.site/mcp/read"
+    }
+  }
+}

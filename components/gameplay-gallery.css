@@ -1,0 +1,16 @@
+/* Self-contained light caption surface prevents inherited dark-theme text bugs. */
+.gameplay-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;max-width:100%;min-width:0}
+.gameplay-gallery .gameplay-screenshot{margin:0;min-width:0;overflow:hidden;border:1px solid #a4b4a0;border-radius:8px;background:#fffef8;color:#23382d}
+.gameplay-gallery .gameplay-screenshot-fullsize{display:block;background:#14271e;line-height:0}
+.gameplay-gallery .gameplay-screenshot-fullsize:focus-visible,.gameplay-gallery a:focus-visible,.gameplay-gallery summary:focus-visible{outline:3px solid #638134;outline-offset:3px}
+.gameplay-gallery img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.gameplay-gallery figcaption{padding:12px 14px;color:#23382d}
+.gameplay-gallery figcaption p,.gameplay-gallery figcaption strong,.gameplay-gallery figcaption summary,.gameplay-gallery figcaption code{color:#23382d;font-size:12px;line-height:1.65;margin:5px 0;overflow-wrap:anywhere}
+.gameplay-gallery figcaption a{color:#234f40;text-decoration:underline;text-underline-offset:3px}
+.gameplay-gallery .gameplay-screenshot-caption{font-weight:600}
+.gameplay-gallery details{margin-top:7px}.gameplay-gallery summary{cursor:pointer}
+.gameplay-gallery code{display:block;font-family:ui-monospace,monospace}
+.gameplay-gallery .gameplay-screenshot-pending{display:flex;flex-direction:column;gap:8px;padding:24px 16px;background:#eef2e7;color:#23382d;border:1px dashed #81977a;border-radius:7px;min-height:120px;justify-content:center;text-align:center}
+.gameplay-gallery .gameplay-screenshot-pending strong,.gameplay-gallery .gameplay-screenshot-pending span{color:#23382d;font-size:13px;line-height:1.6}
+.gameplay-gallery-compact{grid-template-columns:minmax(0,1fr)}
+@media(max-width:600px){.gameplay-gallery{grid-template-columns:minmax(0,1fr)}.gameplay-gallery figcaption{padding:12px}.gameplay-gallery figcaption p{font-size:12px}}

@@ -1,0 +1,23 @@
+{
+  "format": "game-commons-remix-family-v1",
+  "id": "slipstream-family",
+  "reviewedOn": "2026-10-26",
+  "scope": "Original upstream reference only. No unpublished descendant graph is distributed.",
+  "nodes": [
+    {
+      "id": "slipstream-racing-game",
+      "generation": 0,
+      "title": "Slipstream",
+      "parentId": null,
+      "status": "official-external-release",
+      "credit": "Catalin (ctb111) and credited contributors",
+      "changes": "Original classic-car circuit racing with 12 tracks and 6 cars.",
+      "sourceRevision": "3baf4ec6ea617861663bcec41bf3fbc13fb65ea2",
+      "sourceUrl": "https://github.com/ctb111/slipstream-racing-game/tree/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2",
+      "playUrl": "https://github.com/ctb111/slipstream-racing-game/releases/tag/v1.0.0",
+      "sourceManifestSha256": null,
+      "runnableSha256": null,
+      "graphicsVerified": false
+    }
+  ]
+}

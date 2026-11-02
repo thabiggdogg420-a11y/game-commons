@@ -1,0 +1,1 @@
+export function GET(){return new Response('This source edition does not include the optional demonstration runtime. Browse /projects for original source links.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'}})}

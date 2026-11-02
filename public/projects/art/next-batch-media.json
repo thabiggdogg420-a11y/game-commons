@@ -1,0 +1,73 @@
+{
+  "images": [
+    {
+      "id": "beyond-all-reason",
+      "title": "Beyond All Reason",
+      "sourceUrl": "https://cdn.prod.website-files.com/5c69241780da2a1dfc6caa4e/65e5b660b50dd9e3fb6f21e5_screen00246.avif",
+      "sourcePage": "https://www.beyondallreason.info/promokit",
+      "creator": "Beyond All Reason contributors",
+      "license": "Official promo-kit permission: assets may be used for material related to Beyond All Reason; all rights otherwise reserved. Not a Creative Commons screenshot claim.",
+      "licenseUrl": "https://www.beyondallreason.info/promokit",
+      "caption": "BAR contributors \u00b7 official promo image; build/date unknown",
+      "alt": "Official Beyond All Reason screenshot: giant combat robots, tanks, laser beams and explosions fill a rocky battlefield.",
+      "originalSha256": "8d8f6369f0e4fce281c4a2e3f0f84e830020c231590c88ab0e447a60ecc29d7d",
+      "originalDimensions": [
+        3440,
+        1377
+      ],
+      "path": "/projects/art/beyond-all-reason.webp",
+      "width": 1200,
+      "height": 480,
+      "bytes": 116342,
+      "sha256": "d2e5f29c9b9638855e736045f90c49b7e022b073c39e25437ab1516307ad9bfb",
+      "edits": "Proportional downsize and WebP encoding only; no crop, generated content or retouch.",
+      "creditPage": "/projects/art/credits.html#beyond-all-reason"
+    },
+    {
+      "id": "pioneer",
+      "title": "Pioneer",
+      "sourceUrl": "https://github.com/user-attachments/assets/6d1b8e04-ba55-4790-b09b-f08d628cbadf",
+      "sourcePage": "https://pioneerspacesim.net/page/download/",
+      "creator": "Pioneer Developers; Milky Way panorama: Ernie Wright (USRA), Laurence Schuler and Ian Jones (ADNET)",
+      "license": "CC BY-SA 3.0 game-art basis; preserve AUTHORS.txt component exceptions",
+      "licenseUrl": "https://github.com/pioneerspacesim/pioneer/blob/master/AUTHORS.txt",
+      "caption": "Pioneer Developers \u00b7 official September 2026 release image",
+      "alt": "Pioneer official screenshot showing the curved orange horizon of Mars beneath stars and the flight interface.",
+      "originalSha256": "0ddb226a4e7ece1400a77ef90ca1b658a7dc648739b0506760e71db0931ab0c1",
+      "originalDimensions": [
+        2560,
+        1440
+      ],
+      "path": "/projects/art/pioneer.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 49582,
+      "sha256": "76c69fd52255663c021aed7811adf031fc01e12595d924518925c66425fe076e",
+      "edits": "Proportional downsize and WebP encoding only; no crop, generated content or retouch.",
+      "creditPage": "/projects/art/credits.html#pioneer"
+    },
+    {
+      "id": "xonotic",
+      "title": "Xonotic",
+      "sourceUrl": "https://xonotic.org/m/uploads/2011/09/stormkeep-keyhunt-3.jpg",
+      "sourcePage": "https://xonotic.org/images/",
+      "creator": "Team Xonotic and contributors",
+      "license": "Official gallery media-kit offer for editorial illustration of Xonotic; not a blanket screenshot AGPL or asset-clearance claim",
+      "licenseUrl": "https://xonotic.org/images/",
+      "caption": "Team Xonotic \u00b7 historical official media-kit screenshot (2011)",
+      "alt": "Historical Xonotic official screenshot: colored armored players battle in the stone corridors of Stormkeep in Key Hunt mode.",
+      "originalSha256": "8da64efb4a52515f0a614d7e3a16a6b355922caadb8c16e866f30195a535d8dc",
+      "originalDimensions": [
+        1280,
+        1024
+      ],
+      "path": "/projects/art/xonotic.webp",
+      "width": 1200,
+      "height": 960,
+      "bytes": 115152,
+      "sha256": "78206f4f7c1c3ac62dda7e39eafd13762fbb9fd4ec67ddf7de9d3138c4c6b931",
+      "edits": "Proportional downsize and WebP encoding only; no crop, generated content or retouch.",
+      "creditPage": "/projects/art/credits.html#xonotic"
+    }
+  ]
+}

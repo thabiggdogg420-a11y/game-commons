@@ -1,0 +1,3 @@
+import {manifest} from "@/lib/repository";import {response} from "@/lib/http";import {RepositoryError} from "@/lib/limits";
+export const dynamic="force-dynamic";
+export async function GET(request:Request,{params}:{params:Promise<{id:string}>}){try{const {id}=await params;const result=await manifest(id,new URL(request.url).origin,undefined,request.headers.get("oai-authenticated-user-id")||undefined);return result?response(result):response({error:"Game not found"},404)}catch(e){return response({error:e instanceof RepositoryError?e.message:"Manifest is temporarily unavailable."},e instanceof RepositoryError?e.status:503)}}

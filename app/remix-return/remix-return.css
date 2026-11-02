@@ -1,0 +1,4 @@
+.remix-return-parent{border:1px solid #42516a;border-radius:12px;padding:0 16px 16px;margin:20px 0;min-width:0}
+.feedback-form .remix-return-confirm{display:flex;gap:12px;align-items:flex-start;font-weight:400;line-height:1.6}
+.feedback-form .remix-return-confirm input{width:20px;height:20px;flex:0 0 20px;margin-top:3px;padding:0}
+.feedback-form :is(input,textarea){box-sizing:border-box;min-width:0}

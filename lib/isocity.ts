@@ -1,0 +1,3 @@
+export const isocity={id:'isocity-commons'};
+export function hostedSourceProjects(_query='',_platform='all',_genre='all'):Array<{id:string;title:string;creator:string;platform:string;genres:string[];description:string;codeLicense:string;assetLicense:string;verification:string;sourceUrl:string;playUrl:string;runtimeUrl:string;handoffUrl:string;noticesUrl:string;recordUrl:string;repository:string;commit:string;version:number;hosting:string}>{return []}
+export function isocityBrief(_goal=''){return 'This source edition does not distribute a hosted derivative. Browse /projects for original upstream source links.'}

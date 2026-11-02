@@ -1,0 +1,16 @@
+{
+  "title": "Clanfire Commons Scenarios",
+  "parent": {
+    "creator": "Rob Carpenter",
+    "source": "https://github.com/RobleusCaesar/civilization-game/tree/a599c21ef6df9df30a548187b1a86f57a06ff746",
+    "commit": "a599c21ef6df9df30a548187b1a86f57a06ff746"
+  },
+  "playUrl": "/games/clanfire-commons/v1/index.html",
+  "source": {
+    "url": "/remixes/clanfire-commons/clanfire-commons-source-v1.zip",
+    "sha256": "3ef41a4e75fe14dbff92943e469ceeeb9d06a2116de3cc5dad86acbcea7c5b4f"
+  },
+  "runtimeManifest": {
+    "sha256": "2e41b01de726d93951482a7641628765689edd032f697cc7e89dcd44e5df36bb"
+  }
+}

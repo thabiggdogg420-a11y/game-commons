@@ -1,0 +1,93 @@
+{
+  "format": "game-commons-official-homepage-media-v1",
+  "images": [
+    {
+      "id": "slipstream-racing-game",
+      "title": "Slipstream",
+      "sourceUrl": "https://github.com/ctb111/slipstream-racing-game/blob/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2/docs/media/race_start_capo_rosso.jpg",
+      "sourcePage": "https://github.com/ctb111/slipstream-racing-game/tree/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2",
+      "creator": "Catalin (ctb111); credited vehicle and asset artists",
+      "license": "MIT original work; depicted third-party assets retain CC BY / CC BY-SA 4.0 and other notices",
+      "licenseUrl": "/projects/art/slipstream-CREDITS.md",
+      "credit": "Catalin \u00b7 original screenshot / mixed asset licences",
+      "alt": "Slipstream official screenshot: classic sports cars line up at Capo Rosso, with grandstands behind them.",
+      "originalDimensions": [
+        1920,
+        1080
+      ],
+      "originalSha256": "83c9fbd1585dd1f4086d2c8a5aba86cb27153ad7bfe97411ba376d45aa073bd0",
+      "path": "/projects/art/slipstream-racing-game.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 103368,
+      "sha256": "970b85e9f01494b8922ac892a94dc5daaece0aa2e93740ab95a839d764c415fa",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content."
+    },
+    {
+      "id": "valhalla-fps",
+      "title": "VALHALLA",
+      "sourceUrl": "https://img.itch.zone/aW1hZ2UvMjU4MDM3OS8yMTE1NzA4OC5wbmc=/original/Qv01Sp.png",
+      "sourcePage": "https://valhalla-project.itch.io/valhalla-fps",
+      "creator": "Valhalla Project contributors",
+      "license": "CC BY-SA 4.0, official page asset declaration; individual asset exceptions remain",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Valhalla Project \u00b7 CC BY-SA 4.0",
+      "alt": "VALHALLA official screenshot: an armored fighter runs through a sunlit gold-and-green science-fiction arena.",
+      "originalDimensions": [
+        1920,
+        1080
+      ],
+      "originalSha256": "90276e2631b10f6ea69270436055be2b30e944b45e91a5c26194c361ce187bec",
+      "path": "/projects/art/valhalla-fps.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 114496,
+      "sha256": "4aacae41d44d903c3cf8a1beddcb3c4a7bdcfc9ff086f75b3b5cc910d4144f29",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content."
+    },
+    {
+      "id": "veloren",
+      "title": "Veloren",
+      "sourceUrl": "https://book.veloren.net/contributors/journalists/data/screenshots/Savannah%20Exploration.jpg",
+      "sourcePage": "https://book.veloren.net/contributors/journalists/press-kit.html",
+      "creator": "Veloren contributors",
+      "license": "Official press-kit permission for illustrative editorial use; not a blanket asset licence",
+      "licenseUrl": "https://book.veloren.net/contributors/journalists/press-kit.html",
+      "credit": "Veloren contributors \u00b7 official press kit",
+      "alt": "Veloren official press screenshot: a lush voxel forest overlooks a desert city, mountains and an airship.",
+      "originalDimensions": [
+        2520,
+        1362
+      ],
+      "originalSha256": "7fe1da94be67834d6a1e5cd1be3a0937e9a261587d1dd5ee2644896e8bd44bee",
+      "path": "/projects/art/veloren.webp",
+      "width": 1200,
+      "height": 649,
+      "bytes": 148500,
+      "sha256": "d8c399a31450f13afdb98b98f60ca4845f7cbdaf7b1cbf5952fc634217e9d4b3",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content."
+    },
+    {
+      "id": "0-ad",
+      "title": "0 A.D.",
+      "sourceUrl": "https://play0ad.com/wp-content/gallery/screenshots/colossus_of_rhodes_by_nifa.jpg",
+      "sourcePage": "https://play0ad.com/media/screenshots/",
+      "creator": "nifa / Wildfire Games contributors",
+      "license": "CC BY-SA 3.0 artwork; official historical Alpha 27 screenshot, not a Release 28 capture",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "nifa / Wildfire Games \u00b7 CC BY-SA 3.0",
+      "alt": "0 A.D. official Alpha 27 screenshot: the golden Colossus of Rhodes rises above a coastal settlement.",
+      "originalDimensions": [
+        1600,
+        900
+      ],
+      "originalSha256": "1e3f9f13490f5d633039618f46b1d255aac79f3d38340850cbdc43b2335be9d2",
+      "path": "/projects/art/0-ad.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 141760,
+      "sha256": "4bc9e45dbacf4fb7a3ce579f7cab8228d90115b52f0c61bd85aa5713dbd17c3c",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content."
+    }
+  ]
+}

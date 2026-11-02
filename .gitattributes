@@ -1,0 +1,16 @@
+# Preserve the exact pinned emulator bytes used by the integrity manifest.
+public/remixes/datakin-relay/runtime/* -text
+public/remixes/star-circuit/v2/game.js -text
+
+# Keep legacy manifest-pinned text byte-for-byte across Windows/Linux checkouts.
+public/remixes/datakin-relay/v3/example-route.json -text
+public/remixes/datakin-relay/index.html -text
+public/remixes/datakin-relay/LICENSE -text
+public/remixes/datakin-relay/README.txt -text
+public/remixes/datakin-relay/relay-challenge.json -text
+public/remixes/datakin-relay/relay-discovery.json -text
+public/remixes/datakin-relay/validation.json -text
+public/remixes/datakin-relay/v3/remix_next.py -text
+
+# Shell entrypoints must remain executable by Bash on Windows and Unix.
+*.sh text eol=lf

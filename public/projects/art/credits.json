@@ -1,0 +1,452 @@
+{
+  "format": "game-commons-gameplay-image-credits-v1",
+  "note": "Official upstream screenshots, promotional artwork and explicitly labelled logos; not generated gameplay. Each record states its media kind and rights basis. Media does not certify a Game Commons build or imply endorsement.",
+  "images": [
+    {
+      "id": "ancient-beast",
+      "sourceUrl": "https://raw.githubusercontent.com/FreezingMoon/AncientBeast-Website/master/multimedia/screenshots/v0.3%20Dark%20Forest.jpg",
+      "sourcePage": "https://github.com/FreezingMoon/AncientBeast",
+      "creator": "Freezing Moon and Ancient Beast contributors",
+      "license": "CC BY-SA 4.0 artwork; AGPL-3.0 game",
+      "licenseUrl": "https://github.com/FreezingMoon/AncientBeast#-license",
+      "alt": "Creatures face off on the hexagonal Dark Forest battlefield in Ancient Beast.",
+      "path": "/projects/art/ancient-beast.webp",
+      "width": 1400,
+      "height": 788,
+      "originalDimensions": [
+        1920,
+        1080
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 180546
+    },
+    {
+      "id": "endless-sky",
+      "sourceUrl": "https://endless-sky.github.io/images/screenshots/battle.jpg",
+      "sourcePage": "https://endless-sky.github.io/screenshots.html",
+      "creator": "Michael Zahniser and Endless Sky contributors",
+      "license": "Game screenshot; GPL-3.0-or-later game with separately credited open artwork",
+      "licenseUrl": "https://github.com/endless-sky/endless-sky/blob/master/copyright",
+      "alt": "Spaceships exchange laser fire in an Endless Sky fleet battle.",
+      "path": "/projects/art/endless-sky.webp",
+      "width": 1280,
+      "height": 720,
+      "originalDimensions": [
+        1280,
+        720
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 94414
+    },
+    {
+      "id": "thrive",
+      "sourceUrl": "https://thrive-media.b-cdn.net/c516d7bb-8b0d-4c30-b30d-c81e80dd1bba/page-fit.png",
+      "sourcePage": "https://www.revolutionarygamesstudio.com/press-kit",
+      "creator": "Revolutionary Games Studio and Thrive contributors",
+      "license": "Official press-kit screenshot; game artwork CC BY-SA 3.0",
+      "licenseUrl": "https://github.com/Revolutionary-Games/Thrive/blob/master/assets/LICENSE.txt",
+      "alt": "Green microbes swim through nutrient clouds in the playable microbe stage of Thrive.",
+      "path": "/projects/art/thrive.webp",
+      "width": 900,
+      "height": 506,
+      "originalDimensions": [
+        900,
+        506
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 35154
+    },
+    {
+      "id": "supertuxkart",
+      "sourceUrl": "https://supertuxkart.net/assets/gallery/STK1.3_1.jpg",
+      "sourcePage": "https://supertuxkart.net/Gallery",
+      "creator": "SuperTuxKart team and contributing artists; Black Forest track",
+      "license": "Official game screenshot; open game artwork under individual licences including CC BY-SA",
+      "licenseUrl": "https://supertuxkart.net/Licensing",
+      "alt": "A kart races along the colourful Black Forest track in SuperTuxKart.",
+      "path": "/projects/art/supertuxkart.webp",
+      "width": 1400,
+      "height": 788,
+      "originalDimensions": [
+        1920,
+        1080
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 164926
+    },
+    {
+      "id": "shapez",
+      "sourceUrl": "https://shapez.io/og_thumb.png",
+      "sourcePage": "https://github.com/tobspr-games/shapez.io/blob/master/README.md",
+      "creator": "Tobias Springer / tobspr Games and shapez contributors",
+      "license": "Official site promotional gameplay screenshot; GPL-3.0 game, retain resource notices",
+      "licenseUrl": "https://github.com/tobspr-games/shapez.io/blob/master/LICENSE",
+      "alt": "A sprawling shapez factory routes shapes through conveyors and processing machines.",
+      "path": "/projects/art/shapez.webp",
+      "width": 616,
+      "height": 353,
+      "originalDimensions": [
+        616,
+        353
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 38442
+    },
+    {
+      "id": "mindustry",
+      "sourceUrl": "https://mindustrygame.github.io/1.d25af17a.webp",
+      "sourcePage": "https://mindustrygame.github.io/",
+      "creator": "Anuken and Mindustry contributors",
+      "license": "GPL-3.0 game screenshot",
+      "licenseUrl": "https://github.com/Anuken/Mindustry/blob/master/LICENSE",
+      "alt": "A dense Mindustry factory supplies defensive turrets across a rocky battlefield.",
+      "path": "/projects/art/mindustry.webp",
+      "width": 1400,
+      "height": 635,
+      "originalDimensions": [
+        1754,
+        795
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 260462
+    },
+    {
+      "id": "warzone2100",
+      "sourceUrl": "https://wz2100.net/img/screenshots/multiplayer_massive_battle.webp",
+      "sourcePage": "https://wz2100.net/",
+      "creator": "Warzone 2100 Project, Pumpkin Studios and contributors",
+      "license": "GPL-2.0-or-later game screenshot with upstream resource exceptions",
+      "licenseUrl": "https://github.com/Warzone2100/warzone2100/blob/master/COPYING.NONGPL",
+      "alt": "Armoured vehicles and aircraft clash around a large Warzone 2100 base.",
+      "path": "/projects/art/warzone2100.webp",
+      "width": 1151,
+      "height": 800,
+      "originalDimensions": [
+        1151,
+        800
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 209860
+    },
+    {
+      "id": "freeciv-web",
+      "sourceUrl": "https://raw.githubusercontent.com/freeciv/freeciv-web/develop/freeciv-web/src/main/webapp/javascript/webgl/freeciv-webgl.png",
+      "sourcePage": "https://github.com/freeciv/freeciv-web/blob/develop/README.md",
+      "creator": "Freeciv-web and Freeciv contributors, including Andreas R\u00f8sdal",
+      "license": "Code: AGPL-3.0 client; GPL server. Screenshot and individual asset rights review incomplete; code grants are not blanket artwork clearance.",
+      "licenseUrl": "https://github.com/freeciv/freeciv-web/blob/develop/LICENSE.txt",
+      "alt": "Official Freeciv-web illustration",
+      "path": "/projects/art/freeciv-web.webp",
+      "width": 1400,
+      "height": 788,
+      "originalDimensions": [
+        1400,
+        788
+      ],
+      "edits": "Resized proportionally and converted to WebP; catalogue presentation may crop with CSS. No gameplay content altered.",
+      "bytes": 294486,
+      "rightsReview": "incomplete",
+      "testedRuntimeDepicted": false,
+      "caption": "Image from the linked upstream project; not a local playtest record."
+    },
+    {
+      "id": "banana-bread",
+      "sourceUrl": "https://raw.githubusercontent.com/kripken/BananaBread/455191d2e289f6d67f22c9ec44477ff0814d9aa3/cube2/assets/screenshots/02.jpg",
+      "sourcePage": "https://github.com/kripken/BananaBread/tree/455191d2e289f6d67f22c9ec44477ff0814d9aa3/cube2/assets/screenshots",
+      "creator": "Mozilla Foundation, Benjamin Segal and Cube 2 contributors",
+      "license": "Project README grants art CC BY or CC BY-SA; this screenshots directory has no specific override, so default CC BY applies per README.",
+      "licenseUrl": "https://github.com/kripken/BananaBread/blob/455191d2e289f6d67f22c9ec44477ff0814d9aa3/README.md",
+      "alt": "BananaBread first-person view over a reflective arena pool, showing the weapon HUD.",
+      "path": "/projects/art/banana-bread.webp",
+      "width": 1150,
+      "height": 719,
+      "originalDimensions": [
+        1150,
+        719
+      ],
+      "edits": "Resized proportionally and converted to WebP; no gameplay content altered.",
+      "bytes": 121648
+    },
+    {
+      "id": "no-survivor-game",
+      "sourceUrl": "https://raw.githubusercontent.com/Mocas-12/no-survivor-game/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7/screenshots/gameplay.png",
+      "sourcePage": "https://github.com/Mocas-12/no-survivor-game/tree/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7/screenshots",
+      "creator": "Mocas-12; ship models by Quaternius",
+      "license": "Project screenshot of MIT game and generated art; ship models are CC0 (Quaternius). The README's MIT grant covers code and generated art/audio; screenshot is an upstream project capture.",
+      "licenseUrl": "https://github.com/Mocas-12/no-survivor-game/blob/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7/README.md",
+      "alt": "A low-poly player spacecraft fires at enemy ships against a starfield in No Survivor Game.",
+      "path": "/projects/art/no-survivor-game.webp",
+      "width": 1152,
+      "height": 648,
+      "originalDimensions": [
+        1152,
+        648
+      ],
+      "edits": "Resized proportionally and converted to WebP; no gameplay content altered.",
+      "bytes": 37616
+    },
+    {
+      "id": "godot-reversi",
+      "sourceUrl": "https://raw.githubusercontent.com/regiellis/godot-reversi/70586efafbc762efa16f5680ca0b90366eccc698/media/cover.png",
+      "sourcePage": "https://github.com/regiellis/godot-reversi/tree/70586efafbc762efa16f5680ca0b90366eccc698/media",
+      "creator": "Regi Ellis",
+      "license": "MIT project cover image using the project's code-drawn board design; bundled sound/font retain CC0 and OFL notices separately.",
+      "licenseUrl": "https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/LICENSE",
+      "alt": "A code-drawn Reversi board on the Godot Reversi title card.",
+      "path": "/projects/art/godot-reversi.webp",
+      "width": 630,
+      "height": 500,
+      "originalDimensions": [
+        630,
+        500
+      ],
+      "edits": "Resized proportionally and converted to WebP; title-card text and board unchanged.",
+      "bytes": 11044
+    },
+    {
+      "id": "collection",
+      "path": "/projects/art/collection.jpg",
+      "creator": "Layout by Game Commons; screenshots by SuperTuxKart, Endless Sky, Thrive and Mindustry creators as credited individually above.",
+      "sourceImages": [
+        "supertuxkart",
+        "endless-sky",
+        "thrive",
+        "mindustry"
+      ],
+      "license": "Each screenshot retains its original game and artwork terms recorded above. No blanket relicensing or endorsement.",
+      "alt": "Four actual game screenshots with Game Commons title and game names.",
+      "edits": "Screenshots cropped into a four-panel social preview with names and a Game Commons heading.",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "id": "slipstream-racing-game",
+      "title": "Slipstream",
+      "sourceUrl": "https://github.com/ctb111/slipstream-racing-game/blob/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2/docs/media/race_start_capo_rosso.jpg",
+      "sourcePage": "https://github.com/ctb111/slipstream-racing-game/tree/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2",
+      "creator": "Catalin (ctb111); credited vehicle and asset artists",
+      "license": "MIT original work; depicted third-party assets retain CC BY / CC BY-SA 4.0 and other notices",
+      "licenseUrl": "/projects/art/slipstream-CREDITS.md",
+      "credit": "Catalin \u00b7 original screenshot / mixed asset licences",
+      "alt": "Slipstream official screenshot: classic sports cars line up at Capo Rosso, with grandstands behind them.",
+      "originalDimensions": [
+        1920,
+        1080
+      ],
+      "path": "/projects/art/slipstream-racing-game.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 103368,
+      "sha256": "970b85e9f01494b8922ac892a94dc5daaece0aa2e93740ab95a839d764c415fa",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content.",
+      "verification": "Official upstream image, visually inspected; not a local playtest or deployed-build attestation."
+    },
+    {
+      "id": "valhalla-fps",
+      "title": "VALHALLA",
+      "sourceUrl": "https://img.itch.zone/aW1hZ2UvMjU4MDM3OS8yMTE1NzA4OC5wbmc=/original/Qv01Sp.png",
+      "sourcePage": "https://valhalla-project.itch.io/valhalla-fps",
+      "creator": "Valhalla Project contributors",
+      "license": "CC BY-SA 4.0, official page asset declaration; individual asset exceptions remain",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Valhalla Project \u00b7 CC BY-SA 4.0",
+      "alt": "VALHALLA official screenshot: an armored fighter runs through a sunlit gold-and-green science-fiction arena.",
+      "originalDimensions": [
+        1920,
+        1080
+      ],
+      "path": "/projects/art/valhalla-fps.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 114496,
+      "sha256": "4aacae41d44d903c3cf8a1beddcb3c4a7bdcfc9ff086f75b3b5cc910d4144f29",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content.",
+      "verification": "Official upstream image, visually inspected; not a local playtest or deployed-build attestation."
+    },
+    {
+      "id": "veloren",
+      "title": "Veloren",
+      "sourceUrl": "https://book.veloren.net/contributors/journalists/data/screenshots/Savannah%20Exploration.jpg",
+      "sourcePage": "https://book.veloren.net/contributors/journalists/press-kit.html",
+      "creator": "Veloren contributors",
+      "license": "Official press-kit permission for illustrative editorial use; not a blanket asset licence",
+      "licenseUrl": "https://book.veloren.net/contributors/journalists/press-kit.html",
+      "credit": "Veloren contributors \u00b7 official press kit",
+      "alt": "Veloren official press screenshot: a lush voxel forest overlooks a desert city, mountains and an airship.",
+      "originalDimensions": [
+        2520,
+        1362
+      ],
+      "path": "/projects/art/veloren.webp",
+      "width": 1200,
+      "height": 649,
+      "bytes": 148500,
+      "sha256": "d8c399a31450f13afdb98b98f60ca4845f7cbdaf7b1cbf5952fc634217e9d4b3",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content.",
+      "verification": "Official upstream image, visually inspected; not a local playtest or deployed-build attestation."
+    },
+    {
+      "id": "0-ad",
+      "title": "0 A.D.",
+      "sourceUrl": "https://play0ad.com/wp-content/gallery/screenshots/colossus_of_rhodes_by_nifa.jpg",
+      "sourcePage": "https://play0ad.com/media/screenshots/",
+      "creator": "nifa / Wildfire Games contributors",
+      "license": "CC BY-SA 3.0 artwork; official historical Alpha 27 screenshot, not a Release 28 capture",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "credit": "nifa / Wildfire Games \u00b7 CC BY-SA 3.0",
+      "alt": "0 A.D. official Alpha 27 screenshot: the golden Colossus of Rhodes rises above a coastal settlement.",
+      "originalDimensions": [
+        1600,
+        900
+      ],
+      "path": "/projects/art/0-ad.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 141760,
+      "sha256": "4bc9e45dbacf4fb7a3ce579f7cab8228d90115b52f0c61bd85aa5713dbd17c3c",
+      "edits": "Proportional downsize and WebP encoding only. No generated, composited or retouched game content.",
+      "verification": "Official upstream image, visually inspected; not a local playtest or deployed-build attestation."
+    },
+    {
+      "id": "beyond-all-reason",
+      "title": "Beyond All Reason",
+      "sourceUrl": "https://cdn.prod.website-files.com/5c69241780da2a1dfc6caa4e/65e5b660b50dd9e3fb6f21e5_screen00246.avif",
+      "sourcePage": "https://www.beyondallreason.info/promokit",
+      "creator": "Beyond All Reason contributors",
+      "license": "Official promo-kit permission: assets may be used for material related to Beyond All Reason; all rights otherwise reserved. Not a Creative Commons screenshot claim.",
+      "licenseUrl": "https://www.beyondallreason.info/promokit",
+      "caption": "BAR contributors \u00b7 official promo image; build/date unknown",
+      "alt": "Official Beyond All Reason screenshot: giant combat robots, tanks, laser beams and explosions fill a rocky battlefield.",
+      "originalDimensions": [
+        3440,
+        1377
+      ],
+      "path": "/projects/art/beyond-all-reason.webp",
+      "width": 1200,
+      "height": 480,
+      "bytes": 116342,
+      "sha256": "d2e5f29c9b9638855e736045f90c49b7e022b073c39e25437ab1516307ad9bfb",
+      "edits": "Proportional downsize and WebP encoding only; no crop, generated content or retouch.",
+      "verification": "Visually inspected official image; not a local playtest or exact current-runtime capture.",
+      "creditPage": "/projects/art/credits.html#beyond-all-reason"
+    },
+    {
+      "id": "pioneer",
+      "title": "Pioneer",
+      "sourceUrl": "https://github.com/user-attachments/assets/6d1b8e04-ba55-4790-b09b-f08d628cbadf",
+      "sourcePage": "https://pioneerspacesim.net/page/download/",
+      "creator": "Pioneer Developers; Milky Way panorama: Ernie Wright (USRA), Laurence Schuler and Ian Jones (ADNET)",
+      "license": "CC BY-SA 3.0 game-art basis; preserve AUTHORS.txt component exceptions",
+      "licenseUrl": "https://github.com/pioneerspacesim/pioneer/blob/master/AUTHORS.txt",
+      "caption": "Pioneer Developers \u00b7 official September 2026 release image",
+      "alt": "Pioneer official screenshot showing the curved orange horizon of Mars beneath stars and the flight interface.",
+      "originalDimensions": [
+        2560,
+        1440
+      ],
+      "path": "/projects/art/pioneer.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 49582,
+      "sha256": "76c69fd52255663c021aed7811adf031fc01e12595d924518925c66425fe076e",
+      "edits": "Proportional downsize and WebP encoding only; no crop, generated content or retouch.",
+      "verification": "Visually inspected official image; not a local playtest or exact current-runtime capture.",
+      "creditPage": "/projects/art/credits.html#pioneer"
+    },
+    {
+      "id": "xonotic",
+      "title": "Xonotic",
+      "sourceUrl": "https://xonotic.org/m/uploads/2011/09/stormkeep-keyhunt-3.jpg",
+      "sourcePage": "https://xonotic.org/images/",
+      "creator": "Team Xonotic and contributors",
+      "license": "Official gallery media-kit offer for editorial illustration of Xonotic; not a blanket screenshot AGPL or asset-clearance claim",
+      "licenseUrl": "https://xonotic.org/images/",
+      "caption": "Team Xonotic \u00b7 historical official media-kit screenshot (2011)",
+      "alt": "Historical Xonotic official screenshot: colored armored players battle in the stone corridors of Stormkeep in Key Hunt mode.",
+      "originalDimensions": [
+        1280,
+        1024
+      ],
+      "path": "/projects/art/xonotic.webp",
+      "width": 1200,
+      "height": 960,
+      "bytes": 115152,
+      "sha256": "78206f4f7c1c3ac62dda7e39eafd13762fbb9fd4ec67ddf7de9d3138c4c6b931",
+      "edits": "Proportional downsize and WebP encoding only; no crop, generated content or retouch.",
+      "verification": "Visually inspected official image; not a local playtest or exact current-runtime capture.",
+      "creditPage": "/projects/art/credits.html#xonotic"
+    },
+    {
+      "file": "/projects/art/cruising-bones.webp",
+      "sourceUrl": "https://cruisingbones.com/og.jpg",
+      "sourcePage": "https://cruisingbones.com/",
+      "credit": "Cruising Bones / Roel Boer \u00b7 official social-preview artwork",
+      "caption": "Official promotional artwork, not a gameplay capture. Creator-reported AI-assisted art.",
+      "alt": "Cruising Bones official comic-style artwork: skeleton skateboarders and a street-luge rider descend a road beside a black hearse.",
+      "width": 1200,
+      "height": 630,
+      "sha256": "8161ac0f45291852f1c6573d79b9fd45e792bb31951c8ed64fe9e13ae5befa66",
+      "bytes": 190542,
+      "rightsBasis": "Official HTML explicitly designates this image as og:image with summary_large_image Twitter card, supporting a credited link-preview purpose. No broader asset reuse/modification grant located.",
+      "license": "Rights retained by creator and relevant licensors; no open media licence located.",
+      "changes": "Resized/re-encoded to WebP for a credited link-preview; not a gameplay capture.",
+      "id": "cruising-bones"
+    },
+    {
+      "file": "/projects/art/impossible-journey.webp",
+      "sourceUrl": "https://img.itch.zone/aW1nLzMwOTM1MzExLnBuZw==/original/JhnxZH.png",
+      "sourcePage": "https://befuddlebug.itch.io/impossible-journey-machine",
+      "credit": "BefuddleBug",
+      "caption": "Official creator-supplied gameplay image used as a link preview; not a Game Commons playtest capture.",
+      "alt": "A steam-powered wooden mobile base crosses an alien desert; the game HUD shows survival meters, equipment, a compass and boiler controls.",
+      "width": 960,
+      "height": 540,
+      "bytes": 62954,
+      "sha256": "1e28de5527fdd5511df1a8deb88110c4f86ff9d4988e38e56afd1c32ed336585",
+      "rightsBasis": "Official creator itch page expressly designates exact image as og:image, supporting attributed editorial link-preview use. This is a narrow purpose-based basis, not an open licence or permission to redistribute game assets.",
+      "license": "Rights retained; qualified promotional/editorial link-preview basis only.",
+      "changes": "Proportional WebP re-encoding for credited editorial link preview.",
+      "id": "impossible-journey"
+    },
+    {
+      "id": "osu-lazer",
+      "kind": "official-logo",
+      "sourceUrl": "https://raw.githubusercontent.com/ppy/osu/9a10d935b05a3b896f4bd811d620f2023331db93/assets/lazer.png",
+      "sourcePage": "https://github.com/ppy/osu/tree/9a10d935b05a3b896f4bd811d620f2023331db93/assets/lazer.png",
+      "creator": "ppy / osu! contributors",
+      "license": "Guideline-compliant editorial branding use; not a blanket asset or music reuse grant",
+      "licenseUrl": "https://osu.ppy.sh/wiki/en/Brand_identity_guidelines",
+      "alt": "Official pink osu! logo; not a gameplay screenshot",
+      "caption": "Official osu! logo \u2014 ppy / osu! contributors; not a gameplay screenshot.",
+      "path": "/projects/art/osu-lazer.png",
+      "width": 1024,
+      "height": 1024,
+      "originalDimensions": [
+        1024,
+        1024
+      ],
+      "edits": "None. Original PNG bytes retained; contain-fit with clear space, no cropping, recolouring, filters or distortion.",
+      "bytes": 448852,
+      "sha256": "30cf4df3fd76006b08a0bcb6a325fb2fdcf6a4371f77001da3c38cbce871bd51"
+    },
+    {
+      "path": "/projects/art/voxelibre.png",
+      "sourceUrl": "https://raw.githubusercontent.com/VoxeLibre/VoxeLibre/a523240fb89713ffa6302696e8275bbd7de3bd49/menu/background.1.png",
+      "sourcePage": "https://github.com/VoxeLibre/VoxeLibre/blob/a523240fb89713ffa6302696e8275bbd7de3bd49/menu/background.1.png",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1109716,
+      "sha256": "c859f0586b68af400028d1b69002f513914b9ce0766291ab0bbe2e2d25322db8",
+      "kind": "official-menu-artwork",
+      "license": "CC0 (explicit main-menu-images grant in pinned LEGAL.md); underlying game media retain individual notices",
+      "licenseUrl": "https://github.com/VoxeLibre/VoxeLibre/blob/a523240fb89713ffa6302696e8275bbd7de3bd49/LEGAL.md",
+      "credit": "VoxeLibre contributors; official menu background contributed by FossFanatic (2022). Pixel Perfection textures: XSSheep; see project notices.",
+      "caption": "Official VoxeLibre menu artwork (2022), retained in release 0.92.3; not a Game Commons gameplay capture.",
+      "alt": "Official VoxeLibre menu artwork showing a voxel stone cavern, ore deposits and a glowing lava lake",
+      "changes": "None; original PNG downloaded unchanged and visually inspected.",
+      "id": "voxelibre",
+      "creator": "VoxeLibre contributors; official menu background contributed by FossFanatic (2022). Pixel Perfection textures: XSSheep; see project notices.",
+      "edits": "None; original PNG downloaded unchanged and visually inspected."
+    }
+  ]
+}

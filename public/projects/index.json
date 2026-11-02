@@ -1,0 +1,1270 @@
+{
+  "format": "game-commons-external-projects-v1",
+  "reviewedOn": "2026-10-20",
+  "scope": "External project references: original creators, source links, terms and setup guidance. This export contains no private playtest records or acceptance evidence. Independently verify upstream instructions and rights before reuse.",
+  "projects": [
+    {
+      "id": "slipstream-racing-game",
+      "title": "Slipstream",
+      "creator": "Catalin (ctb111)",
+      "genre": "CIRCUIT RACING",
+      "engine": "Godot 4.7.x",
+      "platform": "Desktop \u2014 Windows / macOS",
+      "description": "Substantial Godot classic-sports-car circuit racer: 12 tracks, 6 cars, changing weather, AI opponents, time trials, championships and LAN multiplayer. Original realistic visual direction retained.",
+      "hook": "Twelve tracks. Six classic cars. Your next racing circuit.",
+      "repository": "https://github.com/ctb111/slipstream-racing-game",
+      "commit": "3baf4ec6ea617861663bcec41bf3fbc13fb65ea2",
+      "sourceUrl": "https://github.com/ctb111/slipstream-racing-game/tree/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2",
+      "archiveUrl": "https://github.com/ctb111/slipstream-racing-game/archive/refs/tags/v1.0.0.zip",
+      "playUrl": "https://github.com/ctb111/slipstream-racing-game/releases/tag/v1.0.0",
+      "playLabel": "Free official download",
+      "codeLicense": "MIT code and original assets",
+      "assetLicense": "Separate original MIT and third-party CC0/Public Domain/CC BY/CC BY-SA/OFL/Apache terms; preserve each notice. No blanket MIT claim.",
+      "licenseUrl": "https://github.com/ctb111/slipstream-racing-game/blob/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2/LICENSE",
+      "setupUrl": "https://github.com/ctb111/slipstream-racing-game/blob/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2/README.md",
+      "requirements": [
+        "Official v1.0.0 downloads are Windows and macOS; no browser or Linux release observed.",
+        "Project targets Godot 4.7.x (developed with 4.7.2). Compatibility with an older installed engine is not verified and does not prevent downloading the official release.",
+        "Retain MIT and separate third-party CC0, CC BY, CC BY-SA, OFL and Apache notices. LAN uses ENet/UDP; network play is not tested."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Add a track through TrackDefs.TRACKS and optional dressing/theme/terrain in the original Godot project. Keep original visual direction and all notices; use a compatible Godot version and test normally.",
+      "remixIdeas": [
+        "Track layouts and dressing",
+        "Car handling and AI opponents",
+        "Championship and time-trial rules"
+      ],
+      "remixSurfaces": [
+        "Track layouts and dressing",
+        "Car handling and AI opponents",
+        "Championship and time-trial rules"
+      ],
+      "cautions": [
+        "External availability and system requirements can change. No Game Commons hosting, malware clearance or hands-on acceptance claimed.",
+        "An external listing is not an endorsement or partnership; no third-party artwork is copied into this card.",
+        "Datsun model/textures and graffiti/billboard atlases have share-alike terms; do not relabel the complete asset bundle MIT.",
+        "Car names and makes remain their owners\u2019 trademarks; no endorsement.",
+        "Upstream notes performance below 60fps on some M1 Air settings, countdown flicker, lap-one AI contact and incompletely retested weather/LAN."
+      ],
+      "integrationNote": "Source systems to inspect, not tested drop-in modules or an automatic remix-ready integration.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official download; external host",
+      "aiDevelopment": "AI-assisted development: creator claim; repository commit co-authorship records Claude. Extent not independently audited.",
+      "sourceStatus": "pinned-source-inspected",
+      "assetLicenseUrl": "https://github.com/ctb111/slipstream-racing-game/blob/3baf4ec6ea617861663bcec41bf3fbc13fb65ea2/CREDITS.md"
+    },
+    {
+      "id": "cruising-bones",
+      "title": "Cruising Bones",
+      "creator": "Roel Boer",
+      "creatorUrl": "https://nl.linkedin.com/posts/roelbuerra_een-kort-weekje-geleden-begonnen-aan-cruising-activity-7518231211979374592-08y8",
+      "genre": "DOWNHILL SKATEBOARDING / SPORTS RACING",
+      "platform": "Browser \u2014 desktop keyboard/gamepad and touch controls present; devices not tested",
+      "engine": "Babylon.js",
+      "description": "A free browser alpha about skeleton skateboarders and street-luge riders racing downhill. Official v88 client includes five named courses plus an endless pass, traffic hazards, race variants, story panels, rider customization and local progress. Creator documents AI-assisted development; no Game Commons hands-on playtest yet.",
+      "playUrl": "https://cruisingbones.com/",
+      "playLabel": "Play free official alpha",
+      "freeAccess": "Free browser alpha at official creator site; future pricing not guaranteed",
+      "repository": null,
+      "sourceUrl": null,
+      "commit": null,
+      "archiveUrl": null,
+      "sourceStatus": "official-play-link-no-open-license",
+      "codeLicense": "No open-source or modification licence located. Browser-delivered client code is visible, but visibility does not grant remix rights.",
+      "assetLicense": "No reusable asset licence or general redistribution permission located. Creator credits Magnific/Nano Banana and Tripo for AI-assisted art; that does not itself grant downstream rights.",
+      "licenseUrl": "https://cruisingbones.com/",
+      "setupUrl": "https://cruisingbones.com/",
+      "requirements": [
+        "Open the official game in a WebGL-capable browser; Babylon.js canvas runtime requires functioning graphics.",
+        "Keyboard/gamepad/touch interface code is present; runtime performance and device compatibility remain untested here.",
+        "Use official play link only. Do not copy game code/assets, host a mirror or promise modification/share-back rights without an applicable licence."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "aiDevelopment": "Creator explicitly says Claude AI and Claude Code were used heavily alongside Magnific, Tripo and human design. Creator-reported AI-assisted development, not independently measured percentage or fully AI-made claim.",
+      "firstRemix": "No remix permission established. Play the official alpha and consult the creator\u2019s future licence/modding disclosures before copying or modifying.",
+      "remixIdeas": [],
+      "remixSurfaces": [],
+      "cautions": [
+        "Early alpha, not a claim of 2005\u20132015 AAA production quality or completed content.",
+        "Multiplayer menu is marked Soon/disabled; do not advertise working multiplayer.",
+        "Current client stores browser progress and a random identifier locally, then sends same-origin opened/run-start/run-end counter pings to /api/hit. Google Fonts domains are referenced. Do not claim no tracking or offline-only operation.",
+        "Official social-preview artwork has no separate broad reuse licence. It is intended for linking the game; use only an attributed editorial link-preview if that scope is accepted. Do not label artwork open-licensed or a gameplay screenshot."
+      ],
+      "integrationNote": "External free-play candidate only. No hosting/remix readiness; not rejected merely because a reusable source licence is absent.",
+      "reviewedOn": "2026-10-26",
+      "media": {
+        "file": "next-ai-batch/cruising-bones/official-og.jpg",
+        "sourceUrl": "https://cruisingbones.com/og.jpg",
+        "sourcePage": "https://cruisingbones.com/",
+        "credit": "Cruising Bones / Roel Boer \u00b7 official social-preview artwork",
+        "caption": "Official promotional artwork, not a gameplay capture. Creator-reported AI-assisted art.",
+        "alt": "Cruising Bones official comic-style artwork: skeleton skateboarders and a street-luge rider descend a road beside a black hearse.",
+        "width": 1200,
+        "height": 630,
+        "sha256": "f896446011263308a44c464164d76d6e4011297a15268cecf512669c89b72b31",
+        "bytes": 214992,
+        "rightsBasis": "Official HTML explicitly designates this image as og:image with summary_large_image Twitter card, supporting a credited link-preview purpose. No broader asset reuse/modification grant located.",
+        "license": "Rights retained by creator and relevant licensors; no open media licence located.",
+        "verifiedPixels": true,
+        "changes": "Original downloaded unchanged."
+      },
+      "officialUrl": "https://cruisingbones.com/",
+      "hook": "Skeleton riders. Mountain roads. Comic-book chaos.",
+      "reuseSummary": "Official free alpha only. No open-source or asset modification licence established."
+    },
+    {
+      "reviewedOn": "2026-10-26",
+      "id": "impossible-journey",
+      "title": "Impossible Journey",
+      "creator": "BefuddleBug",
+      "creatorUrl": "https://www.befuddlebug.com/",
+      "officialUrl": "https://befuddlebug.itch.io/impossible-journey-machine",
+      "playUrl": "https://befuddlebug.itch.io/impossible-journey-machine",
+      "sourceUrl": null,
+      "repository": null,
+      "genre": "3D SURVIVAL / MOBILE BASE",
+      "platform": "Browser; first-person desktop controls not hands-on verified",
+      "freeAccess": "Official HTML5 game embedded without purchase requirement; optional support link separate.",
+      "aiDevelopment": "Creator u/befuddlebug directly credits Opus for implementing the game; itch explicitly discloses AI-assisted code. Model version not established.",
+      "description": "Cross a hostile alien desert aboard a steam-powered wooden mobile base. Creator describes water and heat-crystal fuel scarcity, repair needs, predators, caves, shrines, cities and discovery-led lore.",
+      "codeLicense": "No open-source or reuse licence located; visible browser-delivered code does not grant remix permission.",
+      "assetLicense": "Creator retains rights. Official linking is distinct from mirroring or modifying.",
+      "media": {
+        "file": "next-ai-batch/stealth-space/impossible-og.png",
+        "sourceUrl": "https://img.itch.zone/aW1nLzMwOTM1MzExLnBuZw==/original/JhnxZH.png",
+        "sourcePage": "https://befuddlebug.itch.io/impossible-journey-machine",
+        "credit": "BefuddleBug",
+        "caption": "Official creator-supplied gameplay image used as a link preview; not a Game Commons playtest capture.",
+        "alt": "A steam-powered wooden mobile base crosses an alien desert; the game HUD shows survival meters, equipment, a compass and boiler controls.",
+        "width": 960,
+        "height": 540,
+        "bytes": 619378,
+        "sha256": "fdcf23fbe7117d2ef2b6212414af2367f67fcad7d7584c33d0ac2f5f31c62a36",
+        "verifiedPixels": true,
+        "rightsBasis": "Official creator itch page expressly designates exact image as og:image, supporting attributed editorial link-preview use. This is a narrow purpose-based basis, not an open licence or permission to redistribute game assets.",
+        "license": "Rights retained; qualified promotional/editorial link-preview basis only.",
+        "changes": "Original unchanged"
+      },
+      "sources": [
+        "https://befuddlebug.itch.io/impossible-journey-machine",
+        "https://www.reddit.com/r/aigamedev/comments/1x7llo7/i_made_one_of_my_dreams_games_and_cant_stop/",
+        "https://www.befuddlebug.com/games.json",
+        "https://www.befuddlebug.com/presskit.html",
+        "https://html-classic.itch.zone/html/19976161/index.html?v=1792776220"
+      ],
+      "alternateMedia": {
+        "file": "next-ai-batch/stealth-space/impossible-press-cover.jpg",
+        "sourceUrl": "https://www.befuddlebug.com/image/up_preview-lightning_20261021_191844_44c86c.jpg",
+        "credit": "BefuddleBug",
+        "caption": "Official creator-supplied gameplay screenshot; not captured by Game Commons.",
+        "width": 960,
+        "height": 540,
+        "bytes": 76060,
+        "sha256": "719678c52fae0f63d6f6575aa8c9d0e8f9a8b1fd113b70fc2157b255c89367a9",
+        "verifiedPixels": true,
+        "rightsBasis": "Official creator games.json identifies this exact file as cover and screenshot. Press kit clears assets below its notice for editorial use with BefuddleBug credit, but current first8 gallery does not include this title. Therefore qualified editorial/promotional basis only, not explicit title-specific licence. Do not claim fully cleared or open-licensed."
+      },
+      "hook": "Keep a wooden giant moving across an alien desert.",
+      "engine": "Three.js (official browser build)",
+      "commit": null,
+      "archiveUrl": null,
+      "sourceStatus": "official-play-link-no-open-license",
+      "playLabel": "Play free official browser game",
+      "licenseUrl": "https://befuddlebug.itch.io/impossible-journey-machine",
+      "setupUrl": "https://befuddlebug.itch.io/impossible-journey-machine",
+      "requirements": [
+        "A desktop WebGL-capable browser; keyboard and mouse controls.",
+        "Open the official creator-hosted game. No local install or account assessed here.",
+        "No source or remix licence established; do not mirror or modify game code/assets."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "No remix permission established; use official free play only.",
+      "remixIdeas": [],
+      "remixSurfaces": [],
+      "integrationNote": "External official free-play link, not an importable source base or approved remix.",
+      "reuseSummary": "Free official browser game; no source or modification licence established.",
+      "cautions": [
+        "In development; polished completion and substantial-quality acceptance remain unverified.",
+        "AI assistance is creator-reported; no percentage or fully AI-made claim.",
+        "Official image is creator-supplied gameplay media, not Game Commons hands-on evidence."
+      ]
+    },
+    {
+      "id": "osu-lazer",
+      "title": "osu! (lazer)",
+      "creator": "ppy / Dean Herbert (peppy) and osu! contributors",
+      "genre": "RHYTHM",
+      "engine": "osu!framework / C#",
+      "platform": "Desktop \u2014 Windows / macOS / Linux",
+      "description": "Established multi-mode rhythm game with osu!, taiko, catch and mania modes, beatmap editing and custom rulesets. Current stable lazer release is linked; timing, practice and community-created maps are central to play.",
+      "hook": "Four rhythm modes. Learn the pattern. Find your timing.",
+      "repository": "https://github.com/ppy/osu",
+      "commit": "9a10d935b05a3b896f4bd811d620f2023331db93",
+      "sourceUrl": "https://github.com/ppy/osu/tree/9a10d935b05a3b896f4bd811d620f2023331db93",
+      "archiveUrl": null,
+      "playUrl": "https://osu.ppy.sh/home/download",
+      "playLabel": "Free official download",
+      "codeLicense": "MIT client code; preserve original copyright and licence notices.",
+      "assetLicense": "osu-resources uses CC BY-NC 4.0. Community beatmap songs, backgrounds and other media have separate rights; the client licence does not clear them. Branding has separate guidelines.",
+      "licenseUrl": "https://github.com/ppy/osu/blob/9a10d935b05a3b896f4bd811d620f2023331db93/LICENCE",
+      "assetLicenseUrl": "https://github.com/ppy/osu-resources/blob/master/LICENCE.md",
+      "setupUrl": "https://github.com/ppy/osu/blob/9a10d935b05a3b896f4bd811d620f2023331db93/README.md",
+      "requirements": [
+        "Use the official download selector for your operating system. This listing covers native desktop releases, not browser hosting.",
+        "Reviewed stable release: 2026.1005.0-lazer, 5 October 2026. Later tachyon prereleases are not substituted for the stable release.",
+        "Review resource, beatmap music/background and branding terms independently before redistributing a modified build. No account is created or game code executed by this catalogue."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Inspect official custom ruleset support with your own licensed assets. Preserve MIT notices; audit NC resources, music and branding separately. Upstream contribution policy rejects AI-assisted contributions: do not submit AI-generated patches there.",
+      "remixIdeas": [
+        "A private custom rhythm ruleset",
+        "Timing and scoring experiments with self-created music"
+      ],
+      "remixSurfaces": [
+        "Custom rulesets",
+        "Beatmap editor",
+        "Timing and scoring"
+      ],
+      "cautions": [
+        "External listing only; not a Game Commons-hosted game or an accepted remix-ready bundle.",
+        "No AI-made provenance established. No creator partnership or endorsement implied.",
+        "Official logo is shown as branding, not a gameplay screenshot.",
+        "Noncommercial resource licensing and separate song/background permissions constrain distribution; do not repackage community music under MIT."
+      ],
+      "integrationNote": "Source extension points to inspect, not tested drop-in modules; client code and complete game content have different reuse terms.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official native download; external host",
+      "aiDevelopment": "AI-made provenance not established. Upstream rejects AI-assisted contributions.",
+      "sourceStatus": "official-source-pinned",
+      "reuseSummary": "MIT client code; NC resources and separate music/background rights. Not a fully cleared remix-ready bundle.",
+      "stableReleaseUrl": "https://github.com/ppy/osu/releases/tag/2026.1005.0-lazer"
+    },
+    {
+      "reviewedOn": "2026-10-26",
+      "id": "voxelibre",
+      "title": "VoxeLibre",
+      "creator": "VoxeLibre contributors, including Lizzy Fleckenstein, Wuzzy and davedevils",
+      "genre": "SURVIVAL SANDBOX",
+      "engine": "Luanti / Lua",
+      "platform": "Native desktop via Luanti \u2014 Windows / macOS / Linux",
+      "playUrl": "https://www.luanti.org/en/downloads/",
+      "playLabel": "Get Luanti, then install VoxeLibre",
+      "setupUrl": "https://github.com/VoxeLibre/VoxeLibre/blob/a523240fb89713ffa6302696e8275bbd7de3bd49/GETTING_STARTED.md",
+      "repository": "https://github.com/VoxeLibre/VoxeLibre",
+      "canonicalRepository": "https://git.minetest.land/VoxeLibre/VoxeLibre",
+      "commit": "a523240fb89713ffa6302696e8275bbd7de3bd49",
+      "sourceUrl": "https://github.com/VoxeLibre/VoxeLibre/tree/a523240fb89713ffa6302696e8275bbd7de3bd49",
+      "reviewedRelease": "0.92.3",
+      "codeLicense": "GPL-3.0-or-later; individual mods may offer dual licences",
+      "licenseUrl": "https://github.com/VoxeLibre/VoxeLibre/blob/a523240fb89713ffa6302696e8275bbd7de3bd49/LEGAL.md",
+      "assetLicense": "Mixed per-asset licences; Pixel Perfection textures credited to XSSheep under CC BY-SA 4.0, other media fallback CC BY-SA 3.0; main-menu images expressly CC0. Preserve individual notices.",
+      "description": "Substantial survival sandbox beta with generated worlds, creative building, farming, enchanting, hundreds of craftable items, redstone machinery and minecart systems. Features are upstream claims, not hands-on acceptance.",
+      "requirements": [
+        "Install a current stable Luanti client; Content > Browse online content > Games > VoxeLibre > Install. Luanti alone is the engine, not this game.",
+        "Package lookup returned HTTP 503 during review; follow the official guide and check current package availability. Installation was not tested.",
+        "Upstream calls this playable beta; not feature-complete, may have bugs; world upgrades are not guaranteed fully backwards compatible. Back up worlds before upgrading.",
+        "No browser port, server account or user-PC install performed. Native play/build and source/binary correspondence unverified."
+      ],
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "aiDevelopment": "Not established as AI-made. NPC behavior or agent research does not establish generative-AI development.",
+      "firstRemix": "Inspect one Lua recipe or block definition in a separate copy, retain GPL and per-asset notices, establish unchanged baseline before modifications; do not imply automatic importer compatibility.",
+      "archiveUrl": null,
+      "hook": "Build a world. Farm, craft and invent your own machines.",
+      "sourceStatus": "official-source-pinned",
+      "freeAccess": "Free native game via Luanti; external install",
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "remixIdeas": [
+        "A Lua crafting recipe with original art",
+        "A new block or farming mechanic"
+      ],
+      "remixSurfaces": [
+        "Lua crafting recipes",
+        "Block definitions",
+        "Creative and survival rules"
+      ],
+      "cautions": [
+        "External Luanti game, not a browser-hosted game or tested Game Commons build.",
+        "ContentDB package lookup returned HTTP 503 during review. Installation availability and gameplay were not tested; the official documented in-client route is linked, not certified working.",
+        "Playable beta per upstream; preserve backups before world upgrades.",
+        "Unofficial independent project; no affiliation with or endorsement by Mojang or Microsoft implied.",
+        "Menu artwork is historical official art, not a current Game Commons gameplay capture."
+      ],
+      "integrationNote": "Source extension points to inspect, not tested importable modules. Keep code, texture and other media notices distinct.",
+      "reuseSummary": "GPL-3.0-or-later code; mixed separately credited media. Official menu artwork CC0 does not relicense the entire game.",
+      "assetLicenseUrl": "https://github.com/VoxeLibre/VoxeLibre/blob/a523240fb89713ffa6302696e8275bbd7de3bd49/LEGAL.md"
+    },
+    {
+      "id": "beyond-all-reason",
+      "title": "Beyond All Reason",
+      "creator": "Beyond All Reason developers and contributors",
+      "genre": "REAL-TIME STRATEGY",
+      "engine": "Recoil RTS Engine / Lua / Chobby lobby",
+      "platform": "Desktop \u2014 Windows / Linux (macOS officially unsupported)",
+      "description": "Substantial large-scale RTS with simulated projectiles, terrain-dependent tactics, economy growth and armies of robots across land, sea and air. Official external alpha+ game, not a hosted Game Commons runtime.",
+      "hook": "Command an army. Inspect the systems behind the battle.",
+      "repository": "https://github.com/beyond-all-reason/Beyond-All-Reason",
+      "commit": null,
+      "sourceUrl": "https://github.com/beyond-all-reason/Beyond-All-Reason",
+      "archiveUrl": null,
+      "playUrl": "https://www.beyondallreason.info/download",
+      "playLabel": "Free official download",
+      "codeLicense": "GPL v2 game code; individual file licences apply. Recoil engine is separate.",
+      "assetLicense": "Restricted mixed assets: Cremuss models CC BY-SA 4.0; most other models/textures and animations CC BY-NC-ND 4.0, plus per-folder terms and otherwise reserved rights. Not a freely redistributable whole-game remix kit.",
+      "licenseUrl": "https://github.com/beyond-all-reason/Beyond-All-Reason/blob/master/LICENSE.md",
+      "setupUrl": "https://github.com/beyond-all-reason/Beyond-All-Reason#development-quick-start",
+      "requirements": [
+        "A separate working BAR launcher/lobby install fetches the Recoil engine, game content and maps.",
+        "Official desktop minimums include 12 GB RAM and GTX 960-class graphics; macOS unsupported. Online play requires an account and valid email.",
+        "For code investigation follow upstream development setup with a recursive clone in a .sdd directory; do not redistribute restricted art or assume source ZIP completeness."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Inspect one clearly licensed Lua system and follow the official development setup. Review code-only changes separately from restricted art; follow upstream disclosure and human-testing requirements.",
+      "remixIdeas": [
+        "Study unit targeting logic.",
+        "Improve a clearly licensed UI explanation.",
+        "Measure a code-only change against a controlled baseline."
+      ],
+      "remixSurfaces": [
+        "Lua game logic (file licences apply)",
+        "UI and controls (file licences apply)"
+      ],
+      "cautions": [
+        "Most artwork is NC-ND/restricted. Official listing and promo screenshot permission do not grant game redistribution or art remix permission.",
+        "Upstream AI-assisted code requires disclosure and human runtime verification; AI-generated media is prohibited in contributions.",
+        "Current launcher content is mutable; no pinned release/source correspondence verified."
+      ],
+      "integrationNote": "External play and source-inspection listing only. Asset-bearing remix/share-back requires separate rights review and author permission; no one-click compatibility claim.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free website/launcher version; optional paid Steam edition planned with additional single-player content.",
+      "aiDevelopment": "Not established as AI-made. Upstream permits disclosed, human-tested AI-assisted code but prohibits AI-generated media contributions.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://github.com/beyond-all-reason/Beyond-All-Reason/blob/master/LICENSE.md",
+      "assetLicenseLabel": "Restricted artwork and component notices",
+      "officialUrl": "https://www.beyondallreason.info/",
+      "reuseSummary": "Code available; most art is NC-ND/restricted. Not a whole-game remix kit."
+    },
+    {
+      "id": "pioneer",
+      "title": "Pioneer",
+      "creator": "Pioneer Developers",
+      "genre": "SPACE FLIGHT / TRADING SIMULATION",
+      "engine": "Pioneer custom engine (C++ / Lua)",
+      "platform": "Desktop \u2014 Windows / Linux",
+      "description": "Open-ended single-player space flight, trading and combat simulation with planetary landings, missions and a procedurally generated galaxy. Official 7 September 2026 development release adds atmospheric lighting, thruster plumes, landing aids and smuggler holds. Features are upstream descriptions, not local playtest results.",
+      "hook": "A galaxy to fly, trade and explore",
+      "repository": "https://github.com/pioneerspacesim/pioneer",
+      "commit": null,
+      "sourceUrl": "https://github.com/pioneerspacesim/pioneer",
+      "archiveUrl": null,
+      "playUrl": "https://pioneerspacesim.net/page/download/",
+      "playLabel": "Free official download",
+      "codeLicense": "GPL-3.0 core code and extension modules; third-party libraries retain their notices",
+      "assetLicense": "Art/music/assets generally CC BY-SA 3.0; AUTHORS.txt retains font, NASA/public-domain and other component notices",
+      "licenseUrl": "https://github.com/pioneerspacesim/pioneer/blob/master/AUTHORS.txt",
+      "setupUrl": "https://github.com/pioneerspacesim/pioneer/blob/master/COMPILING.txt",
+      "requirements": [
+        "Use an official Windows or Linux development build; no Game Commons browser runtime is provided.",
+        "For source modification follow COMPILING.txt and preserve AUTHORS.txt component credits. Upstream does not accept materially AI-generated contributions."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Study a small Lua mission or interface component, checking all notices. A personal fork is not automatically eligible for upstream submission: Pioneer rejects materially AI-generated contributions.",
+      "remixIdeas": [
+        "Lua mission design",
+        "Trading and equipment systems",
+        "Flight interface"
+      ],
+      "remixSurfaces": [
+        "Lua mission design",
+        "Trading and equipment systems",
+        "Flight interface"
+      ],
+      "cautions": [
+        "Not locally downloaded as a game, installed or played; no malware clearance.",
+        "Do not promise AI-generated share-back acceptance: upstream README explicitly rejects materially AI-generated code, comments and design suggestions.",
+        "Keep individual asset/font/NASA notices; source availability does not prove every asset has one uniform licence."
+      ],
+      "integrationNote": "Source investigation only; no automatic import, tested integration or accepted upstream share-back.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free native desktop download; official builds are unfinished development snapshots",
+      "aiDevelopment": "Not established as AI-made. Upstream currently rejects contributions wholly or materially generated by AI; this is a contribution policy, not a restriction on official free play.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://github.com/pioneerspacesim/pioneer/blob/master/AUTHORS.txt",
+      "assetLicenseLabel": "Full asset, font and astronomy credits",
+      "creatorUrl": "https://pioneerspacesim.net/",
+      "assetSourceUrl": "https://github.com/pioneerspacesim/pioneer-assets",
+      "moddingUrl": "https://dev.pioneerspacesim.net/contribute/getting-started",
+      "officialUrl": "https://pioneerspacesim.net/",
+      "reuseSummary": "GPL code / CC BY-SA art with exceptions. Upstream rejects materially AI-generated contributions."
+    },
+    {
+      "id": "xonotic",
+      "title": "Xonotic",
+      "creator": "Team Xonotic and contributors",
+      "genre": "ARENA FIRST-PERSON SHOOTER",
+      "engine": "DarkPlaces / QuakeC",
+      "platform": "Desktop \u2014 Windows / Linux / macOS (x86-64)",
+      "description": "Fast arena FPS with movement techniques, bots, team modes and a level editor. The official download currently offers 0.8.6; this is a mature project, not a newly released AI-made game.",
+      "hook": "Maps, movement and arena rules",
+      "repository": "https://gitlab.com/xonotic/xonotic",
+      "commit": null,
+      "sourceUrl": "https://gitlab.com/xonotic/xonotic",
+      "archiveUrl": null,
+      "playUrl": "https://xonotic.org/download/",
+      "playLabel": "Free official download",
+      "codeLicense": "GPLv3+ project; preserve component licences",
+      "assetLicense": "Official project describes the game as freely playable and modifiable under GPLv3+. Preserve individual asset notices and corresponding-source obligations; no per-asset redistribution audit performed here.",
+      "licenseUrl": "https://xonotic.org/",
+      "setupUrl": "https://gitlab.com/xonotic/xonotic/-/wikis/Compiling",
+      "requirements": [
+        "Use the current official download, with hardware-accelerated OpenGL 2.1 and at least 4 GB RAM. No browser port is represented by this listing.",
+        "Source builds and NetRadiant map editing require their separate official setup. Follow project/component licence notices; no local build verified."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Start with a small NetRadiant map or rules change in a separate compatible build. Check the current contribution process and all code/asset licences before sharing changes.",
+      "remixIdeas": [
+        "Arena map layouts",
+        "Movement and weapon balance",
+        "Bot and team-mode rules"
+      ],
+      "remixSurfaces": [
+        "Arena map layouts",
+        "Movement and weapon balance",
+        "Bot and team-mode rules"
+      ],
+      "cautions": [
+        "Official security notice: versions older than 0.8.6 must not be used to join online servers. Link points to the current official download, not an old binary.",
+        "External listing only: no Game Commons hosting, malware clearance, local playtest, partnership or automatic remix integration is claimed.",
+        "The displayed official media-kit image dates from 2011 and does not attest the current release."
+      ],
+      "integrationNote": "Source systems to inspect, not tested drop-in modules or an automatic remix-ready integration.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official download; external host",
+      "aiDevelopment": "AI development not established; no AI-made claim.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://gitlab.com/xonotic/xonotic",
+      "assetLicenseLabel": "Official project source and component notices",
+      "creatorUrl": "https://xonotic.org/team/",
+      "officialUrl": "https://xonotic.org/",
+      "reuseSummary": "Open code and modding tools; follow component licences and current security guidance."
+    },
+    {
+      "id": "ancient-beast",
+      "title": "Ancient Beast",
+      "creator": "Freezing Moon and Ancient Beast contributors",
+      "genre": "TACTICAL STRATEGY",
+      "engine": "Phaser / TypeScript / Bun",
+      "platform": "Browser",
+      "description": "Build an army of creatures with distinct abilities and fight across a hex battlefield. A substantial browser strategy game with an existing playable hotseat mode.",
+      "hook": "What would your own creature faction play like?",
+      "repository": "https://github.com/FreezingMoon/AncientBeast",
+      "commit": "d37961462eb91f97e81710ede456346148cd2522",
+      "playUrl": "https://play.ancientbeast.com",
+      "playLabel": "Play on the official site",
+      "sourceUrl": "https://github.com/FreezingMoon/AncientBeast/tree/d37961462eb91f97e81710ede456346148cd2522",
+      "archiveUrl": "https://github.com/FreezingMoon/AncientBeast/archive/d37961462eb91f97e81710ede456346148cd2522.zip",
+      "codeLicense": "AGPL-3.0",
+      "assetLicense": "CC BY-SA 4.0 artwork and audio; retain individual author credits. Name and logo are trademarks of Freezing Moon.",
+      "licenseUrl": "https://github.com/FreezingMoon/AncientBeast/blob/d37961462eb91f97e81710ede456346148cd2522/README.md#-license",
+      "setupUrl": "https://github.com/FreezingMoon/AncientBeast/blob/d37961462eb91f97e81710ede456346148cd2522/CONTRIBUTING.md",
+      "requirements": [
+        "For a local remix, install Git and the Bun version specified by the pinned package.json.",
+        "Inspect the pinned contribution guide, dependency scripts and asset notices before installing dependencies.",
+        "The official player is a separate deployed release; this pinned development source is not claimed to reproduce it."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Add a beginner training scenario using existing creatures, with clear explanations of range and turn order.",
+      "remixIdeas": [
+        "Prototype a new creature ability in a separate fork.",
+        "Add a local accessibility option for clearer faction colours.",
+        "Create a short training ruleset before changing multiplayer balance."
+      ],
+      "cautions": [
+        "If you run a modified network version, preserve the AGPL source-availability obligations.",
+        "Use a distinct name for your fork and preserve attribution; do not imply official endorsement."
+      ],
+      "remixSurfaces": [
+        "Hex movement and turn order",
+        "Creature abilities",
+        "Tactical combat"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "endless-sky",
+      "title": "Endless Sky",
+      "creator": "Michael Zahniser and Endless Sky contributors",
+      "genre": "SPACE SANDBOX",
+      "engine": "C++ / CMake; text-based content plugins",
+      "platform": "Windows / macOS / Linux",
+      "description": "Trade, explore, upgrade your ship and follow branching stories across a populated galaxy. Start with a new mission or ship rather than rebuilding an entire space game.",
+      "hook": "Your story. An entire galaxy to put it in.",
+      "repository": "https://github.com/endless-sky/endless-sky",
+      "commit": "773698e132dffe31d5ba83e566797437fe6e0c4b",
+      "playUrl": "https://github.com/endless-sky/endless-sky/releases/latest",
+      "playLabel": "Get the official desktop game",
+      "sourceUrl": "https://github.com/endless-sky/endless-sky/tree/773698e132dffe31d5ba83e566797437fe6e0c4b",
+      "archiveUrl": "https://github.com/endless-sky/endless-sky/archive/773698e132dffe31d5ba83e566797437fe6e0c4b.zip",
+      "codeLicense": "GPL-3.0-or-later",
+      "assetLicense": "Mixed per-file licences, including CC BY-SA and public domain. The pinned copyright inventory is authoritative for individual assets.",
+      "licenseUrl": "https://github.com/endless-sky/endless-sky/blob/773698e132dffe31d5ba83e566797437fe6e0c4b/copyright",
+      "setupUrl": "https://github.com/endless-sky/endless-sky/blob/773698e132dffe31d5ba83e566797437fe6e0c4b/docs/readme-developer.md",
+      "moddingUrl": "https://github.com/endless-sky/endless-sky/wiki/CreatingPlugins",
+      "requirements": [
+        "Use an official desktop release to play. Content plugins offer a smaller first remix than compiling the engine.",
+        "Engine changes require Git, a C++ toolchain, CMake and the dependencies in the pinned build guide.",
+        "Keep plugin compatibility with the release you actually test; the pinned source snapshot may be newer."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Make a small original courier mission as a separate content plugin, using existing ships and assets. Test its appearance, acceptance and completion in one named release.",
+      "remixIdeas": [
+        "Write a short branching rescue story.",
+        "Design a new economy challenge using existing commodities.",
+        "Build a new ship loadout and compare it against a baseline."
+      ],
+      "cautions": [
+        "A public repository is not an MIT grant: retain GPL source terms and each asset's own notices.",
+        "Existing saves and plugins can be release-sensitive; test with a separate pilot save."
+      ],
+      "remixSurfaces": [
+        "Trading and ship upgrades",
+        "Mission/story scripting",
+        "Space exploration"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "thrive",
+      "title": "Thrive",
+      "creator": "Revolutionary Games and Thrive contributors",
+      "genre": "EVOLUTION SIMULATION",
+      "engine": "Godot / C# / native modules / Git LFS",
+      "platform": "Desktop; check official release support",
+      "description": "An evolution game with a playable microbe stage, cell editing and simulation systems. A much larger Godot starting point for exploring life, environments and biological trade-offs.",
+      "hook": "Change one survival rule. Watch life adapt.",
+      "repository": "https://github.com/Revolutionary-Games/Thrive",
+      "commit": "cf7a24827740a12a1a48580f7972378ce564d360",
+      "playUrl": "https://github.com/Revolutionary-Games/Thrive/releases",
+      "playLabel": "Get an official desktop release",
+      "sourceUrl": "https://github.com/Revolutionary-Games/Thrive/tree/cf7a24827740a12a1a48580f7972378ce564d360",
+      "archiveUrl": null,
+      "codeLicense": "GPL-3.0-or-later with upstream mod-linking exception",
+      "assetLicense": "Asset directory includes CC BY-SA 3.0 terms; preserve per-asset and bundled third-party notices. Some raw editable assets live in a separate repository.",
+      "licenseUrl": "https://github.com/Revolutionary-Games/Thrive/blob/cf7a24827740a12a1a48580f7972378ce564d360/LICENSE.txt",
+      "assetLicenseUrl": "https://github.com/Revolutionary-Games/Thrive/blob/cf7a24827740a12a1a48580f7972378ce564d360/assets/LICENSE.txt",
+      "setupUrl": "https://github.com/Revolutionary-Games/Thrive/blob/cf7a24827740a12a1a48580f7972378ce564d360/doc/setup_instructions.md",
+      "requirements": [
+        "Install Git LFS and use the exact Godot, .NET and native-library setup specified in the pinned guide.",
+        "Clone and check out the pinned commit, then fetch its LFS objects. A GitHub source ZIP is not a complete asset handoff.",
+        "Read the pinned setup guide before opening the project; this is not an ordinary GDScript-only starter."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Adjust one environmental simulation parameter in a separate fork, then compare the same starting conditions and record the effect. First establish an unchanged baseline build.",
+      "remixIdeas": [
+        "Explore a new environmental preset.",
+        "Improve an explanation in the cell editor.",
+        "Graph one simulation outcome before changing its rules."
+      ],
+      "cautions": [
+        "Fetch real LFS objects rather than treating pointer files as assets.",
+        "Keep the project's own licences and contribution policy; an open licence does not mean upstream maintainers accept AI-generated submissions."
+      ],
+      "remixSurfaces": [
+        "Cell and organism simulation",
+        "Evolution progression",
+        "3D environments"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "supertuxkart",
+      "title": "SuperTuxKart",
+      "creator": "The SuperTuxKart team and contributors",
+      "genre": "3D KART RACING",
+      "engine": "C++ / CMake; separate track and kart assets",
+      "platform": "Windows / macOS / Linux / Android",
+      "description": "A developed 3D kart racer with tracks, characters, race modes and an established asset pipeline. A strong starting point for an original track or a new racing rule.",
+      "hook": "A new track. A different kind of race.",
+      "repository": "https://github.com/supertuxkart/stk-code",
+      "commit": "2997f192e6876047909d909498dbb4810e5dbb8d",
+      "playUrl": "https://supertuxkart.net/Download",
+      "playLabel": "Get the official game",
+      "sourceUrl": "https://github.com/supertuxkart/stk-code/tree/2997f192e6876047909d909498dbb4810e5dbb8d",
+      "archiveUrl": null,
+      "codeLicense": "GPL-3.0-or-later",
+      "assetLicense": "Open artwork under individual licences and credits, including CC BY-SA. Consult each asset's licence record; the code licence is not an artwork licence.",
+      "licenseUrl": "https://supertuxkart.net/Licensing",
+      "setupUrl": "https://github.com/supertuxkart/stk-code/blob/2997f192e6876047909d909498dbb4810e5dbb8d/INSTALL.md",
+      "assetSourceUrl": "https://svn.code.sf.net/p/supertuxkart/code/stk-assets/",
+      "requirements": [
+        "Play an official release first. A new track can be a smaller first project than modifying the engine.",
+        "Building requires both stk-code and the separate stk-assets checkout, plus CMake, a C++ toolchain and platform dependencies.",
+        "The asset revision is not pinned by this listing. Record a compatible asset revision alongside your code commit before claiming a reproducible build."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Create one short original practice track using openly licensed assets, then test a complete lap in an official release and retain all author credits.",
+      "remixIdeas": [
+        "Design a beginner-friendly practice circuit.",
+        "Prototype a time-trial ruleset in a separate fork.",
+        "Create an original kart with a documented art source."
+      ],
+      "cautions": [
+        "Fetch code and compatible game assets; the Git source ZIP alone cannot run.",
+        "Retain individual artwork credits and share-alike terms. Use original branding for your remix."
+      ],
+      "remixSurfaces": [
+        "Kart driving and races",
+        "Track content",
+        "Local racing challenges"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "shapez",
+      "title": "shapez",
+      "creator": "Tobias Springer / tobspr Games and shapez contributors",
+      "genre": "FACTORY AUTOMATION",
+      "engine": "JavaScript / custom engine",
+      "platform": "Browser demo; desktop",
+      "description": "Build conveyor networks that cut, rotate and combine shapes into increasingly demanding factories.",
+      "hook": "What if your factory had a completely different goal?",
+      "playUrl": "https://shapez.io/",
+      "playLabel": "Play the official browser demo",
+      "codeLicense": "GPL-3.0",
+      "assetLicense": "Retain the repository licence and resource notices. The README links a separate raw-artwork repository that is currently unavailable; do not assume missing artwork is included.",
+      "requirements": [
+        "Use the pinned README: Node.js 16, Yarn, Java and ffmpeg are required by the original build pipeline.",
+        "The original repository is no longer actively maintained; its README points to a separate Community Edition with different build requirements.",
+        "Work on game logic using the included resources first. Rebuilding or replacing raw artwork requires a separate asset audit."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "firstRemix": "Change one early factory goal using existing shapes, then compare the tutorial and saved-game behaviour with an unchanged build.",
+      "remixIdeas": [
+        "A short factory challenge with a different production target.",
+        "A clearer beginner progression using existing machines."
+      ],
+      "cautions": [
+        "The free browser demo and the pinned development source may differ.",
+        "Use distinct fork branding; preserve code and resource notices."
+      ],
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "repository": "https://github.com/tobspr-games/shapez.io",
+      "commit": "8a79de5255fb6756f3a1d26579b1e9bc36e0c811",
+      "sourceUrl": "https://github.com/tobspr-games/shapez.io/tree/8a79de5255fb6756f3a1d26579b1e9bc36e0c811",
+      "archiveUrl": "https://github.com/tobspr-games/shapez.io/archive/8a79de5255fb6756f3a1d26579b1e9bc36e0c811.zip",
+      "licenseUrl": "https://github.com/tobspr-games/shapez.io/blob/8a79de5255fb6756f3a1d26579b1e9bc36e0c811/LICENSE",
+      "setupUrl": "https://github.com/tobspr-games/shapez.io/blob/8a79de5255fb6756f3a1d26579b1e9bc36e0c811/README.md",
+      "remixSurfaces": [
+        "Conveyor logistics",
+        "Shape recipes and machines",
+        "Factory progression"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "mindustry",
+      "title": "Mindustry",
+      "creator": "Anuken and Mindustry contributors",
+      "genre": "FACTORY / TOWER DEFENSE",
+      "engine": "Java / Arc / Gradle",
+      "platform": "Windows / macOS / Linux / Android",
+      "description": "Combine supply chains, factory production and defensive combat across maps and campaigns.",
+      "hook": "Turn the same machines into a new survival challenge.",
+      "playUrl": "https://github.com/Anuken/Mindustry/releases/latest",
+      "playLabel": "Get the official desktop game",
+      "codeLicense": "GPL-3.0",
+      "assetLicense": "The repository carries GPL-3.0; preserve resource, dependency and author notices. Audit any additional mod artwork separately.",
+      "requirements": [
+        "The pinned README requires JDK 17 and the included Gradle wrapper.",
+        "Inspect dependency and build scripts before building the desktop target.",
+        "Start with a small content mod or map using existing assets; use the project wiki for mod formats."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "firstRemix": "Make a short survival map or content mod that changes one production or defense rule using existing assets.",
+      "remixIdeas": [
+        "A new wave schedule on a small map.",
+        "One resource-chain or unit-balance variant."
+      ],
+      "cautions": [
+        "Use official release downloads to play; desktop binaries are external.",
+        "Keep GPL and third-party notices when distributing a modified game."
+      ],
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "moddingUrl": "https://mindustrygame.github.io/wiki/modding/1-modding/",
+      "repository": "https://github.com/Anuken/Mindustry",
+      "commit": "84fd6bf8f42128bbdaa4799670694a83b6c61adb",
+      "sourceUrl": "https://github.com/Anuken/Mindustry/tree/84fd6bf8f42128bbdaa4799670694a83b6c61adb",
+      "archiveUrl": "https://github.com/Anuken/Mindustry/archive/84fd6bf8f42128bbdaa4799670694a83b6c61adb.zip",
+      "licenseUrl": "https://github.com/Anuken/Mindustry/blob/84fd6bf8f42128bbdaa4799670694a83b6c61adb/LICENSE",
+      "setupUrl": "https://github.com/Anuken/Mindustry/blob/84fd6bf8f42128bbdaa4799670694a83b6c61adb/README.md",
+      "remixSurfaces": [
+        "Resource production",
+        "Defense waves and units",
+        "Content mods and maps"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "warzone2100",
+      "title": "Warzone 2100",
+      "creator": "Pumpkin Studios, Warzone 2100 Project and contributors",
+      "genre": "3D REAL-TIME STRATEGY",
+      "engine": "C++ / CMake / JavaScript scripting",
+      "platform": "Windows / macOS / Linux",
+      "description": "Command customizable vehicles, research technologies and rebuild after a global catastrophe in a substantial 3D RTS.",
+      "hook": "A new mission inside a working strategy game.",
+      "playUrl": "https://wz2100.net/",
+      "playLabel": "Get the official desktop game",
+      "codeLicense": "GPL-2.0-or-later",
+      "assetLicense": "GPL material plus exceptions in COPYING.NONGPL, including CC BY-SA 3.0, CC0, OFL and other dependency/resource licences. Retain individual notices.",
+      "requirements": [
+        "Use a recursive Git clone and check out the pinned commit, then update submodules recursively.",
+        "The upstream README explicitly warns against GitHub Download ZIP: it lacks submodules and revision information.",
+        "Use the documented CMake/toolchain setup; campaign videos are a separate optional download."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "firstRemix": "Create one short JavaScript-scripted skirmish objective using existing maps and units before changing the engine.",
+      "remixIdeas": [
+        "A scripted escort or timed defense mission.",
+        "A focused AI behaviour experiment."
+      ],
+      "cautions": [
+        "Follow the upstream build guide and preserve per-file artwork licences.",
+        "Official binaries may be a different revision from this source snapshot."
+      ],
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "repository": "https://github.com/Warzone2100/warzone2100",
+      "commit": "b738e6875d1545c0ecd0e4c328398cc2f02c4811",
+      "sourceUrl": "https://github.com/Warzone2100/warzone2100/tree/b738e6875d1545c0ecd0e4c328398cc2f02c4811",
+      "archiveUrl": null,
+      "licenseUrl": "https://github.com/Warzone2100/warzone2100/blob/b738e6875d1545c0ecd0e4c328398cc2f02c4811/COPYING",
+      "setupUrl": "https://github.com/Warzone2100/warzone2100/blob/b738e6875d1545c0ecd0e4c328398cc2f02c4811/README.md",
+      "assetLicenseUrl": "https://github.com/Warzone2100/warzone2100/blob/b738e6875d1545c0ecd0e4c328398cc2f02c4811/COPYING.NONGPL",
+      "remixSurfaces": [
+        "Vehicle assembly and research",
+        "JavaScript missions",
+        "3D real-time combat"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights."
+    },
+    {
+      "id": "freeciv-web",
+      "title": "Freeciv-web",
+      "creator": "Freeciv-web and Freeciv contributors, including Andreas R\u00f8sdal",
+      "genre": "CIVILIZATION STRATEGY",
+      "engine": "JavaScript / WebGL / Java / C server",
+      "platform": "Browser",
+      "description": "Build cities, direct an economy and guide a civilization against computer or human opponents through a web browser.",
+      "hook": "Rewrite a civilization\u2019s rules, not its entire engine.",
+      "playUrl": "https://www.freecivweb.com/",
+      "playLabel": "Play external single-player (tested 26 Oct 2026)",
+      "codeLicense": "AGPL-3.0 client; GPL server",
+      "assetLicense": "Per-asset rights review incomplete. Project code grants do not establish blanket rights for tilesets, flags, fonts, sounds, music or screenshots. Visible music listing lacks adjacent per-track notices; this is an evidence gap, not a finding of infringement. Do not redistribute a bundled remix until selected assets and notices are verified.",
+      "requirements": [
+        "External play was tested without an account; same-browser guest save/restore worked despite account warnings. Cross-device and long-term guest recovery remain unverified. The tested server closes sessions after 40 minutes of inactivity.",
+        "A remix requires a reviewed native C game server, Python WebSocket proxy/process launcher and Java web application; it is not a standalone static HTML upload.",
+        "Choose an exact source baseline and separately pin C-server/dependencies/assets. Do not assume latest dev or the catalogue upstream pin equals the live server.",
+        "Review acquisition, licenses, installer privileges and sandbox admission before execution. Current dev README says Docker setup is unmaintained; no stock installer execution is authorized by this handoff."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "firstRemix": "After an unchanged isolated baseline and rights/security checks pass, make one beginner-interface change that labels unavailable production choices with their missing technology. Preserve game rules and test queue selection, prerequisite completion, production fallback, save and restore. This is a proposed remix, not an implemented module.",
+      "remixIdeas": [
+        "A short custom victory-condition scenario.",
+        "An economy-focused ruleset with existing graphics."
+      ],
+      "cautions": [
+        "The external server controls its own availability, accounts and save rules.",
+        "Serving a modified AGPL client requires corresponding source availability; retain component notices.",
+        "Tested Classic+ isometric 2D play is not the catalogue illustration of the upstream 3D renderer.",
+        "The live deployment is not tied to the pinned general upstream commit; exact deployed SHA is unknown.",
+        "A queued Granary without Pottery produced conflicting postponing/building messages, then changed to Coinage on the next turn. This observed UX issue remains unresolved.",
+        "No full victory, combat/diplomacy review, independent remix, self-hosting, malware clearance or per-asset clearance is claimed."
+      ],
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "repository": "https://github.com/freeciv/freeciv-web",
+      "commit": "c19ce060fadc99663f8aba3652ca94b07174467c",
+      "sourceUrl": "https://github.com/freeciv/freeciv-web/tree/c19ce060fadc99663f8aba3652ca94b07174467c",
+      "archiveUrl": "https://github.com/freeciv/freeciv-web/archive/c19ce060fadc99663f8aba3652ca94b07174467c.zip",
+      "licenseUrl": "https://github.com/freeciv/freeciv-web/blob/c19ce060fadc99663f8aba3652ca94b07174467c/LICENSE.txt",
+      "setupUrl": "https://github.com/freeciv/freeciv-web/blob/c19ce060fadc99663f8aba3652ca94b07174467c/README.md",
+      "remixSurfaces": [
+        "Civilization rulesets",
+        "City economies",
+        "Browser strategy interface"
+      ],
+      "integrationNote": "Candidate systems to inspect in the source, not tested drop-in modules. Cross-engine combinations require adaptation, build validation and compatible code/asset rights.",
+      "reviewedOn": "2026-10-26"
+    },
+    {
+      "id": "banana-bread",
+      "title": "BananaBread",
+      "creator": "Mozilla Foundation, Benjamin Segal and Cube 2 contributors",
+      "genre": "WEB FIRST-PERSON SHOOTER",
+      "engine": "C++ / Cube 2, compiled to WebAssembly and WebGL",
+      "platform": "Browser",
+      "description": "A browser port of the Cube 2 first-person shooter with multiplayer, maps and weapons. Its original web build is now a legacy experience, but the source shows how a full 3D arena shooter was brought to the browser.",
+      "hook": "Could you modernize one map, weapon or movement rule?",
+      "repository": "https://github.com/kripken/BananaBread",
+      "commit": "455191d2e289f6d67f22c9ec44477ff0814d9aa3",
+      "playUrl": "https://kripken.github.io/BananaBread/cube2/bb.html",
+      "playLabel": "Open the original browser build",
+      "sourceUrl": "https://github.com/kripken/BananaBread/tree/455191d2e289f6d67f22c9ec44477ff0814d9aa3",
+      "archiveUrl": "https://github.com/kripken/BananaBread/archive/455191d2e289f6d67f22c9ec44477ff0814d9aa3.zip",
+      "codeLicense": "zlib",
+      "assetLicense": "Art assets are CC BY or CC BY-SA; the upstream README says directories without a specific licence default to CC BY. Retain the original author credit and any share-alike terms. Mozilla branding is not included as a reuse grant.",
+      "licenseUrl": "https://github.com/kripken/BananaBread/blob/455191d2e289f6d67f22c9ec44477ff0814d9aa3/README.md",
+      "setupUrl": "https://github.com/kripken/BananaBread/blob/455191d2e289f6d67f22c9ec44477ff0814d9aa3/README.md",
+      "requirements": [
+        "Use the pinned repository and its documented Emscripten/Cube 2 build setup; this is not a simple single-file web game.",
+        "The project is inactive and its legacy WebAssembly/WebGL runtime may need browser compatibility work.",
+        "Keep attribution for all art and verify any per-directory licence before redistributing modified assets."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Try one small single-player arena change in a separate fork, then establish a modern-browser build before adding maps or network features.",
+      "remixIdeas": [
+        "Prototype one weapon or movement adjustment.",
+        "Modernize one original map while preserving its author credits.",
+        "Test a browser-compatible rendering or input improvement."
+      ],
+      "cautions": [
+        "This old project does not meet a modern AAA visual target; treat it as a substantial historical browser FPS source.",
+        "Preserve zlib and asset-specific terms; do not reuse Mozilla marks or external commercial game assets."
+      ],
+      "remixSurfaces": [
+        "FPS movement and combat",
+        "Arena maps",
+        "Browser 3D rendering"
+      ],
+      "integrationNote": "Legacy WebGL/WebAssembly port. The screenshot shows the upstream project and does not certify that its live legacy build currently runs in modern browsers."
+    },
+    {
+      "id": "no-survivor-game",
+      "title": "No Survivor Game",
+      "creator": "Mocas-12",
+      "genre": "3D BULLET-HEAVEN ROGUELITE",
+      "engine": "Godot 4.7 / GDScript",
+      "platform": "Browser",
+      "description": "Pilot a low-poly fighter through waves, bosses and ship evolutions. This complete browser game combines mouse or touch movement, upgrade drafts, multiple weapon patterns and 3D ships.",
+      "hook": "Build a new ship form or boss pattern from a real Godot game.",
+      "repository": "https://github.com/Mocas-12/no-survivor-game",
+      "commit": "c413daa4fd97fe2ea0a71c406be54cf6994bf7c7",
+      "playUrl": "https://mocas-12.github.io/no-survivor-game/",
+      "playLabel": "Play the browser build",
+      "sourceUrl": "https://github.com/Mocas-12/no-survivor-game/tree/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7",
+      "archiveUrl": "https://github.com/Mocas-12/no-survivor-game/archive/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7.zip",
+      "codeLicense": "MIT",
+      "assetLicense": "Generated art/audio are MIT; ship models are Quaternius Ultimate Spaceships CC0; font is SIL OFL 1.1. Preserve the font notice and asset credits.",
+      "licenseUrl": "https://github.com/Mocas-12/no-survivor-game/blob/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7/LICENSE",
+      "setupUrl": "https://github.com/Mocas-12/no-survivor-game/blob/c413daa4fd97fe2ea0a71c406be54cf6994bf7c7/README.md",
+      "requirements": [
+        "Open the pinned Godot 4.7 project in Godot or rebuild the Web export using the included export preset.",
+        "Expect about a 40 MB first browser load for the engine; later loads can use browser cache.",
+        "Keep the Quaternius CC0 model credit and font OFL notice when redistributing."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Add one ship evolution or boss attack, then rebuild the web export and compare it against the original gameplay screenshot.",
+      "remixIdeas": [
+        "Add an original boss attack pattern.",
+        "Create a ship form with a distinct movement ability.",
+        "Change one upgrade-card effect and rebalance the wave curve."
+      ],
+      "cautions": [
+        "This is a compact indie roguelite, not a 2010-era AAA production.",
+        "The project reports a large first WebAssembly download; verify current browser loading before building on it."
+      ],
+      "remixSurfaces": [
+        "3D ship models and forms",
+        "Boss and wave behaviour",
+        "Upgrade and weapon systems"
+      ],
+      "integrationNote": "Godot web project with a no-threads browser export. Pinned source and official GitHub Pages build are separate artifacts."
+    },
+    {
+      "id": "godot-reversi",
+      "title": "Godot Reversi",
+      "creator": "Regi Ellis",
+      "genre": "BOARD STRATEGY",
+      "engine": "Godot 4.7 / GDScript",
+      "platform": "Browser",
+      "description": "A complete Reversi game with a polished, code-drawn interface and an approachable Godot project. Its author presents it as a teaching example built with AI agents and a live editor.",
+      "hook": "Give a classic board game a new opponent or learning mode.",
+      "repository": "https://github.com/regiellis/godot-reversi",
+      "commit": "70586efafbc762efa16f5680ca0b90366eccc698",
+      "playUrl": "https://regiellis.github.io/godot-reversi/",
+      "playLabel": "Play the browser build",
+      "sourceUrl": "https://github.com/regiellis/godot-reversi/tree/70586efafbc762efa16f5680ca0b90366eccc698",
+      "archiveUrl": "https://github.com/regiellis/godot-reversi/archive/70586efafbc762efa16f5680ca0b90366eccc698.zip",
+      "codeLicense": "MIT",
+      "assetLicense": "The game, widget kit and board renderer are MIT; bundled sound effects are CC0 and Bungee font is SIL OFL 1.1. See NOTICE and included font licence.",
+      "licenseUrl": "https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/LICENSE",
+      "setupUrl": "https://github.com/regiellis/godot-reversi/blob/70586efafbc762efa16f5680ca0b90366eccc698/README.md",
+      "requirements": [
+        "Open the pinned project with Godot 4.7 or use the author's browser build.",
+        "The repository is a one-way snapshot; upstream issues and changes are tracked in the original godot-mcp-go repository.",
+        "Preserve bundled CC0/OFL notices as applicable."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Add a beginner hint or an alternate computer-opponent style, then verify legal moves and end-game scoring against the original rules.",
+      "remixIdeas": [
+        "Add a tutorial highlighting legal moves and flips.",
+        "Create a second AI opponent with a distinct strategy.",
+        "Add a timed challenge or move-history review."
+      ],
+      "cautions": [
+        "This is a focused board game and teaching example, not a large commercial-scale game.",
+        "The cover image is an illustrative title card, not an in-gameplay screenshot."
+      ],
+      "remixSurfaces": [
+        "Board rules and move validation",
+        "Opponent strategy",
+        "Animated interface"
+      ],
+      "integrationNote": "Compact Godot browser game; a useful code and interface learning project, not a high-end visual target."
+    },
+    {
+      "id": "tactical-slash",
+      "title": "Tactical Slash",
+      "creator": "Sion RGB",
+      "genre": "3D TACTICAL RPG",
+      "engine": "Godot 4.7 / typed GDScript / Compatibility renderer",
+      "description": "Lead a swordsman, archer and priest through a turn-based 3D battle. Position your squad, use line of sight, heal allies and outplay class-aware enemy AI.",
+      "repository": "https://github.com/sion-rgb/tactical-slash",
+      "commit": "8bf8d835cb7afa7cb3f4d893b0966c6b4e9b7727",
+      "playUrl": "https://sion-rgb.github.io/tactical-slash/",
+      "sourceUrl": "https://github.com/sion-rgb/tactical-slash/tree/8bf8d835cb7afa7cb3f4d893b0966c6b4e9b7727",
+      "archiveUrl": "https://github.com/sion-rgb/tactical-slash/archive/8bf8d835cb7afa7cb3f4d893b0966c6b4e9b7727.zip",
+      "codeLicense": "MIT \u2014 original Tactical Slash code, copyright 2026 Sion RGB",
+      "assetLicense": "CC0 1.0 \u2014 KayKit models by Kay Lousberg, Nature Kit by Kenney, Cloud Layers HDRI by Greg Zaal / Poly Haven. Retain the asset inventory and original notices.",
+      "licenseUrl": "https://github.com/sion-rgb/tactical-slash/blob/8bf8d835cb7afa7cb3f4d893b0966c6b4e9b7727/LICENSE",
+      "assetLicenseUrl": "https://github.com/sion-rgb/tactical-slash/blob/8bf8d835cb7afa7cb3f4d893b0966c6b4e9b7727/THIRD_PARTY_ASSETS.md",
+      "setupUrl": "https://github.com/sion-rgb/tactical-slash/blob/8bf8d835cb7afa7cb3f4d893b0966c6b4e9b7727/README.md",
+      "requirements": [
+        "Use the upstream Godot 4.7 stable requirement; this project was not checked with our hosted 4.6 runtime.",
+        "Inspect project.godot, the pinned README, scripts and notices before importing or running downloaded code.",
+        "Use the official external browser player to play. This project is linked rather than loaded into the Game Commons Godot iframe."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "platform": "Browser",
+      "hook": "What would a new mission or a fourth character class change?",
+      "playLabel": "Play at the creator\u2019s site",
+      "firstRemix": "Add one tactical mission or fourth character class, retaining the original asset and source notices.",
+      "remixIdeas": [
+        "Design a new tactical map with existing assets.",
+        "Add an original class ability or enemy behaviour."
+      ],
+      "cautions": [
+        "A compact independent tactical encounter; not a commercial-scale RPG.",
+        "The official browser export may differ from this pinned source. Full match and local build remain unverified."
+      ],
+      "remixSurfaces": [
+        "Grid movement and line of sight",
+        "Class abilities and turn phases",
+        "Enemy tactics"
+      ],
+      "integrationNote": "Source-linked Godot game. Keep engine requirements and MIT/CC0 notices with the handoff; these systems are not tested drop-in modules."
+    },
+    {
+      "id": "valhalla-fps",
+      "title": "VALHALLA",
+      "creator": "Project Valhalla contributors",
+      "genre": "ARENA FIRST-PERSON SHOOTER",
+      "engine": "VALHALLA engine",
+      "platform": "Desktop \u2014 Windows / Linux",
+      "description": "Free arena FPS beta with seven weapons and alternate fire, eleven maps, bots and a built-in editor, according to the project. Beta 2 released May 2025; project progress reported June 2026.",
+      "hook": "Arena layouts and built-in editing",
+      "repository": "https://github.com/project-valhalla/base",
+      "commit": null,
+      "sourceUrl": "https://github.com/project-valhalla/base",
+      "archiveUrl": null,
+      "playUrl": "https://valhalla-project.itch.io/valhalla-fps",
+      "playLabel": "Free official download",
+      "codeLicense": "zlib code",
+      "assetLicense": "Assets retain individual licences; inspect project asset notices. No blanket CC or complete asset-clearance claim.",
+      "licenseUrl": "https://github.com/project-valhalla/base",
+      "setupUrl": "https://github.com/project-valhalla/base",
+      "requirements": [
+        "Download from the official project for a supported desktop platform; this is not a browser build.",
+        "For modification, follow the official source/build documentation and preserve code and individual asset notices. Source availability is not a claim of a verified local build."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Inspect the official source and editor documentation, choose one small content change, and validate it in a separate compatible local build. Preserve all relevant licences and credits.",
+      "remixIdeas": [
+        "Arena layouts and built-in editing",
+        "Weapon and alternate-fire rules",
+        "Bot matches"
+      ],
+      "remixSurfaces": [
+        "Arena layouts and built-in editing",
+        "Weapon and alternate-fire rules",
+        "Bot matches"
+      ],
+      "cautions": [
+        "External availability and system requirements can change. No Game Commons hosting, malware clearance or hands-on acceptance claimed.",
+        "An external listing is not an endorsement or partnership; no third-party artwork is copied into this card."
+      ],
+      "integrationNote": "Source systems to inspect, not tested drop-in modules or an automatic remix-ready integration.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official download (name your price; optional support)",
+      "aiDevelopment": "AI development not established; no AI-made claim.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://github.com/project-valhalla/data",
+      "assetLicenseLabel": "Source asset inventory (rights review incomplete)"
+    },
+    {
+      "id": "veloren",
+      "title": "Veloren",
+      "creator": "Veloren contributors",
+      "genre": "VOXEL ACTION RPG",
+      "engine": "Rust / custom engine",
+      "platform": "Desktop \u2014 Windows / macOS / Linux",
+      "description": "An open-world multiplayer voxel action RPG with exploration, combat and character progression. Official changelog records version 0.18 on 23 January 2026; gameplay has not been tested here.",
+      "hook": "Voxel exploration and world generation",
+      "repository": "https://github.com/veloren/veloren",
+      "commit": null,
+      "sourceUrl": "https://github.com/veloren/veloren",
+      "archiveUrl": null,
+      "playUrl": "https://veloren.net/download/",
+      "playLabel": "Free official download",
+      "codeLicense": "GPL-3.0 code",
+      "assetLicense": "Preserve individual asset and dependency notices; no whole-bundle rights audit performed for this external listing.",
+      "licenseUrl": "https://github.com/veloren/veloren",
+      "setupUrl": "https://github.com/veloren/veloren",
+      "requirements": [
+        "Download from the official project for a supported desktop platform; this is not a browser build.",
+        "For modification, follow the official source/build documentation and preserve code and individual asset notices. Source availability is not a claim of a verified local build."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Inspect the official source and editor documentation, choose one small content change, and validate it in a separate compatible local build. Preserve all relevant licences and credits.",
+      "remixIdeas": [
+        "Voxel exploration and world generation",
+        "Character progression and combat",
+        "Multiplayer RPG systems"
+      ],
+      "remixSurfaces": [
+        "Voxel exploration and world generation",
+        "Character progression and combat",
+        "Multiplayer RPG systems"
+      ],
+      "cautions": [
+        "External availability and system requirements can change. No Game Commons hosting, malware clearance or hands-on acceptance claimed.",
+        "An external listing is not an endorsement or partnership; no third-party artwork is copied into this card."
+      ],
+      "integrationNote": "Source systems to inspect, not tested drop-in modules or an automatic remix-ready integration.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official download; external host",
+      "aiDevelopment": "AI development not established; no AI-made claim.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://github.com/veloren/veloren",
+      "assetLicenseLabel": "Source asset inventory (rights review incomplete)"
+    },
+    {
+      "id": "stunt-rally",
+      "title": "Stunt Rally 3",
+      "creator": "Stunt Rally contributors",
+      "genre": "RALLY / STUNT RACING",
+      "engine": "C++ / OgreNext",
+      "platform": "Desktop \u2014 Windows / Linux",
+      "description": "Stunt rally driving with an editor and a project-advertised collection of 232 tracks and 33 vehicles. Version 3.3 released December 2024; lead developer reports development stopped. Existing downloads remain externally listed, not locally tested.",
+      "hook": "Track editor and terrain",
+      "repository": "https://github.com/stuntrally/stuntrally3",
+      "commit": null,
+      "sourceUrl": "https://github.com/stuntrally/stuntrally3",
+      "archiveUrl": null,
+      "playUrl": "https://cryham.org/stuntrally/downloads/",
+      "playLabel": "Free official download",
+      "codeLicense": "GPL-3.0 code",
+      "assetLicense": "Mixed asset licences documented in the data ledger; some texture/sound provenance remains unclear. Link-only listing is not bundled-asset clearance.",
+      "licenseUrl": "https://github.com/stuntrally/stuntrally3",
+      "setupUrl": "https://cryham.org/stuntrally/",
+      "requirements": [
+        "Download from the official project for a supported desktop platform; this is not a browser build.",
+        "For modification, follow the official source/build documentation and preserve code and individual asset notices. Source availability is not a claim of a verified local build."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Inspect the official source and editor documentation, choose one small content change, and validate it in a separate compatible local build. Preserve all relevant licences and credits.",
+      "remixIdeas": [
+        "Track editor and terrain",
+        "Vehicle tuning",
+        "Stunt courses and rally routes"
+      ],
+      "remixSurfaces": [
+        "Track editor and terrain",
+        "Vehicle tuning",
+        "Stunt courses and rally routes"
+      ],
+      "cautions": [
+        "External availability and system requirements can change. No Game Commons hosting, malware clearance or hands-on acceptance claimed.",
+        "An external listing is not an endorsement or partnership; no third-party artwork is copied into this card.",
+        "Development stopped according to the lead developer; ongoing support is not promised."
+      ],
+      "integrationNote": "Source systems to inspect, not tested drop-in modules or an automatic remix-ready integration.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official download; external host",
+      "aiDevelopment": "AI development not established; no AI-made claim.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://github.com/stuntrally/stuntrally3/blob/main/docs/data.md"
+    },
+    {
+      "id": "0-ad",
+      "title": "0 A.D.",
+      "creator": "Wildfire Games contributors",
+      "genre": "HISTORICAL REAL-TIME STRATEGY",
+      "engine": "Pyrogenesis",
+      "platform": "Desktop \u2014 Windows / macOS / Linux",
+      "description": "Historical real-time strategy with base building, economy and battles. Official Release 28 \u201cBoiorix\u201d announcement (18 February 2026) describes fifteen factions; not played locally for this listing.",
+      "hook": "Civilization and unit data",
+      "repository": "https://gitea.wildfiregames.com/0ad/0ad",
+      "commit": null,
+      "sourceUrl": "https://gitea.wildfiregames.com/0ad/0ad",
+      "archiveUrl": null,
+      "playUrl": "https://play0ad.com/download/",
+      "playLabel": "Free official download",
+      "codeLicense": "GPL-2.0 code",
+      "assetLicense": "Project artwork generally CC BY-SA 3.0; preserve credits, share-alike obligations and component exceptions. Check each asset before redistribution.",
+      "licenseUrl": "https://play0ad.com/game-info/project-overview/",
+      "setupUrl": "https://gitea.wildfiregames.com/0ad/0ad",
+      "requirements": [
+        "Download from the official project for a supported desktop platform; this is not a browser build.",
+        "For modification, follow the official source/build documentation and preserve code and individual asset notices. Source availability is not a claim of a verified local build."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "Inspect the official source and editor documentation, choose one small content change, and validate it in a separate compatible local build. Preserve all relevant licences and credits.",
+      "remixIdeas": [
+        "Civilization and unit data",
+        "Economy and build orders",
+        "Maps and scenarios"
+      ],
+      "remixSurfaces": [
+        "Civilization and unit data",
+        "Economy and build orders",
+        "Maps and scenarios"
+      ],
+      "cautions": [
+        "External availability and system requirements can change. No Game Commons hosting, malware clearance or hands-on acceptance claimed.",
+        "An external listing is not an endorsement or partnership; no third-party artwork is copied into this card."
+      ],
+      "integrationNote": "Source systems to inspect, not tested drop-in modules or an automatic remix-ready integration.",
+      "reviewedOn": "2026-10-26",
+      "freeAccess": "Free official download; external host",
+      "aiDevelopment": "AI development not established; no AI-made claim.",
+      "sourceStatus": "official-source-unpinned",
+      "assetLicenseUrl": "https://gitea.wildfiregames.com/0ad/0ad",
+      "assetLicenseLabel": "Source asset inventory (rights review incomplete)"
+    },
+    {
+      "id": "monolith",
+      "title": "Monolith",
+      "creator": "Luc Cary",
+      "creatorUrl": "https://www.reddit.com/r/ClaudeGameDev/comments/1x2krp2/monolith_an_enginebuilding_computer_game_made/",
+      "genre": "STRATEGY / COMPANY ENGINE-BUILDER",
+      "platform": "Browser \u2014 laptop recommended by creator; mobile not tested",
+      "engine": "Browser card game; engine not established",
+      "description": "Build a company through card-driven decisions about hiring, revenue, architecture, technical debt and morale.",
+      "hook": "Build your company. Balance growth against technical debt.",
+      "playUrl": "https://monolithgame.app/",
+      "officialUrl": "https://monolithgame.app/",
+      "playLabel": "Play at creator\u2019s site",
+      "freeAccess": "Free browser play; tutorial and bot turns inspected without login",
+      "repository": null,
+      "sourceUrl": null,
+      "commit": null,
+      "archiveUrl": null,
+      "sourceStatus": "official-play-link-no-open-license",
+      "codeLicense": "No public source repository or open modification licence identified. Free play does not grant copying or remix rights.",
+      "assetLicense": "No downstream asset reuse or redistribution grant identified. Creator-reported AI-made art is not reuse permission.",
+      "licenseUrl": "https://monolithgame.app/",
+      "setupUrl": "https://monolithgame.app/",
+      "requirements": [
+        "Open the official game in a browser; creator recommends a laptop.",
+        "Tutorial access was observed while not logged in. Creator says ranked and agent modes require login; no account was created for review.",
+        "Follow the official play link. Do not mirror or remix the game without applicable permission."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "aiDevelopment": "Creator describes development with Claude. This is creator-reported AI assistance, not an independently measured authorship claim.",
+      "firstRemix": "No remix permission established. This is an external play reference, not an importable project.",
+      "remixIdeas": [],
+      "remixSurfaces": [],
+      "cautions": [
+        "External availability and access requirements can change.",
+        "Full-match outcome, reset, save/reload, audio, mobile and online modes remain untested.",
+        "Independent editorial listing, not a partnership or security assessment. No game code or artwork is copied."
+      ],
+      "integrationNote": "External play only; not a source base or tested composable module.",
+      "reviewedOn": "2026-10-29",
+      "reuseSummary": "Play the external original. No source or remix rights established."
+    },
+    {
+      "id": "selk",
+      "title": "Selk",
+      "creator": "miculpionier (window-ops)",
+      "creatorUrl": "https://vb2020.itch.io/selk",
+      "genre": "INVESTIGATION / NARRATIVE PUZZLE",
+      "platform": "Browser \u2014 desktop inspected; mobile not tested",
+      "engine": "Static DOM/SVG interface with synthesized Web Audio",
+      "description": "Investigate conflicting records on Titan, connect evidence and submit reports through a fictional research terminal.",
+      "hook": "Read between the records. Decide what the evidence means.",
+      "repository": "https://gitlab.com/window-ops-web/selk-terminal",
+      "commit": "e577d592e62c8be3213703fbe10c266a0901876f",
+      "sourceUrl": "https://gitlab.com/window-ops-web/selk-terminal/-/tree/e577d592e62c8be3213703fbe10c266a0901876f",
+      "archiveUrl": null,
+      "playUrl": "https://miculpionier.ro/projects/selk-terminal/",
+      "officialUrl": "https://miculpionier.ro/projects/selk-terminal/",
+      "playLabel": "Play original at creator\u2019s site",
+      "codeLicense": "GPL-3.0-only program source. Preserve notices and provide corresponding modified source under the applicable GPL terms when distributing.",
+      "assetLicense": "Story and documentation: CC BY-SA 4.0. Original Selk illustrations: CC0 1.0 to the author\u2019s rights; RADIOSOL reference images excluded/not covered. IBM Plex Mono and VT323 fonts: SIL OFL 1.1 with per-font notices. Synthesized audio follows program-source terms; not a separate CC0 sample pack.",
+      "licenseUrl": "https://gitlab.com/window-ops-web/selk-terminal/-/blob/e577d592e62c8be3213703fbe10c266a0901876f/README.md",
+      "assetLicenseUrl": "https://gitlab.com/window-ops-web/selk-terminal/-/blob/e577d592e62c8be3213703fbe10c266a0901876f/notes/credits.html",
+      "assetLicenseLabel": "Pinned story, illustration and font notices",
+      "setupUrl": "https://gitlab.com/window-ops-web/selk-terminal/-/blob/e577d592e62c8be3213703fbe10c266a0901876f/README.md",
+      "requirements": [
+        "Open the official browser game. The terminal sign-in is fictional avatar naming, not a real account; use an invented name rather than personal information.",
+        "Source is a static website with no package-install/build step according to its pinned README. Follow upstream instructions; an unchanged local source build has not been independently accepted.",
+        "For redistribution or adaptation, retain GPL source obligations, CC BY-SA story attribution/share-alike, CC0 illustration provenance and OFL font notices separately. Exclude unlicensed reference images."
+      ],
+      "sourceCompleteness": "Source availability and completeness must be checked at the linked upstream revision; a directory listing is not a build attestation.",
+      "verification": "No private playtest or build-validation records are included. Verify the selected upstream project in your own environment.",
+      "firstRemix": "First reproduce the pinned original unchanged. Then make one small investigation case with a new evidence chain and report. Keep GPL program source and CC BY-SA story obligations explicit, preserve credits, test report unlocks and provide corresponding modified source. This is a suggested direction, not an existing case-pack importer.",
+      "remixIdeas": [
+        "A small original evidence chain with a report and progressive hints",
+        "A focused readability or navigation improvement",
+        "A separately credited story case retaining the original terminal engine"
+      ],
+      "remixSurfaces": [
+        "Data-driven investigation records",
+        "Report evidence dependencies",
+        "Progressive hints and branching story outcomes"
+      ],
+      "cautions": [
+        "Creator describes a perpetual beta; six endings are an upstream feature claim, not six independently tested outcomes.",
+        "The original has an authorial political-economic viewpoint; it is fiction, not neutral science instruction.",
+        "RADIOSOL visual references are not included or covered. Do not acquire or redistribute those reference images as part of a remix. Visual similarity has not been independently assessed.",
+        "Free browser play and source availability do not imply every licence can be combined with any other game. No automatic compatibility, complete source build, security clearance or full quality acceptance claimed."
+      ],
+      "integrationNote": "Potential separately licensed narrative-case remix. Source systems to inspect, not tested drop-in components or an automatic cross-game integration.",
+      "reviewedOn": "2026-10-29",
+      "freeAccess": "Check this behavior independently; no developer-session evidence is distributed.",
+      "aiDevelopment": "Creator\u2019s ClaudeGameDev release describes AI-assisted development; creator-reported, not an independently measured authorship claim.",
+      "sourceStatus": "official-source-pinned",
+      "reuseSummary": "GPL code, CC BY-SA story, CC0 original illustrations and OFL fonts retain separate obligations. No proprietary reference imagery included."
+    }
+  ]
+}
