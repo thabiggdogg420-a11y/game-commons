@@ -1,4 +1,4 @@
-# Game Commons: connect an AI to reusable game starting points
+# Games4Free: connect an AI to reusable game starting points
 
 **Native MCP endpoint:** `https://game-commons-captain.thabiggdogg420.chatgpt.site/mcp/read`
 
@@ -6,7 +6,7 @@ This is an actual public, read-only MCP Streamable HTTP server—not a JSON feed
 
 ## Use with Claude Code (optional; not installed by this package)
 
-After you choose to connect Game Commons, run in your game project:
+After you choose to connect Games4Free, run in your game project:
 
 ```sh
 claude mcp add --transport http game-commons --scope local https://game-commons-captain.thabiggdogg420.chatgpt.site/mcp/read
@@ -19,7 +19,7 @@ For a deliberately shared project setup, merge `claude-code.mcp.example.json` in
 
 Suggested request:
 
-> Search Game Commons for starting points for a small city-building game. Compare the best matches, get the handoff for the best fit, and explain which systems you would adapt for my desired rules. Don't download or execute anything yet.
+> Search Games4Free for starting points for a small city-building game. Compare the best matches, get the handoff for the best fit, and explain which systems you would adapt for my desired rules. Don't download or execute anything yet.
 
 ## Independent runnable reader and verification
 
@@ -56,7 +56,7 @@ Protocol and client documentation:
 
 ### Candidate source integration
 
-The candidate adapter checks handlers **in-process, not over live HTTP**. Run it against a Game Commons source checkout with its existing test resolver:
+The candidate adapter checks handlers **in-process, not over live HTTP**. Run it against a Games4Free source checkout with its existing test resolver:
 
 ```sh
 GC_SOURCE_DIR=/absolute/path/to/game-commons node candidate-adapter.mjs

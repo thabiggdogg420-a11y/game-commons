@@ -44,3 +44,5 @@ test('invalid RPC envelopes and arguments fail cleanly',async()=>{
  assert.equal((await call('search_games',[])).isError,true);
  const r=await POST(new Request('https://example.test/mcp/read',{method:'POST',headers:{'Content-Type':'application/json'},body:'{'}));assert.equal((await r.json()).error.code,-32700);
 });
+
+test("MCP display names reflect Games4Free while tool identities remain stable",async()=>{const init=rpc("initialize",{protocolVersion:"2025-11-25"});assert.equal((await (await POST(request(init))).json()).result.serverInfo.name,"Games4Free Reader");assert.equal((await (await full(request(init))).json()).result.serverInfo.name,"Games4Free");});
