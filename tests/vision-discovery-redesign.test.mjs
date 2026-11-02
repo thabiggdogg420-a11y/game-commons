@@ -13,6 +13,8 @@ const catalogueDir=mkdtempSync(path.resolve('.catalogue-redesign-test-'));
 const {default:Catalogue}=await import(compileSsrModule(new URL('../app/projects/page.tsx',import.meta.url),catalogueDir));
 const render=params=>renderToStaticMarkup(createElement(Home,{params}));
 const html=render({});
+// No network during source-edition SSR tests. Snapshot integration uses a pinned opt-in fixture.
+globalThis.fetch=async()=>new Response(null,{status:503});
 rmSync(dir,{recursive:true,force:true});rmSync(catalogueDir,{recursive:true,force:true});
 test('directory precedes concept, preserves source-only scope and provides labelled filters',()=>{
  assert.match(readFileSync('app/page.tsx','utf8'),/return <DiscoverHome params=\{params\}/);
@@ -51,7 +53,7 @@ test('home and full catalogue pagination are bounded, complete and stable',async
  assert.equal(directoryBrowse({page:'-3'}).page,1);assert.equal(directoryBrowse({page:'2bad'}).page,1);assert.equal(directoryBrowse({page:'999999'}).page,first.pages);assert.match(html,/aria-label="Directory pages"/);
 });
 test('responsive, reduced-motion and contrast affordances survive without image URLs',()=>{
- const css=readFileSync('app/discovery.css','utf8');assert.match(css,/@media\(max-width:480px\)/);assert.match(css,/prefers-reduced-motion/);assert.match(css,/:focus-visible\{outline:3px solid #72512c/);assert.doesNotMatch(css,/url\(/);
+ const css=readFileSync('app/discovery.css','utf8');assert.match(css,/@media\(max-width:480px\)/);assert.match(css,/prefers-reduced-motion/);assert.match(css,/:focus-visible\{outline:3px solid #d5ff60/);assert.doesNotMatch(css,/url\(/);
  const lum=h=>h.match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
- for(const [fg,bg]of [['162e3d','f8f7f1'],['465b65','ffffff'],['162e3d','c7e4ef'],['274a3a','e6f0ea']])assert.ok((lum(bg)+.05)/(lum(fg)+.05)>4.5);
+ for(const [fg,bg]of [['101113','f4f5f6'],['101113','a6aab2'],['12150c','d5ff60']])assert.ok((lum(bg)+.05)/(lum(fg)+.05)>4.5);
 });

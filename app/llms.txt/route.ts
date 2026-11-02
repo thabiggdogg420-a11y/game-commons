@@ -1,6 +1,10 @@
 const guide=`# Game Commons — find a base for the game your user wants
 People browse /projects; assistants use this same catalogue. Compare suitable mechanics/platforms, fetch one source/setup brief, then help the user adapt it. Existing gameplay is a starting point, not a constraint. Preserve creators, not the original design.
-Origin: https://game-commons-captain.thabiggdogg420.chatgpt.site
+Origin: https://games.free4allhub.com
+
+## Broad linked-project discovery versus source foundations
+For a general game search, query BOTH search_source_projects (curated source foundations) and search_external_catalogue (broader linked listings); neither alone is the entire catalogue. Merge by project identity without counting aliases twice. For broad discovery use search_external_catalogue with content:"all" and access:"all" (HTTP GET /api/external-catalogue?q={query}&content=all&access=all&limit=5), then get_external_catalogue_entry({id}) (HTTP /api/external-catalogue/{id}). Same indexed listings and filters as the website. Defaults prefer upstream-reported free/open required content, NOT verified free gameplay. content=all includes unknown requirements; content=commercial explicitly requires original commercial game content. access=free-reported filters upstream price reports separately from original-content requirements; pair with content=all to discover free-access claims with unknown original-asset requirements. Preserve freeClaimScope, knownLimitations and contentWarnings in your recommendations. limit1–24; preserve query/platform/genre/content/access with nextCursor. Entries may be link-only: licence claims, source availability and runtime are unverified; no automatic source handoff or remix permission.
+Responses disclose pinned public snapshot provenance when that read-only source supplies the index. Metadata-only listings are not hosted games. Follow a chosen project link; inspect setup/rights before adaptation. Prefer the curated source foundations below when a more detailed source/setup brief is needed. Never claim an external listing has a curated handoff.
 
 ## Search briefly, fetch selected detail
 GET /api/projects?view=summary&q={query}&platform=all|browser|desktop&limit=5
@@ -9,11 +13,11 @@ Rows: id,title,creator,mechanics,runtime,reuse,readiness,kind,detailUrl. Play-on
 GET /projects/{id}/brief?goal={request} (goal ≤500): source/revision, setup, code/asset terms and evidence. Retrieve files from those source links. Inspect/setup, make a focused gameplay change, run relevant tests and explain gaps. No automatic cross-engine mixing or build guarantee.
 
 ## Public MCP: no account/token for reads
-https://game-commons-captain.thabiggdogg420.chatgpt.site/mcp/read
+https://games.free4allhub.com/mcp/read
 Stateless HTTP JSON-RPC POST: initialize, notifications/initialized, tools/list, tools/call. GET is not a page/stream.
 search_source_projects takes query/platform/genre/limit/cursor; compact default. get_project_handoff takes id/goal, including isocity-commons. HTTP without view=summary stays legacy full; MCP view:"full" also returns legacy full (omit pagination).
 Claude Code setup, subject to user/client trust approval:
-claude mcp add --transport http game-commons --scope local https://game-commons-captain.thabiggdogg420.chatgpt.site/mcp/read
+claude mcp add --transport http game-commons --scope local https://games.free4allhub.com/mcp/read
 This guide installs nothing. Never add credentials for this public reader.
 
 ## Scope and examples

@@ -22,9 +22,9 @@ test('five substantial external listings are unique, native, free-download and s
 test('unverified pins stay null with honest handoffs; Slipstream preserves pinned mixed-licence source',()=>{
  for(const id of ids.slice(1)){
   const p=externalProjects.find(x=>x.id===id);assert.equal(p.commit,null);assert.equal(p.archiveUrl,null);assert.equal(p.sourceStatus,'official-source-unpinned');
-  assert.match(projectBrief(id),/OFFICIAL SOURCE — REVISION NOT PINNED/);assert.doesNotMatch(projectBrief(id),/Commit: null/);assert.match(projectReadiness(p).remix.label,/revision and local build unverified/);assert.match(p.aiDevelopment,/not established/);
+  assert.match(projectBrief(id),/Revision: not pinned/);assert.doesNotMatch(projectBrief(id),/Commit: null/);assert.match(projectReadiness(p).remix.label,/revision and local build unverified/);assert.match(p.aiDevelopment,/not established/);
  }
- const p=externalProjects[0];assert.equal(p.commit,'3baf4ec6ea617861663bcec41bf3fbc13fb65ea2');assert.match(p.assetLicense,/CC BY-SA/);assert.match(p.aiDevelopment,/creator claim/);assert.match(p.verification,/not downloaded or run/);
+ const p=externalProjects[0];assert.equal(p.commit,'3baf4ec6ea617861663bcec41bf3fbc13fb65ea2');assert.match(p.assetLicense,/CC BY-SA/);assert.match(p.aiDevelopment,/creator claim/);assert.match(p.verification,/No private playtest or build-validation records are included/);
  assert.match(projectBrief(p.id),/Original: Catalin/);assert.match(projectBrief(p.id),/Original code MIT/);
 });
 test('discovery categories grow linked counts only, never accepted or hosted counts',()=>{

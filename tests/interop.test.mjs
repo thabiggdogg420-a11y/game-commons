@@ -8,7 +8,7 @@ const rpc=(method,params={})=>({jsonrpc:'2.0',id:1,method,params});
 async function call(name,args={},headers={}){return (await (await POST(request(rpc('tools/call',{name,arguments:args}),headers))).json()).result}
 test('reader exposes only catalogue and source tools, without personal collections',async()=>{
  const result=(await (await POST(request(rpc('tools/list')))).json()).result;
- assert.deepEqual(result.tools.map(t=>t.name),['search_source_projects','get_project_handoff','search_games','get_game_manifest','get_game_source']);
+ assert.deepEqual(result.tools.map(t=>t.name),['search_external_catalogue','get_external_catalogue_entry','search_source_projects','get_project_handoff','search_games','get_game_manifest','get_game_source']);
  assert.equal(result.tools[0].inputSchema.properties.mine,undefined);
  for(const name of ['contribute_game','set_game_visibility'])assert.equal((await call(name,{}, {'oai-authenticated-user-id':'owner'})).isError,true);
  assert.equal((await call('search_games',{mine:true},{'oai-authenticated-user-id':'owner'})).isError,true);

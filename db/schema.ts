@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, check, index, primaryKey } from "drizzle-orm/sqlite-core";
+import { sqliteTable, text, integer, check, index, uniqueIndex, primaryKey } from "drizzle-orm/sqlite-core";
 import { sql } from "drizzle-orm";
 export const games = sqliteTable("games", {
   id: text("id").primaryKey(), owner: text("owner").notNull(),
@@ -63,3 +63,14 @@ export const trafficVisits=sqliteTable('traffic_visits',{
 export const usageDaily=sqliteTable('usage_daily',{
  day:text('day').notNull(),event:text('event').notNull(),count:integer('count').notNull(),
 },t=>[primaryKey({columns:[t.day,t.event]}),check('usage_event',sql`${t.event} IN ('landing','start','complete')`),check('usage_count',sql`${t.count} BETWEEN 0 AND 10000`)]);
+
+// Public external metadata only. No hosted game bytes, identities or contact data.
+export const externalImports=sqliteTable('external_imports',{
+ id:text('id').primaryKey(),state:text('state').notNull().default('staging'),expected:integer('expected').notNull(),createdAt:text('created_at').notNull(),
+},t=>[check('external_import_count',sql`${t.expected} BETWEEN 1 AND 20000`),check('external_import_state',sql`${t.state} IN ('staging','active','retired')`),index('external_import_state_idx').on(t.state),uniqueIndex('external_one_active_idx').on(t.state).where(sql`${t.state} = 'active'`)]);
+export const externalEntries=sqliteTable('external_entries',{
+ generation:text('generation').notNull().references(()=>externalImports.id),id:text('id').notNull(),title:text('title').notNull(),sortKey:text('sort_key').notNull(),metadata:text('metadata').notNull(),browser:integer('browser').notNull(),desktop:integer('desktop').notNull(),contentRequirement:text('content_requirement').notNull(),
+},t=>[primaryKey({columns:[t.generation,t.id]}),index('external_entries_sort_idx').on(t.generation,t.sortKey,t.id),index('external_entries_content_idx').on(t.generation,t.contentRequirement,t.sortKey,t.id)]);
+export const externalTerms=sqliteTable('external_terms',{
+ generation:text('generation').notNull(),term:text('term').notNull(),id:text('id').notNull(),
+},t=>[primaryKey({columns:[t.generation,t.term,t.id]}),index('external_terms_entry_idx').on(t.generation,t.id)]);
