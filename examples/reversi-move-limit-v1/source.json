@@ -1,0 +1,23 @@
+{
+  "format": "games4free-reversi-source-example-v1",
+  "status": "assistant-authored example; not an independent creator return",
+  "parent": {
+    "repository": "https://github.com/regiellis/godot-reversi",
+    "commit": "70586efafbc762efa16f5680ca0b90366eccc698",
+    "tree": "8a3479e52be557fae54f55bbe3569be559ecefd1",
+    "creator": "Regi Ellis"
+  },
+  "patchSha256": "e34cb282be45ae33b09ed478c91f2a619b033d89b255fdc715f67265d2f93f33",
+  "patchedFiles": {
+    "systems/session.gd": "8d18a741a7e45e4a7d4bc2e5892eed7e1105ab6789b17877ea17dc6f1f69e50d",
+    "screens/setup/setup.gd": "40322ec57430fb1fc15445be8140780959a67d79eb50b2f7dde7b11f4c6a34ae",
+    "screens/game/game.gd": "19103bb41a5910e1487660a1241959d029ece82b16c5bac42230d01395fcbc71",
+    "screens/result/result.gd": "bcafa5345205b4d0000c5163f089705e6f61a8c266dbaacbb55dc2dd9f64fa19",
+    "tests/acceptance.gd": "a3405520283bbb5cf1748cd3eb4e2f667729efc264b6154cfcf7f91b4280096b"
+  },
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "exportPreset": "Web (non-threaded)",
+  "codeTerms": "MIT; preserve upstream LICENSE",
+  "assetTerms": "Kenney SFX CC0; Bungee by David Jonathan Ross SIL OFL 1.1; retain original notices",
+  "distribution": "Text patch only; fetch the complete pinned parent separately. No compiled game bundled."
+}

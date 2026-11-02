@@ -52,6 +52,10 @@ This is a contribution-ready source edition updated from hosted v86, **not a byt
 - `drizzle/`, `db/`: schema/migration source, not production data.
 - `tools/mcp-client/`: standalone read-only client and checks.
 
+## Reproducible source example
+
+[Reversi move-limit example](examples/reversi-move-limit-v1/README.md): credited pinned-parent patch and harness, with bounded assistant browser-test results. Source-only teaching example; no hosted build or independent creator outcome.
+
 ## Help wanted
 
 Reproduce upstream setup instructions, improve search relevance and concise handoffs, test keyboard/mobile accessibility, or demonstrate a focused adaptation with reproducible source and real checks. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting.

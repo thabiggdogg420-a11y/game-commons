@@ -1,0 +1,343 @@
+--- a/systems/session.gd
++++ b/systems/session.gd
+@@ -18,6 +18,8 @@
+ var difficulty: int = 1 ## A ReversiAI.Level value.
+ var human_player: int = BLACK
+ var seed_value: int = 0
++## Total legal placements by both players; zero keeps standard Reversi.
++var move_limit: int = 0
+ 
+ ## {winner: int, black: int, white: int, moves: int, biggest_flip: int}.
+ var result: Dictionary = {}
+@@ -27,7 +29,8 @@
+ 	reset()
+ 
+ 
+-func configure(new_mode: int, new_difficulty: int, new_human_player: int) -> void:
++func configure(new_mode: int, new_difficulty: int, new_human_player: int, new_limit: int = 0) -> void:
++	move_limit = clampi(new_limit, 0, 60)
+ 	mode = new_mode
+ 	difficulty = new_difficulty
+ 	human_player = new_human_player
+@@ -40,7 +43,7 @@
+ 	result = outcome.duplicate(true)
+ 	# Hotseat is two people at one keyboard, so the win/loss ledger would mean
+ 	# nothing. Only matches against the CPU move the stats.
+-	if mode != Mode.CPU:
++	if mode != Mode.CPU or move_limit > 0:
+ 		return
+ 	var settings := get_node_or_null(^"/root/Settings")
+ 	if settings == null:
+@@ -71,6 +74,7 @@
+ 
+ 
+ func reset() -> void:
++	move_limit = 0
+ 	mode = Mode.CPU
+ 	human_player = BLACK
+ 	seed_value = 0
+--- a/screens/setup/setup.gd
++++ b/screens/setup/setup.gd
+@@ -31,6 +31,10 @@
+ @onready var _start := %StartButton as JuiceButton
+ @onready var _back := %BackButton as JuiceButton
+ 
++const LIMITS := [0, 12, 24]
++var _limit: int = 0
++var _limit_button: JuiceButton
++
+ var _opponent: int = 1
+ var _colour: int = 0
+ var _opponents: Array[JuiceButton] = []
+@@ -38,6 +42,13 @@
+ 
+ 
+ func _ready() -> void:
++	_limit = Session.move_limit if LIMITS.has(Session.move_limit) else 0
++	_limit_button = JuiceButton.new()
++	_limit_button.position = Vector2(584, 950)
++	_limit_button.size = Vector2(1392, 108)
++	add_child(_limit_button)
++	%Note.hide()
++	_limit_button.pressed.connect(_on_limit_pressed)
+ 	_opponents = [_easy, _normal, _hard, _two]
+ 	_colours = [_black, _white]
+ 
+@@ -77,6 +88,7 @@
+ 	var rows: Array[JuiceButton] = []
+ 	rows.append_array(_opponents)
+ 	rows.append_array(_colours)
++	rows.append(_limit_button)
+ 	rows.append(_start)
+ 	rows.append(_back)
+ 	return rows
+@@ -85,6 +97,8 @@
+ ## Pushes the whole selection state out to the widgets in one pass, so there is
+ ## one place where "what is chosen" turns into "what is drawn".
+ func _refresh() -> void:
++	_limit_button.text = "MOVES: UNLIMITED" if _limit == 0 else "MOVES: %d TOTAL - MOST DISCS WINS" % _limit
++	_limit_button.queue_redraw()
+ 	for i in _opponents.size():
+ 		_style_choice(_opponents[i], i == _opponent)
+ 	for i in _colours.size():
+@@ -120,6 +134,7 @@
+ 	var rows: Array[Array] = [[_easy, _normal], [_hard, _two]]
+ 	if _opponent != TWO_PLAYERS:
+ 		rows.append([_black, _white])
++	rows.append([_limit_button])
+ 	rows.append([_start, _back])
+ 
+ 	var flat: Array[JuiceButton] = []
+@@ -166,10 +181,15 @@
+ 	Settings.set_value(DIFFICULTY_KEY, _opponent)
+ 	var mode := Session.Mode.HOTSEAT if _opponent == TWO_PLAYERS else Session.Mode.CPU
+ 	var human := Session.WHITE if _colour == 1 else Session.BLACK
+-	Session.configure(mode, _opponent, human)
++	Session.configure(mode, _opponent, human, _limit)
+ 	Audio.play(&"start")
+ 	Stage.go(GAME_SCENE)
+ 
+ 
+ func _on_back_pressed() -> void:
+ 	Stage.go(TITLE_SCENE)
++
++
++func _on_limit_pressed() -> void:
++	_limit = LIMITS[(LIMITS.find(_limit) + 1) % LIMITS.size()]
++	_refresh()
+--- a/screens/game/game.gd
++++ b/screens/game/game.gd
+@@ -65,6 +65,7 @@
+ 
+ var _busy := true
+ var _over := false
++var _generation := 0
+ var _mode: int = Session.Mode.HOTSEAT
+ var _difficulty: int = ReversiAI.Level.NORMAL
+ var _human: int = ReversiBoard.BLACK
+@@ -201,6 +202,7 @@
+ 
+ 
+ func _take_cpu_turn() -> void:
++	var generation := _generation
+ 	_busy = true
+ 	_board_view.interactive = false
+ 	_board_view.hints = []
+@@ -208,7 +210,7 @@
+ 	# The readout has to be legible before the board moves, and the search
+ 	# itself is too fast to supply that pause on its own.
+ 	await get_tree().create_timer(T_THINK_BEAT).timeout
+-	if not is_inside_tree() or _over:
++	if not is_inside_tree() or _over or generation != _generation:
+ 		return
+ 	var cell := ReversiAI.choose(_board, _turn, _difficulty, _rng)
+ 	_stop_thinking()
+@@ -219,6 +221,7 @@
+ 
+ 
+ func _apply(cell: Vector2i) -> void:
++	var generation := _generation
+ 	_busy = true
+ 	_board_view.interactive = false
+ 	_board_view.hints = []
+@@ -242,12 +245,15 @@
+ 		Juice.toast("Flipped %d." % flipped.size(), Design.CYAN)
+ 
+ 	await _board_view.animation_finished
+-	if not is_inside_tree() or _over:
++	if not is_inside_tree() or _over or generation != _generation:
+ 		return
+ 	_advance_turn()
+ 
+ 
+ func _advance_turn() -> void:
++	if Session.move_limit > 0 and _board.move_count() >= Session.move_limit:
++		_finish("Move limit reached.")
++		return
+ 	if _board.is_over():
+ 		_finish()
+ 		return
+@@ -256,6 +262,7 @@
+ 
+ 
+ func _pass_turn() -> void:
++	var generation := _generation
+ 	_busy = true
+ 	_board_view.interactive = false
+ 	_board_view.hints = []
+@@ -263,13 +270,13 @@
+ 	Juice.toast(PASS_BLACK if _turn == ReversiBoard.BLACK else PASS_WHITE, Design.CYAN)
+ 	Audio.play(&"pass")
+ 	await _show_centre(CENTRE_PASS)
+-	if not is_inside_tree() or _over:
++	if not is_inside_tree() or _over or generation != _generation:
+ 		return
+ 	_turn = ReversiBoard.opponent(_turn)
+ 	_begin_turn()
+ 
+ 
+-func _finish() -> void:
++func _finish(reason: String = "No legal moves remain.") -> void:
+ 	if _over:
+ 		return
+ 	_over = true
+@@ -288,6 +295,7 @@
+ 		winner = ReversiBoard.WHITE
+ 
+ 	Session.record_result({
++		"reason": reason,
+ 		"winner": winner,
+ 		"black": black,
+ 		"white": white,
+@@ -303,6 +311,12 @@
+ 
+ 
+ func _restart() -> void:
++	_generation += 1
++	Session.result = {}
++	for slot in _strip.get_children():
++		slot.visible = false
++	_centre.visible = false
++	Juice.toast("Restarted. Black moves first.", Design.CYAN)
+ 	_over = false
+ 	_busy = true
+ 	_stop_thinking()
+@@ -399,6 +413,8 @@
+ 		_last_label.text = _algebraic(_last_cell)
+ 		_flip_label.text = "Flipped %d." % _last_flips
+ 
++	if Session.move_limit > 0:
++		_flip_label.text += "  Moves %d/%d" % [_board.move_count(), Session.move_limit]
+ 	_hint_button.disabled = _over or _is_cpu_turn()
+ 
+ 
+--- a/screens/result/result.gd
++++ b/screens/result/result.gd
+@@ -58,6 +58,7 @@
+ ## a screen opened directly renders a zeroed match instead of throwing.
+ static func normalise_result(raw: Dictionary) -> Dictionary:
+ 	return {
++		"reason": str(raw.get("reason", "Match finished.")),
+ 		"winner": int(raw.get("winner", EMPTY)),
+ 		"black": int(raw.get("black", 0)),
+ 		"white": int(raw.get("white", 0)),
+@@ -115,7 +116,7 @@
+ 	_card.accent = accent
+ 
+ 	_heading.text = heading_for(winner)
+-	_subline.text = subline_for(winner, Session.mode, Session.human_player)
++	_subline.text = str(_result["reason"]) + " " + subline_for(winner, Session.mode, Session.human_player)
+ 	_moves_value.text = str(int(_result["moves"]))
+ 	_flip_value.text = str(int(_result["biggest_flip"]))
+ 	_record_value.text = _record_text()
+@@ -236,7 +237,7 @@
+ func _on_play_again_pressed() -> void:
+ 	# Same opponent, same colour, fresh seed. configure() re-rolls seed_value, so
+ 	# a second run is a new match rather than a replay of the one just finished.
+-	Session.configure(Session.mode, Session.difficulty, Session.human_player)
++	Session.configure(Session.mode, Session.difficulty, Session.human_player, Session.move_limit)
+ 	Stage.go(GAME_SCENE)
+ 
+ 
+--- /dev/null
++++ b/tests/acceptance.gd
+@@ -0,0 +1,99 @@
++extends SceneTree
++
++var checks := 0
++var failures := 0
++var session: Node
++var stage: Node
++
++func check(ok: bool, label: String) -> void:
++	checks += 1
++	if not ok:
++		failures += 1
++	print("%s %s" % ["PASS" if ok else "FAIL", label])
++
++func _initialize() -> void:
++	call_deferred("run")
++
++func wait_seconds(seconds: float) -> void:
++	await create_timer(seconds).timeout
++
++func scene(path: String) -> Node:
++	change_scene_to_file(path)
++	await process_frame
++	await process_frame
++	return current_scene
++
++func move(game: Node) -> void:
++	var cells: Array = game._moves.keys()
++	game._on_cell_clicked(cells[0])
++	await wait_seconds(0.8)
++
++func run() -> void:
++	session = root.get_node("Session")
++	stage = root.get_node("Stage")
++	root.get_node("Settings").set_value("a11y/reduced_motion", true)
++	var setup: Node = await scene("res://screens/setup/setup.tscn")
++	check(setup._limit == 0 and "UNLIMITED" in setup._limit_button.text, "default unlimited visible")
++	setup._limit_button.pressed.emit()
++	check(setup._limit == 12 and "12 TOTAL" in setup._limit_button.text, "limit control selects 12 total")
++	check(setup._limit_button.get_minimum_size().x <= 1392, "limit label fits allocated width")
++	check(setup._limit_button.get_minimum_size().y <= 108, "limit control fits allocated height")
++	setup._limit_button.pressed.emit()
++	check(setup._limit == 24, "limit control selects 24")
++	setup._limit_button.pressed.emit()
++	check(setup._limit == 0, "limit control cycles back to unlimited")
++	session.configure(1, 0, 1, 2)
++	var game: Node = await scene("res://screens/game/game.tscn")
++	check(game._board.score(1) == 2 and game._board.score(2) == 2 and game._moves.size() == 4, "standard opening retained")
++	game._on_cell_clicked(Vector2i(0, 0))
++	check(game._board.move_count() == 0, "illegal click does not consume limit")
++	await move(game)
++	check(game._board.move_count() == 1 and not game._over, "first legal move increments once")
++	check("Moves 1/2" in game._flip_label.text, "remaining progress feedback")
++	game._open_pause()
++	check(paused and game._pause != null, "pause opens")
++	game._pause.restart_requested.emit()
++	await wait_seconds(0.1)
++	check(not paused and game._board.move_count() == 0 and game._board.score(1) == 2, "pause restart resets board/count")
++	check(session.move_limit == 2 and session.result.is_empty(), "restart preserves limit and clears result")
++	check(game._last_cell == Vector2i(-1, -1) and game._played.is_empty(), "restart clears prior move history")
++	await move(game)
++	# Two rapid clicks must not consume two placements while animation is busy.
++	var next_cell: Vector2i = game._moves.keys()[0]
++	game._on_cell_clicked(next_cell)
++	game._on_cell_clicked(next_cell)
++	await wait_seconds(1.5)
++	check(current_scene.scene_file_path.ends_with("result.tscn"), "limit transitions to actual result screen")
++	check(session.result.get("moves") == 2 and session.result.get("reason") == "Move limit reached.", "exact total-placement limit and reason")
++	check("Move limit reached." in current_scene._subline.text, "result displays limit reason")
++	check(current_scene._subline.get_minimum_size().x <= 2080, "result reason fits design width")
++	current_scene._play_again.pressed.emit()
++	await wait_seconds(0.8)
++	check(current_scene.scene_file_path.ends_with("game.tscn") and current_scene._board.move_count() == 0 and session.move_limit == 2, "play again starts fresh with selected limit")
++	session.configure(1, 0, 1, 0)
++	game = await scene("res://screens/game/game.tscn")
++	for i in range(3):
++		await move(game)
++	check(game._board.move_count() == 3 and not game._over and session.result.is_empty(), "unlimited regression continues beyond short limit")
++	# Restart during the CPU delay: old delayed move must not act in new match.
++	session.configure(0, 0, 2, 12)
++	game = await scene("res://screens/game/game.tscn")
++	await wait_seconds(0.1)
++	game._restart()
++	game._restart()
++	await wait_seconds(1.5)
++	check(game._board.move_count() == 1 and game._turn == 2, "repeated restart cancels stale CPU callbacks")
++	# Pure rules full-match regression, no simulated outcome shortcuts.
++	var board := ReversiBoard.new()
++	var turn := ReversiBoard.BLACK
++	var steps := 0
++	while not board.is_over() and steps < 130:
++		var legal := board.valid_moves(turn)
++		if not legal.is_empty():
++			board.apply_move(legal.keys()[0], turn)
++		turn = ReversiBoard.opponent(turn)
++		steps += 1
++	check(board.is_over() and board.move_count() <= 60 and board.score(1) + board.score(2) == board.move_count() + 4, "complete deterministic rules match preserves scoring")
++	print("RESULT %d checks, %d failures" % [checks, failures])
++	await wait_seconds(1)
++	quit(1 if failures else 0)
