@@ -1,5 +1,7 @@
 # Games4Free
 
+**Play and browse:** [games.free4allhub.com](https://games.free4allhub.com). For AI connection steps and copyable discovery examples, see the [MCP guide](tools/mcp-client/README.md).
+
 Part of [**Free4AllHub**](https://free4allhub.thabiggdogg420.chatgpt.site), alongside **Plan4Free** and **Learn4Free**. The product was formerly Game Commons; the `thabiggdogg420-a11y/game-commons` repository URL stays unchanged for compatibility.
 
 **Point your AI at Games4Free, find a useful starting point, and adapt it into the game you want.**
@@ -33,9 +35,11 @@ The 93 baseline checks above cover installation, source-edition boundaries, dire
 - `/api/external-catalogue`: broad metadata discovery with independent access-price and original-content facets.
 - `/projects/{id}/brief`: selected project's source and adaptation handoff.
 
-The [MCP client and acceptance harness](tools/mcp-client/README.md) uses the same directory, not a separate catalogue. Inside that directory, `npm ci --ignore-scripts`, `npm test` and `npm run tools` install and exercise its read-only client. The default client contacts the hosted public site; set `GC_MCP_URL` to test your own server. It does not install into an AI account or publish to npm.
+The [MCP client and acceptance harness](tools/mcp-client/README.md) uses the same directory, not a separate catalogue. Inside that directory, `npm ci --ignore-scripts`, `npm test` and `npm run tools` install and exercise its read-only client. The default client contacts the hosted public site; set `GC_MCP_URL` for `npm test` to test your own server. The `tools`, `search` and `detail` CLI commands always contact the hosted endpoint; they do not read `GC_MCP_URL`. It does not install into an AI account or publish to npm.
 
 ## Community source edition
+
+**Version boundary (2 November 2026):** the hosted site is v85; this clone remains the v82 source edition. Hosted v85 adds device-specific platform filters, engine filters and Recommended sorting. Those features are not yet synchronized into this clone. This documentation update does not change the website or claim a newer source release.
 
 This is a contribution-ready source edition derived from hosted v82, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
 

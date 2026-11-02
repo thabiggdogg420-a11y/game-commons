@@ -1,5 +1,7 @@
 # Games4Free: connect an AI to reusable game starting points
 
+**Website:** [Games4Free](https://games.free4allhub.com)
+
 **Native MCP endpoint:** `https://game-commons-captain.thabiggdogg420.chatgpt.site/mcp/read`
 
 This is an actual public, read-only MCP Streamable HTTP server—not a JSON feed pretending to be MCP. It searches the same source catalogue used by the website and returns detailed project handoffs. No API key, account, OAuth grant, local bridge, hosted duplicate catalogue or paid service is needed to read it.
@@ -33,7 +35,34 @@ npm run search -- "city builder"
 npm run detail -- freeciv-web "Make a smaller game with different building rules"
 ```
 
-Dependencies are pinned with a lockfile. This uses the official `@modelcontextprotocol/sdk` client and `StreamableHTTPClientTransport`. It does not launch an LLM, bill a model API, install into an AI account, download game repositories or execute game source. `npm test` makes real read-only requests to the live server; it is not a mocked demonstration. For a local candidate server, use `GC_MCP_URL=http://127.0.0.1:PORT/mcp/read npm test`.
+Dependencies are pinned with a lockfile. This uses the official `@modelcontextprotocol/sdk` client and `StreamableHTTPClientTransport`. It does not launch an LLM, bill a model API, install into an AI account, download game repositories or execute game source. `npm test` makes real read-only requests to the live server; it is not a mocked demonstration. For a local candidate server, use `GC_MCP_URL=http://127.0.0.1:PORT/mcp/read npm test`. Only the acceptance harness (`check.mjs`, run by `npm test`) reads that variable. The `tools`, `search` and `detail` CLI commands always use the hosted endpoint; setting `GC_MCP_URL` does not redirect them. The `search` command searches curated source starting points, not the broad external catalogue.
+
+## Pick the right discovery tool
+
+The hosted site is **v85 as of 2 November 2026**; this repository remains the **v82 source edition**. The example below targets the hosted public MCP server. Device-specific platform filters, engine filters and Recommended sorting are not yet available in this clone. Call `tools/list` in your connected client to inspect the server's current schema; this guide does not upgrade an already-installed connector.
+
+- **Find something to play:** `search_external_catalogue` searches broad upstream metadata. Follow with `get_external_catalogue_entry` using the returned ID, then inspect the original creator's destination.
+- **Find a base to adapt:** `search_source_projects`, then `get_project_handoff`, returns the smaller source/setup/rights-oriented collection. This is what the CLI `search` and `detail` commands use.
+
+Example tool call for a connected MCP client (not a shell command):
+
+```json
+{
+  "name": "search_external_catalogue",
+  "arguments": {
+    "platform": "browser",
+    "engine": "godot",
+    "content": "all",
+    "access": "free-reported",
+    "sort": "recommended",
+    "limit": 3
+  }
+}
+```
+
+These are upstream-reported facets, not proof that a game runs on your device. `content: "all"` includes records without free/open original-content rights; `access: "free-reported"` filters reported access price only. Recommended combines reviewed selections and reported evidence, not a universal quality score. Keep warnings and rights qualifications, and follow `nextCursor` with identical filters. A browser/Godot match is not automatically remixable.
+
+For adapting a game, ask: “Search Games4Free's source starting points for a city builder; get the best match's handoff and explain setup, licences and which systems could change. Do not download or execute anything.”
 
 ## Discovery contract
 

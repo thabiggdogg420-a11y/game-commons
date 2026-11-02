@@ -3,7 +3,7 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 const [command='help',value='',goal='']=process.argv.slice(2);
 if(!['tools','search','detail'].includes(command)){
- console.log('Game Commons read-only MCP client\n  node cli.mjs tools\n  node cli.mjs search "city builder"\n  node cli.mjs detail PROJECT_ID "desired changes"\nNo credentials, installation into another AI client, downloads or code execution.');
+ console.log('Games4Free read-only MCP client\n  node cli.mjs tools\n  node cli.mjs search "city builder"\n  node cli.mjs detail PROJECT_ID "desired changes"\nNo credentials, installation into another AI client, downloads or code execution.');
  process.exit(command==='help'?0:1);
 }
 if(command==='detail'&&!value)throw Error('A project ID is required.');
