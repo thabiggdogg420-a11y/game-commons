@@ -1,6 +1,8 @@
-# Game Commons
+# Games4Free
 
-**Point your AI at Game Commons, find a useful starting point, and adapt it into the game you want.**
+Part of [**Free4AllHub**](https://free4allhub.thabiggdogg420.chatgpt.site), alongside **Plan4Free** and **Learn4Free**. The product was formerly Game Commons; the `thabiggdogg420-a11y/game-commons` repository URL stays unchanged for compatibility.
+
+**Point your AI at Games4Free, find a useful starting point, and adapt it into the game you want.**
 
 One game-source directory, two entrances: a website for people and a compact read-only MCP interface for assistants. Listings credit original creators, link upstream source/setup instructions, and distinguish source-linked projects from play-only references.
 

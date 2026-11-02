@@ -6,10 +6,10 @@ import TrafficTracker from "./traffic-tracker";
 import UsageTracker from "./usage-tracker";
 
 export const metadata: Metadata = {
-  title: "Game Commons — A starting point for your game",
-  description: "Point your AI at Game Commons. Find a suitable game base, meet its creator and adapt useful source into the game you want.",
+  title: "Games4Free — A starting point for your game",
+  description: "Point your AI at Games4Free. Find a suitable game base, meet its creator and adapt useful source into the game you want.",
   metadataBase: new URL('https://game-commons-captain.thabiggdogg420.chatgpt.site'),
-  openGraph: {title:'Game Commons — A starting point for your game',description:'Find a starting point for the game you want. Browse original games or let your AI find a suitable source base.'},
+  openGraph: {title:'Games4Free — A starting point for your game',description:'Find a starting point for the game you want. Browse original games or let your AI find a suitable source base.'},
   twitter: {card:'summary'},
   icons: {
     icon: "/favicon.svg",

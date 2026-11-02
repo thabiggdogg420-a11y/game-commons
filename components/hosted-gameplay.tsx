@@ -4,12 +4,12 @@ import './hosted-gameplay.css';
 import {hostedCatalogue,hostedGameRoute} from '@/lib/hosted-catalogue';
 import type {GameplayCapture} from '@/lib/gameplay-captures';
 const pendingCredits:Record<string,{creator:string;license:string;source:string}>={
- 'isocity-commons':{creator:'amilich (original); Game Commons (English solo adaptation)',license:'MIT repository declaration; dependency notices retained. Artwork has no independent per-image provenance guarantee.',source:'/games/isocity/v1-manifest.json'},
- 'clanfire-commons':{creator:'Rob Carpenter (Clanfire); Game Commons (offline scenarios and integration)',license:'MIT; procedural-only art and synthesized audio; optional upstream assets omitted',source:'/remixes/clanfire-commons/release.json'},
- 'star-circuit':{creator:'BridgeMind / Apex Formula and Babylon.js / Space Pirates contributors; adaptation by Game Commons with Codex',license:'MIT and Apache-2.0; retain component notices',source:'/remixes/star-circuit/v2.json'},
+ 'isocity-commons':{creator:'amilich (original); Games4Free (English solo adaptation)',license:'MIT repository declaration; dependency notices retained. Artwork has no independent per-image provenance guarantee.',source:'/games/isocity/v1-manifest.json'},
+ 'clanfire-commons':{creator:'Rob Carpenter (Clanfire); Games4Free (offline scenarios and integration)',license:'MIT; procedural-only art and synthesized audio; optional upstream assets omitted',source:'/remixes/clanfire-commons/release.json'},
+ 'star-circuit':{creator:'BridgeMind / Apex Formula and Babylon.js / Space Pirates contributors; adaptation by Games4Free with Codex',license:'MIT and Apache-2.0; retain component notices',source:'/remixes/star-circuit/v2.json'},
  'godot-pong':{creator:'Godot Engine contributors',license:'MIT; original and engine notices retained',source:'/godot/godot-pong-provenance.json'},
- 'datakin-discovery':{creator:'CircuitFoxes (original game, art and music); Game Commons (Discovery route)',license:'Creator-permitted edited ROM; level geometry MIT; emulator MPL-2.0. Not an open-source game engine.',source:'/remixes/datakin-relay/v2.json'},
- 'datakin-challenge':{creator:'CircuitFoxes (original game, art and music); Game Commons (Challenge route)',license:'Creator-permitted edited ROM; level geometry MIT; emulator MPL-2.0. Not an open-source game engine.',source:'/remixes/datakin-relay/v2.json'},
+ 'datakin-discovery':{creator:'CircuitFoxes (original game, art and music); Games4Free (Discovery route)',license:'Creator-permitted edited ROM; level geometry MIT; emulator MPL-2.0. Not an open-source game engine.',source:'/remixes/datakin-relay/v2.json'},
+ 'datakin-challenge':{creator:'CircuitFoxes (original game, art and music); Games4Free (Challenge route)',license:'Creator-permitted edited ROM; level geometry MIT; emulator MPL-2.0. Not an open-source game engine.',source:'/remixes/datakin-relay/v2.json'},
 };
 export function HostedGameplay({id,version,compact=false}:{id:string;version:number;compact?:boolean}){
  const credit=pendingCredits[id]; const record=gameplayCaptures[id],historical=version===2?historicalGameplayCaptures[id]:undefined;
