@@ -27,6 +27,18 @@ node --import ./tests/register.mjs --test --test-concurrency=1 tests/public-sour
 
 The 93 baseline checks above cover installation, source-edition boundaries, directory filters and pagination, catalogue handoffs, read-only MCP, core storage/feedback and event handling. The import hook supplies the in-memory test environment and TypeScript aliases. Other retained tests include historical assumptions and are not all part of this verified subset. Lint has existing errors/warnings; it is not a clean release gate.
 
+### Focused v87 search-state checks
+
+Header searches retain selected device, access, engine and curated source filters while starting a fresh page. Exact genre accepts surrounding whitespace, case and Unicode normalization; blank means all genres. Both raw and normalized length limits remain enforced. Earlier cursors using noncanonical genre text may need a fresh search.
+
+After fetching the optional pinned public metadata fixtures using the documented integration-fixture instructions, run:
+
+```sh
+node --import ./tests/register.mjs --test --test-concurrency=1 tests/discovery-search-state.test.mjs tests/genre-boundary-integration.test.mjs tests/external-catalogue.test.mjs
+```
+
+These are source-edition regressions, not independent player outcomes or all-device acceptance.
+
 ## Use with an assistant
 
 - `/llms.txt`: assistant entry guide.
@@ -39,9 +51,9 @@ The [MCP client and acceptance harness](tools/mcp-client/README.md) uses the sam
 
 ## Community source edition
 
-**Version boundary (2 November 2026):** this source edition includes discovery/filter logic from hosted v86: reported device-specific platform and engine filters, Recommended sorting and current public media/action metadata. This is not complete hosted-site parity: image rendering, historical demos, private data and deployment bindings remain deliberately excluded. The hosted v86 website is unchanged by this source update.
+**Version boundary (2 November 2026):** this source edition includes discovery/filter logic from hosted v87: reported device-specific platform and engine filters, Recommended sorting and current public media/action metadata. This is not complete hosted-site parity: image rendering, historical demos, private data and deployment bindings remain deliberately excluded. The hosted v87 website is unchanged by this source update.
 
-This is a contribution-ready source edition updated from hosted v86, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
+This is a contribution-ready source edition updated from hosted v87, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
 
 ## Project map
 

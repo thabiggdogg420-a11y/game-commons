@@ -1,4 +1,4 @@
-import {platforms,engines,platformAliases,engineAliases,normalizedPlatforms,normalizedEngines,FACET_REVISION} from './external-facets.mjs';
+import {platforms,engines,platformAliases,engineAliases,normalizedPlatforms,normalizedEngines,FACET_REVISION,normalizeGenre} from './external-facets.mjs';
 import type {MediaSummary} from './project-media-types';
 import {mediaSummaries,mediaFor,prepareMedia,mediaHasImage,MEDIA_SHA} from './project-media';
 import {projectSignals,SIGNALS_SHA} from './project-signals';
@@ -52,8 +52,9 @@ async function snapshotPage(query:string,platform:unknown,engine:unknown,genre:s
  return {format:'games4free-external-index-v1',available:true as const,generation,content,access,sort,platform,engine,rankingAvailable:!!signals,total:result.total,limit,nextCursor:result.nextCursor?enc({v:3,g:generation,sr:signals?SIGNALS_SHA:'unavailable',cr:CORRECTION_REVISION,after:result.nextCursor}):null,projects:await selectedSummaries(result.projects,signals,mediaReady),source:snapshotSource,scope:'External metadata, not hosted games or verified licensing/runtime. Free access reports do not establish original-content rights or remix permission.'};
 }
 export async function externalCataloguePage(options:Record<string,unknown>={}){
- const {query='',platform='all',engine='all',genre='all',content='free-open',access='all',sort='relevance',limit=12,cursor}=options;
- if(Object.keys(options).some(k=>!['query','platform','engine','genre','content','access','sort','limit','cursor'].includes(k))||typeof query!=='string'||query.length>200||!platforms.includes(platform as string)||!engines.includes(engine as string)||!['free-open','free','open','unknown','commercial','swappable','all'].includes(content as string)||!['all','free-reported','paid-reported','unknown'].includes(access as string)||!['relevance','popularity','recommended'].includes(sort as string)||typeof genre!=='string'||genre.length>100||typeof limit!=='number'||!Number.isInteger(limit)||limit<1||limit>24||(cursor!==undefined&&typeof cursor!=='string'))fail('Invalid external catalogue filters (limit 1–24).');
+ const {query='',platform='all',engine='all',genre:rawGenre='all',content='free-open',access='all',sort='relevance',limit=12,cursor}=options;
+ if(Object.keys(options).some(k=>!['query','platform','engine','genre','content','access','sort','limit','cursor'].includes(k))||typeof query!=='string'||query.length>200||!platforms.includes(platform as string)||!engines.includes(engine as string)||!['free-open','free','open','unknown','commercial','swappable','all'].includes(content as string)||!['all','free-reported','paid-reported','unknown'].includes(access as string)||!['relevance','popularity','recommended'].includes(sort as string)||typeof rawGenre!=='string'||rawGenre.length>100||typeof limit!=='number'||!Number.isInteger(limit)||limit<1||limit>24||(cursor!==undefined&&typeof cursor!=='string'))fail('Invalid external catalogue filters (limit 1–24).');
+ const genre=normalizeGenre(rawGenre);if(genre.length>100)fail('Invalid external catalogue genre (maximum 100 normalized characters).');
  const q=query.trim(),terms=externalTokens(q).slice(0,8),binding=[q,platform,engine,genre,content,access,sort,FACET_REVISION];
  let active:{id:string}|null;
  try{active=await db().prepare("SELECT id FROM external_imports WHERE state='active' ORDER BY created_at DESC LIMIT 1").first<{id:string}>()}catch{return snapshotPage(q,platform,engine,genre,content,access,sort,limit,cursor)}

@@ -95,3 +95,12 @@ test('concurrent chunks cannot exceed expected count or overwrite same-ID metada
   await assert.rejects(()=>send('catalogue-'+'f'.repeat(32),{action:'begin',expected:1}),/Four retained/);
  }finally{env.DB.batch=original}
 });
+
+test('active database canonicalizes genre before filtering and cursor binding',async()=>{
+ const genre=dataset.find(p=>p.genres.length)?.genres[0];assert.ok(genre);
+ const base=await externalCataloguePage({content:'all',genre,limit:1});assert.ok(base.total>0);
+ for(const value of [genre.toUpperCase(),' '+genre+' ','\t'+genre+'\n']){const p=await externalCataloguePage({content:'all',genre:value,limit:1});assert.equal(p.total,base.total);assert.deepEqual(p.projects.map(x=>x.id),base.projects.map(x=>x.id));assert.equal(p.nextCursor,base.nextCursor);}
+ assert.equal((await externalCataloguePage({content:'all',genre:'   '})).total,(await externalCataloguePage({content:'all',genre:'all'})).total);
+ if(base.nextCursor){const next=await externalCataloguePage({content:'all',genre:' '+genre+' ',limit:1,cursor:base.nextCursor});assert.ok(next.projects.every(p=>p.id!==base.projects[0].id));await assert.rejects(()=>externalCataloguePage({content:'all',genre:'not-the-same-genre',cursor:base.nextCursor}));}
+ await assert.rejects(()=>externalCataloguePage({genre:42}));await assert.rejects(()=>externalCataloguePage({genre:' '.repeat(101)}));
+});

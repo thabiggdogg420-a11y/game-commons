@@ -9,6 +9,7 @@ import {projectReadiness} from '@/lib/project-readiness';
 import {projectGenres} from '@/lib/project-genres';
 import {CuratedSearchMatches} from '@/components/featured-games';
 import './discovery.css';
+import {platforms,engines,normalizeGenre} from '@/lib/external-facets.mjs';
 type Params=Record<string,string|string[]|undefined>;
 const stackOf=(engine:string)=>/godot/i.test(engine)?'godot':/javascript|typescript|three\.js|babylon|phaser|dom\/svg/i.test(engine)?'web':'other';
 export function directoryBrowse(params:Params={}){
@@ -20,13 +21,23 @@ export function directoryBrowse(params:Params={}){
  const href=(changes:Record<string,string>)=>{const s=new URLSearchParams({q,platform,genre,lane,stack,readiness,collection:'curated',page:'1',...changes});for(const [k,v] of [...s])if(!v||defaults[k]===v)s.delete(k);if(params.gc_test==='1')s.set('gc_test','1');return '/'+(s.size?'?'+s.toString():'')+'#directory'};
  return {q,platform,genre,lane,stack,readiness,projects,total,page,pages,href};
 }
-export function CommonsNav({curated=false,query=''}:{curated?:boolean;query?:string}){return <header className="gc-nav gc-wrap"><a className="gc-brand" href="/" aria-label="Games4Free home">Games<span>4</span>Free</a><nav aria-label="Main navigation"><a href="/#directory">Discover</a><a href="/?collection=curated&lane=source#directory">Source games</a></nav><form className="gc-header-search" action="/#directory" method="get">{curated&&<input type="hidden" name="collection" value="curated"/>}<input aria-label="Search games" type="search" name={curated?'q':'externalQ'} defaultValue={query} placeholder="Search games, genres, mechanics…" maxLength={200}/><button type="submit">Search</button></form><a className="gc-ai-link" href="#ai-tools">Connect your AI</a></header>}
+// Preserve only validated filters; a new query always starts from the first page.
+export function headerSearchFields(params:Params={},curated=false):Record<string,string>{
+ const value=(key:string)=>typeof params[key]==='string'?params[key] as string:'';
+ if(curated){const {platform,genre,lane,stack,readiness}=directoryBrowse(params);return {collection:'curated',platform,genre,lane,stack,readiness,...(params.gc_test==='1'?{gc_test:'1'}:{})};}
+ const allowed:Record<string,readonly string[]>={externalPlatform:platforms,externalEngine:engines,externalContent:['free-open','free','open','unknown','commercial','swappable','all'],externalAccess:['all','free-reported','paid-reported','unknown'],externalSort:['relevance','popularity','recommended']};
+ const fields:Record<string,string>={};
+ for(const [key,options] of Object.entries(allowed)){const v=value(key);if(options.includes(v))fields[key]=v;}
+ const genre=value('externalGenre');if(genre.length<=100&&genre&&normalizeGenre(genre).length<=100)fields.externalGenre=normalizeGenre(genre);
+ return fields;
+}
+export function CommonsNav({curated=false,query='',params={}}:{curated?:boolean;query?:string;params?:Params}){return <header className="gc-nav gc-wrap"><a className="gc-brand" href="/" aria-label="Games4Free home">Games<span>4</span>Free</a><nav aria-label="Main navigation"><a href="/#directory">Discover</a><a href="/?collection=curated&lane=source#directory">Source games</a></nav><form className="gc-header-search" action="/#directory" method="get">{Object.entries(headerSearchFields(params,curated)).map(([name,value])=><input key={name} type="hidden" name={name} value={value}/>)}<input aria-label="Search games" type="search" name={curated?'q':'externalQ'} defaultValue={query} placeholder="Search games, genres, mechanics…" maxLength={200}/><button type="submit">Search</button></form><a className="gc-ai-link" href="#ai-tools">Connect your AI</a></header>}
 export default function DiscoverHome({params={},externalSection=null,topSlides}:{params?:Params;externalSection?:ReactNode;topSlides?:TopGameSlide[]}={}){
  const state=directoryBrowse(params),{q,platform,genre,lane,stack,readiness,projects,total,page,pages,href}=state;
  const linked=externalProjects.filter(p=>p.sourceUrl).length;
  const curated=!externalSection||params.collection==='curated'||!!params.q||!!params.lane||!!params.stack||!!params.readiness;
  const slides=topSlides??featured.records.filter(p=>p.rating).map(p=>{const r=p.rating!;return {id:p.id,title:p.title,genre:p.genre,summary:p.setupBurden,action:{url:p.officialFreePlayOrDownload,label:'Get the free edition',usage:'start' as const},activity:{count:r.count,provider:r.provider,scope:r.scope,dateLabel:'Observed '+r.checkedAt,sourceUrl:r.sourceUrl,metricLabel:r.provider==='itch.io'?'ratings':'English reviews'},detailUrl:p.sourceUrl,scoreLabel:r.scale===5?`${r.score} / 5 on ${r.provider}`:`${r.score}% positive on ${r.provider}`,notes:p.caveats}});
- return <div className="gc-discovery"><a className="gc-skip" href="#main">Skip to content</a><CommonsNav curated={curated} query={curated?q:typeof params.externalQ==='string'?params.externalQ:''}/><main id="main" tabIndex={-1}>
+ return <div className="gc-discovery"><a className="gc-skip" href="#main">Skip to content</a><CommonsNav curated={curated} params={params} query={curated?q:typeof params.externalQ==='string'?params.externalQ:''}/><main id="main" tabIndex={-1}>
  <section className="gc-intro gc-wrap"><div><p className="gc-kicker">FREE TO DISCOVER. FULL OF POSSIBILITIES.</p><h1>Find a game.<br/>Give your AI a starting point.</h1><p className="gc-idea-note">Play or download from the original creators. Point your AI at the catalogue to find the mechanics, source and setup for your next idea. Start with a real game—not a blank page.</p></div></section>
  <TopGameCarousel slides={slides}/>
  {!slides.some(p=>p.id==='external-80fa3f53a31a7e03536d')&&<p className="gc-rated-extra gc-wrap">Also highly rated: <a href="https://yairm210.itch.io/unciv">Unciv · 4.8 / 5 from 378 itch.io ratings</a> (observed 2 Nov 2026). Free downloadable edition; text-only source edition.</p>}

@@ -1,2 +1,3 @@
 export const platformAliases:Record<string,string[]>;export const engineAliases:Record<string,string[]>;export const platforms:string[];export const engines:string[];export const FACET_REVISION:string;export function normalizedPlatforms(raw:string[]):string[];export function normalizedEngines(raw:string[]):string[];
 export const platformOptions:Array<{value:string;label:string}>;export const engineOptions:Array<{value:string;label:string}>;
+export function normalizeGenre(value:string):string;
