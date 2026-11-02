@@ -80,8 +80,8 @@ test('actual human section renders same index with honest counts and commercial 
  const {compileSsrModule}=await import('./ssr-module.mjs'),{mkdtempSync,rmSync}=await import('node:fs'),{resolve}=await import('node:path'),{renderToStaticMarkup}=await import('react-dom/server');
  const dir=mkdtempSync(resolve('.external-section-test-'));
  try{const {ExternalCatalogueSection}=await import(compileSsrModule(new URL('../components/external-catalogue-section.tsx',import.meta.url),dir));
- const defaultHTML=renderToStaticMarkup(await ExternalCatalogueSection({params:{},path:'/'}));assert.ok(defaultHTML.includes('matching project listings'));assert.ok(defaultHTML.includes('gc-cards'));assert.ok(defaultHTML.includes('metadata')||defaultHTML.includes('Metadata'));assert.ok(defaultHTML.includes('upstream-reported'));
- const commercial=renderToStaticMarkup(await ExternalCatalogueSection({params:{externalContent:'commercial'}}));assert.ok(commercial.includes('Requires original commercial game content'));assert.ok(commercial.includes('Metadata licence:'));assert.ok(commercial.includes('https://creativecommons.org/licenses/by/4.0/'));
+ const defaultHTML=renderToStaticMarkup(await ExternalCatalogueSection({params:{externalSort:'relevance'},path:'/'}));assert.ok(defaultHTML.includes('matching project listings'));assert.ok(defaultHTML.includes('gc-cards'));assert.ok(defaultHTML.includes('metadata')||defaultHTML.includes('Metadata'));assert.ok(defaultHTML.includes('upstream-reported'));
+ const commercial=renderToStaticMarkup(await ExternalCatalogueSection({params:{externalContent:'commercial',externalSort:'relevance'}}));assert.ok(commercial.includes('Requires original commercial game content'));assert.ok(commercial.includes('Metadata licence:'));assert.ok(commercial.includes('https://creativecommons.org/licenses/by/4.0/'));
  }finally{rmSync(dir,{recursive:true,force:true})}
 });
 test('concurrent chunks cannot exceed expected count or overwrite same-ID metadata; snapshots bounded',async()=>{

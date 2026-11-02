@@ -1,6 +1,6 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {performance} from 'node:perf_hooks';import {env} from './test-env.mjs';import {externalCataloguePage,externalCatalogueEntry,ingestExternalCatalogue,validateExternalEntry,externalTokens} from '../lib/external-catalogue.ts';import {externalSnapshot,SNAPSHOT_URL,SNAPSHOT_SHA,SNAPSHOT_GENERATION} from '../lib/external-snapshot.ts';import {GET} from '../app/api/external-catalogue/route.ts';import {handleMcp} from '../lib/mcp.ts';
 import {bytes,rows as records} from './external-fixture.mjs';let calls=0;
-const mock=(body=bytes,headers={})=>{globalThis.fetch=async(url,options)=>{calls++;assert.equal(url,SNAPSHOT_URL);assert.equal(options.redirect,'manual');assert.ok(options.signal);return new Response(body,{headers})}};
+const mock=(body=bytes,headers={})=>{globalThis.fetch=async(url,options)=>{if(url!==SNAPSHOT_URL)throw Error('Other optional snapshots unavailable in this test');calls++;assert.equal(url,SNAPSHOT_URL);assert.equal(options.redirect,'manual');assert.ok(options.signal);return new Response(body,{headers})}};
 test('bad size, wrong digest, unavailable/redirect response fail closed with no cached data',async()=>{
  mock(bytes,{'content-length':'9999999'});assert.equal((await externalCataloguePage()).available,false);
  const corrupt=Buffer.from(bytes);corrupt[10]^=1;mock(corrupt);assert.equal((await externalCataloguePage()).available,false);

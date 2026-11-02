@@ -1,0 +1,3 @@
+import {topPicks} from '@/lib/top-picks';import {response} from '@/lib/http';
+export const dynamic='force-dynamic';
+export async function GET(request:Request){const value=new URL(request.url).searchParams.get('limit');const limit=value===null?6:Number(value);if(!Number.isInteger(limit)||limit<1||limit>6)return response({error:'Choose1–6 approved picks.'},400);const picks=await topPicks({limit});return response({format:'games4free-approved-picks-v1',picks,scope:'Editorial variety across the catalogue with sourced rating/review activity and reviewed access, not a universal global quality ranking. No installation or gameplay test implied.'});}

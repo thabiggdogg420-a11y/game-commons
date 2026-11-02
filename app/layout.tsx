@@ -7,8 +7,8 @@ import UsageTracker from "./usage-tracker";
 
 export const metadata: Metadata = {
   title: "Games4Free — A starting point for your game",
-  description: "Point your AI at Games4Free. Find a suitable game base, meet its creator and adapt useful source into the game you want.",
-  metadataBase: new URL('https://game-commons-captain.thabiggdogg420.chatgpt.site'),
+  description: "Discover games to play or download from their creators. Point your AI at Games4Free to find a source-linked starting point for your next idea.",
+  metadataBase: new URL('https://games.free4allhub.com'),
   openGraph: {title:'Games4Free — A starting point for your game',description:'Find a starting point for the game you want. Browse original games or let your AI find a suitable source base.'},
   twitter: {card:'summary'},
   icons: {

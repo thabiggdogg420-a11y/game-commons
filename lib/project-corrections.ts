@@ -1,0 +1,10 @@
+import type {ExternalEntry} from './external-catalogue';
+export const CORRECTION_REVISION='official-access-2026-11-02-v2';
+export const accessCorrections=new Map([
+ ['external-ae4d63a0b6615fc7d358',{access:'paid-reported',sourceUrl:'https://blank-house.itch.io/keyframes',observedAt:'2026-11-02',scope:'Full game requires payment; a separate free demo is available.',note:'Paid full game; free demo only. Do not treat the entire game as free.',carouselEligible:false}],
+ ['external-a88be3ce3811b9bf85f2',{access:'unknown',sourceUrl:'https://jennyvipham.itch.io/error143',observedAt:'2026-11-02',scope:'Free base game; the complete Day 1–8 edition requires $25. Mixed edition scope, not a confirmed entirely free full game.',note:'Free base / paid additional days. Check edition and price on the creator page.',carouselEligible:false}],
+ ['external-a0135e5020c293aee5ee',{access:'free-reported',sourceUrl:'https://gbpatch.itch.io/our-life',observedAt:'2026-11-02',scope:'Complete main story free; optional paid DLC.',note:'Publisher rating16+: profanity, crude humour and suggestive adult-aged scenes.',carouselEligible:false}],
+ ['external-e11608324db6efa19426',{access:'free-reported',sourceUrl:'https://garula.itch.io/the-freak-circus',observedAt:'2026-11-02',scope:'Free prototype, incomplete; publisher restricts this game to ages18+.',note:'18+ only: graphic horror and coercive themes. Prototype/incomplete; not suitable for the general featured carousel.',carouselEligible:false}]
+]);
+export const effectiveAccess=(id:string,original:string)=>accessCorrections.get(id)?.access??original;
+export function applyProjectCorrection(project:ExternalEntry){const correction=accessCorrections.get(project.id);if(!correction)return project;return {...project,access:correction.access,freeClaimScope:correction.scope,contentWarnings:[...(project.contentWarnings??[]),correction.note],historicalClaims:{access:project.access,freeClaimScope:project.freeClaimScope,contentWarnings:project.contentWarnings},accessCorrection:correction};}

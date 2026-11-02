@@ -1,3 +1,5 @@
+import {TopGameCarousel,type TopGameSlide} from '@/components/top-game-carousel';
+import featured from '@/lib/featured-games.json';
 import type {ReactNode} from 'react';
 import {AIDirectoryEntry} from './projects/project-actions';
 import {projectCredits} from '@/lib/project-credits';
@@ -5,7 +7,7 @@ import {externalProjects} from '@/lib/project-handoff';
 import {sourceProjects} from '@/lib/project-catalogue';
 import {projectReadiness} from '@/lib/project-readiness';
 import {projectGenres} from '@/lib/project-genres';
-import {FeaturedGames, CuratedSearchMatches} from '@/components/featured-games';
+import {CuratedSearchMatches} from '@/components/featured-games';
 import './discovery.css';
 type Params=Record<string,string|string[]|undefined>;
 const stackOf=(engine:string)=>/godot/i.test(engine)?'godot':/javascript|typescript|three\.js|babylon|phaser|dom\/svg/i.test(engine)?'web':'other';
@@ -19,15 +21,15 @@ export function directoryBrowse(params:Params={}){
  return {q,platform,genre,lane,stack,readiness,projects,total,page,pages,href};
 }
 export function CommonsNav({curated=false,query=''}:{curated?:boolean;query?:string}){return <header className="gc-nav gc-wrap"><a className="gc-brand" href="/" aria-label="Games4Free home">Games<span>4</span>Free</a><nav aria-label="Main navigation"><a href="/#directory">Discover</a><a href="/?collection=curated&lane=source#directory">Source games</a></nav><form className="gc-header-search" action="/#directory" method="get">{curated&&<input type="hidden" name="collection" value="curated"/>}<input aria-label="Search games" type="search" name={curated?'q':'externalQ'} defaultValue={query} placeholder="Search games, genres, mechanics…" maxLength={200}/><button type="submit">Search</button></form><a className="gc-ai-link" href="#ai-tools">Connect your AI</a></header>}
-export default function DiscoverHome({params={},externalSection=null}:{params?:Params;externalSection?:ReactNode}={}){
+export default function DiscoverHome({params={},externalSection=null,topSlides}:{params?:Params;externalSection?:ReactNode;topSlides?:TopGameSlide[]}={}){
  const state=directoryBrowse(params),{q,platform,genre,lane,stack,readiness,projects,total,page,pages,href}=state;
  const linked=externalProjects.filter(p=>p.sourceUrl).length;
  const curated=!externalSection||params.collection==='curated'||!!params.q||!!params.lane||!!params.stack||!!params.readiness;
- const feature=externalProjects.find(p=>p.id==='mindustry')!;
+ const slides=topSlides??featured.records.filter(p=>p.rating).map(p=>{const r=p.rating!;return {id:p.id,title:p.title,genre:p.genre,summary:p.setupBurden,action:{url:p.officialFreePlayOrDownload,label:'Get the free edition'},activity:{count:r.count,provider:r.provider,scope:r.scope,dateLabel:'Observed '+r.checkedAt,sourceUrl:r.sourceUrl,metricLabel:r.provider==='itch.io'?'ratings':'English reviews'},detailUrl:p.sourceUrl,scoreLabel:r.scale===5?`${r.score} / 5 on ${r.provider}`:`${r.score}% positive on ${r.provider}`,notes:p.caveats}});
  return <div className="gc-discovery"><a className="gc-skip" href="#main">Skip to content</a><CommonsNav curated={curated} query={curated?q:typeof params.externalQ==='string'?params.externalQ:''}/><main id="main" tabIndex={-1}>
- <section className="gc-intro gc-wrap"><div><h1>Find your next great game.</h1><p>Play the originals. Discover the source. Make something new.</p></div><span>Independent games. Original creators. <a href="/projects/art/credits.json">Artwork credits</a></span></section>
- <section className="gc-features gc-wrap" aria-label="Selected games"><article className="gc-spotlight"><span className="gc-text-preview">Source edition · text-only preview</span><div><p className="gc-kicker">PLAYER FAVOURITE / FACTORY DEFENSE</p><h2>{feature.title}</h2><p>Build the supply chain. Defend your factory.</p><p className="gc-feature-credit">By <a href={projectCredits(feature).creditUrl}>{feature.creator}</a></p><a className="gc-button" href="/projects?q=Mindustry#mindustry">Explore game</a><a className="gc-feature-source" href="/projects?q=Mindustry#remix-mindustry">Source + AI handoff</a></div></article><div className="gc-feature-side">{['endless-sky','beyond-all-reason'].map(id=>{const p=externalProjects.find(p=>p.id===id)!;return <a className="gc-side-game" key={id} href={'/projects?q='+encodeURIComponent(p.title)+'#'+id}><span className="gc-text-preview">Source edition · text-only preview</span><div><p className="gc-kicker">{p.genre}</p><h3>{p.title}</h3><p>{p.hook}</p><span>By {p.creator}</span></div></a>})}</div></section>
- <FeaturedGames/>
+ <section className="gc-intro gc-wrap"><div><p className="gc-kicker">FREE TO DISCOVER. FULL OF POSSIBILITIES.</p><h1>Find a game.<br/>Give your AI a starting point.</h1><p className="gc-idea-note">Play or download from the original creators. Point your AI at the catalogue to find the mechanics, source and setup for your next idea. Start with a real game—not a blank page.</p></div></section>
+ <TopGameCarousel slides={slides}/>
+ <p className="gc-rated-extra gc-wrap">Also highly rated: <a href="https://yairm210.itch.io/unciv">Unciv · 4.8 / 5 from 378 itch.io ratings</a> (observed 2 Nov 2026). Free downloadable edition; text-only source edition.</p>
  <aside className="gc-assistant gc-wrap" id="ai-tools"><details><summary><span><strong>Your next game starts with an idea.</strong> Point your AI at Games4Free to find a source-linked starting point.</span><b>Get AI handoff</b></summary><div className="gc-ai-panel"><div><h2>You bring the idea. Your AI finds the base.</h2><p>Find a starting point for the game you want. Compare mechanics, source and setup before changing anything.</p><p className="gc-mcp-path">Public MCP: <code>/mcp/read</code> · no token for reads</p><a href="/api/external-catalogue">Catalogue API</a> · <a href="/llms.txt">MCP setup + guide</a></div><AIDirectoryEntry/></div></details></aside>
  <section className="gc-collection-switch gc-wrap" id="directory"><div><h2>Explore the catalogue</h2><p>Creator links, not hosted copies.</p></div><nav aria-label="Choose catalogue"><a href="/#directory" aria-current={!curated?'page':undefined}>All games</a><a href="/?collection=curated#directory" aria-current={curated?'page':undefined}>Selected originals <span>{externalProjects.length}</span></a></nav></section>
  {!curated?<div className="gc-wrap"><CuratedSearchMatches query={typeof params.externalQ==='string'?params.externalQ:''}/>{externalSection}</div>:<>
