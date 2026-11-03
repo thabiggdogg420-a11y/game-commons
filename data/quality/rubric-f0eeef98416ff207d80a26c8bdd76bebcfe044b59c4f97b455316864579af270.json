@@ -1,0 +1,128 @@
+{
+  "format": "games4free-quality-rubric-v1",
+  "rubricVersion": "quality-criteria-2026-11-03-v1",
+  "criteria": [
+    {
+      "id": "presentation",
+      "label": "Presentation",
+      "passStandard": "Cohesive, detailed and readable presentation appropriate to its genre. Comparable 3D games must demonstrate substantial model, material, lighting and environmental craft. Intentional 2D/stylized work can meet the standard through art direction, animation, interface and scene craft; dimensionality alone does not pass or fail.",
+      "adequateEvidence": "Inspect representative real gameplay imagery/footage, not logos, generated mockups or promotional covers. State scene/build limits. Screenshot inspection establishes presentation only."
+    },
+    {
+      "id": "gameplayDepth",
+      "label": "Gameplay depth",
+      "passStandard": "Substantial coherent core loop with meaningful choices, challenge and progression or replayability appropriate to its genre; more than a one-mechanic technical demonstration. Feature counts and length alone do not establish depth.",
+      "adequateEvidence": "Observed gameplay, substantial creator gameplay footage, an inspectable implemented loop, a substantive independent review, or a detailed operational walkthrough corroborated by actual gameplay imagery or source evidence. Documentation-based passes have medium confidence. Marketing feature lists and genre tags alone are insufficient."
+    },
+    {
+      "id": "controlsPolish",
+      "label": "Controls and polish",
+      "passStandard": "Responsive understandable controls; readable feedback/interface; coherent onboarding/transitions; no recurring friction undermining play. Judge actual supported device, not presumed mobile compatibility.",
+      "adequateEvidence": "Hands-on interaction or substantive independent review evaluating controls/feedback on an identified edition/platform. Merely listing supported controls is insufficient."
+    },
+    {
+      "id": "completeness",
+      "label": "Completeness",
+      "passStandard": "Satisfying usable game within promised scope: sustained loop or appropriate campaign/outcome, restart/recovery and applicable save/progression. Alpha is not automatic failure. A Released tag or downloadable build alone is not proof. Sandboxes do not require narrative endings.",
+      "adequateEvidence": "Observed complete loop/session or substantive independent review corroborated by current release scope, describing available/incomplete and recoverable portions."
+    },
+    {
+      "id": "stability",
+      "label": "Stability",
+      "passStandard": "Core play, transitions and applicable saving/reloading work reliably on assessed platform/build without material crashes, softlocks, lost progress or severe performance failures. Other builds/devices do not inherit this judgment.",
+      "adequateEvidence": "Bounded meaningful gameplay session or substantive independent test/review on an identified build/platform. Headless tests, HTTP200, source availability, crowd ratings and absence of bug reports alone do not qualify."
+    }
+  ],
+  "statusDefinitions": {
+    "pass": "Adequate criterion-specific evidence shows the standard met.",
+    "partial": "Adequate evidence shows mixed quality: substantive requirements met and others below standard. Not a synonym for incomplete evidence.",
+    "fail": "Adequate evidence shows the standard unmet; explain observed defect.",
+    "unknown": "Absent, inadequate, build-mismatched or insufficient evidence. Never scored as failure."
+  },
+  "aggregation": {
+    "passStars": 1,
+    "partialStars": 0,
+    "failStars": 0,
+    "unknownStars": null,
+    "completeAssessmentRequires": 5,
+    "incompleteDisplay": "No overall star rating; show criteriaMet, assessedCriteria and missing criteria.",
+    "noEvidenceCategory": "unassessed",
+    "incompleteCategory": "provisional",
+    "completeZeroPassCategory": "below-standard",
+    "completeCategories": {
+      "1": "1-star",
+      "2": "2-star",
+      "3": "3-star",
+      "4": "4-star",
+      "5": "5-star"
+    },
+    "confidence": "Evidence strength and build/platform specificity, not metadata coverage or popularity.",
+    "qualitySort": "Criteria met descending across complete/provisional; confidence then completeness as tie-breakers, then relevance/title. Not an incomparable final quality ranking. Editorial showcase is separately selected.",
+    "completeScopeRequirement": "All five adequately assessed criteria must share a compatible identified build/platform; otherwise remain provisional with an explicit scope mismatch. Derivative/scenario assessments never become whole-original ratings."
+  },
+  "qualityBands": {
+    "below-standard": "No criteria met in a complete assessment",
+    "1-star": "One criterion met; substantial shortcomings",
+    "2-star": "Two criteria met; limited overall quality",
+    "3-star": "Three criteria met; worthwhile strengths with material limitations",
+    "4-star": "Four criteria met; strong with a clearly identified weakness",
+    "5-star": "All five criteria met; strongest qualified games"
+  },
+  "excludedFactors": [
+    "crowd ratings/review count",
+    "reuse rights",
+    "AI authorship",
+    "browser versus download",
+    "alpha/released label alone",
+    "metadata field count",
+    "installer size"
+  ],
+  "priorityPolicy": "Substantial cross-genre candidates first based on real game evidence and published presentation and depth standards. Evidence availability organizes work only, never raises quality scores. Preserve access/maturity/content filters separately.",
+  "evidenceMethods": [
+    "hands-on",
+    "independent-review",
+    "creator-gameplay-video",
+    "source-inspection",
+    "official-screenshot-inspection",
+    "official-documentation",
+    "recorded-hands-on",
+    "secondary-report",
+    "third-party-screenshot-inspection"
+  ],
+  "showcaseEligibility": {
+    "requiredPasses": [
+      "presentation",
+      "gameplayDepth"
+    ],
+    "blockingFailures": [
+      "controlsPolish",
+      "stability"
+    ],
+    "note": "Editorial showcase selection requires substantive presentation and depth evidence and no known material control/stability failure. A generic four-of-five score does not override weak graphics or shallow gameplay. Provisional status stays visible."
+  },
+  "calibration": [
+    {
+      "case": "Visual benchmark",
+      "rule": "Inspected substantial game imagery may establish scoped presentation, but does not automatically award all five criteria or validate a derivative."
+    },
+    {
+      "case": "Technical demonstration",
+      "rule": "Startup, legal moves and passing automation do not establish substantial presentation, a meaningful finished game experience or overall five-star quality."
+    },
+    {
+      "case": "Unpolished prototype",
+      "rule": "A functioning prototype, metadata completeness or work-in-progress label does not establish polished presentation or substantial gameplay depth."
+    }
+  ],
+  "operationalWalkthroughException": {
+    "criterion": "gameplayDepth",
+    "method": "official-documentation",
+    "evidenceKind": "operational-walkthrough",
+    "confidence": "medium",
+    "requires": "Specific operational systems/decisions, corroborated by inspected actual gameplay imagery or implemented source, not a marketing feature list. Presentation need not pass: visual quality and mechanics are independent criteria. Never qualifies control or stability passes.",
+    "methods": [
+      "official-documentation",
+      "secondary-report"
+    ]
+  }
+}

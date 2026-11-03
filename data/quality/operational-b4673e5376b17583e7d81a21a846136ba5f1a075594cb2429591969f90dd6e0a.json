@@ -1,0 +1,68 @@
+{
+  "format": "games4free-operational-corrections-v1",
+  "revision": "operational-2026-11-03-001",
+  "independentOfQualityScores": true,
+  "records": [
+    {
+      "id": "external-23de2e969079ebe61dff",
+      "inventory": "external",
+      "title": "WebConfessional",
+      "sourceUrl": "https://peachieevee.itch.io/webconfessional",
+      "observedAt": "2026-11-03",
+      "sourceKind": "creator-page",
+      "listingType": "game",
+      "creatorMinimumAge": 18,
+      "contentWarnings": [
+        "Creator specifies an adult audience (18+).",
+        "Themes include manipulation, self-harm and suicidal ideation, threats and violence, cultism, and references to gore."
+      ],
+      "accessCaution": "Read the creator content warnings before playing. This is a creator age restriction, not an independent age rating.",
+      "evidenceSummary": "The official creator page explicitly states an 18+ audience and lists these warnings.",
+      "qualityScoreEffect": "none"
+    },
+    {
+      "id": "external-9a8e9b48f893bffea657",
+      "inventory": "external",
+      "title": "BLUEJEWELED",
+      "sourceUrl": "https://brandonhare.itch.io/bluejeweled",
+      "observedAt": "2026-11-03",
+      "sourceKind": "creator-page",
+      "listingType": "game",
+      "listingSubtype": "creator-described-mod-parody",
+      "contentRequirementStatus": "unverified",
+      "contentWarnings": [],
+      "accessCaution": "Creator describes this as a Bejeweled 3 mod. The page offers a browser embed and Windows/macOS builds; whether any build requires a separate base-game installation is not established.",
+      "reuseCaution": "Do not infer permission to reuse Bejeweled assets from the mod description.",
+      "evidenceSummary": "Creator description and listed access formats were read. No build was executed or installed.",
+      "qualityScoreEffect": "none"
+    },
+    {
+      "id": "external-cf4c253ecb04dc983d54",
+      "inventory": "external",
+      "title": "Desktop Goose",
+      "sourceUrl": "https://samperson.itch.io/desktop-goose",
+      "observedAt": "2026-11-03",
+      "sourceKind": "creator-page",
+      "listingType": "tool",
+      "listingSubtype": "desktop-toy",
+      "contentWarnings": [],
+      "accessCaution": "A desktop companion that moves the cursor and displays notes/memes, rather than a standalone challenge or campaign game. Windows/macOS downloads; no installation or runtime test performed.",
+      "evidenceSummary": "Creator describes a desktop companion and its desktop interactions.",
+      "qualityScoreEffect": "exclude-from-standalone-game-stars"
+    },
+    {
+      "id": "external-cf92fa47b0bd0d140d88",
+      "inventory": "external",
+      "title": "Planet Life",
+      "sourceUrl": "https://crede.itch.io/planet",
+      "observedAt": "2026-11-03",
+      "sourceKind": "creator-page",
+      "listingType": "game",
+      "contentWarnings": [],
+      "accessCaution": "Creator warns that the itch-hosted version can lose progress and recommends the separate official host. This warning is attributed; save reliability has not been tested here.",
+      "creatorRecommendedUrl": "https://planetlife.space/",
+      "evidenceSummary": "The prominent creator warning links the official host as the recommended alternative.",
+      "qualityScoreEffect": "none"
+    }
+  ]
+}
