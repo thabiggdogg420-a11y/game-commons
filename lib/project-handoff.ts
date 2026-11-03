@@ -1,3 +1,4 @@
+import {reversiExampleBrief} from './reversi-example';
 import {isocity,isocityBrief} from './isocity';
 import {slipstreamWorkflowBrief} from './slipstream-workflow';
 import {projectCredits} from './project-credits';
@@ -16,6 +17,7 @@ Creator: ${p.creator}
 ${p.description}
 Original game: ${p.playUrl}
 ${source}
+${p.id==='godot-reversi'?reversiExampleBrief():''}
 REUSE TERMS
 Code: ${p.codeLicense}
 Assets: ${p.assetLicense}

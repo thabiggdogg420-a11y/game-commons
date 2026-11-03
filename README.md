@@ -51,9 +51,9 @@ The [MCP client and acceptance harness](tools/mcp-client/README.md) uses the sam
 
 ## Community source edition
 
-**Version boundary (2 November 2026):** this source edition includes discovery/filter logic from hosted v87: reported device-specific platform and engine filters, Recommended sorting and current public media/action metadata. This is not complete hosted-site parity: image rendering, historical demos, private data and deployment bindings remain deliberately excluded. The hosted v87 website is unchanged by this source update.
+**Version boundary (2 November 2026):** this source edition includes discovery/filter logic from hosted v88: reported device-specific platform and engine filters, Recommended sorting and current public media/action metadata. This is not complete hosted-site parity: image rendering, historical demos, private data and deployment bindings remain deliberately excluded. The hosted v88 website is unchanged by this source update.
 
-This is a contribution-ready source edition updated from hosted v87, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
+This is a contribution-ready source edition updated from hosted v88, **not a byte-for-byte copy of the hosted site's historical demo collection**. It keeps the searchable external catalogue, upstream source/rights/setup information, compact MCP implementation, website foundation and generic storage/review code. Internal demo records, private-origin captures, operational receipts and demonstration binaries are excluded. Capture and curated-return registries start empty; legacy demo routes explain that scope rather than claiming a playable bundled game. The hosted website is unchanged by this export.
 
 ## Project map
 
@@ -66,7 +66,7 @@ This is a contribution-ready source edition updated from hosted v87, **not a byt
 
 ## Reproducible source example
 
-[Reversi move-limit example](examples/reversi-move-limit-v1/README.md): credited pinned-parent patch and harness, with bounded assistant browser-test results. Source-only teaching example; no hosted build or independent creator outcome.
+[Reversi move-limit example](examples/reversi-move-limit-v1/README.md): credited pinned-parent patch and harness, with bounded assistant browser-test results. This source-only example directory contains no hosted build and is not an independent creator outcome. The existing Reversi listing now links separately to the [bounded playable Hub remix](https://free4allhub.com/play/reversi-move-limit-v1/), its pinned source guide and the private-return form. The original and assistant example remain distinct; original-game counts do not increase. Desktop hotseat-12 is the tested scope, not CPU, 24/unlimited, mobile or independent-user acceptance.
 
 ## Help wanted
 
@@ -113,3 +113,5 @@ Public image URLs, image type, original-source links, creator/rights notices and
 Reported platform and engine facets combine independently. Recommended uses reviewed selections, reported release/access evidence, metadata preview availability and provider-native rating thresholds; it is not an engine quality judgement or gameplay certification. Preview availability can inform ranking without fetching or rendering any image. Six reviewed picks remain text-only in this clone.
 
 For memory-constrained builds, native worker pools can be bounded: `ROLLDOWN_WORKER_THREADS=1 RAYON_NUM_THREADS=1 NODE_OPTIONS=--max-old-space-size=512 pnpm run build`.
+
+The focused listing/brief regression can be run after preparing the same public metadata fixtures: `node --import ./tests/register.mjs --test tests/reversi-example-integration.test.mjs`.
